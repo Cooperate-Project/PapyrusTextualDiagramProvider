@@ -64,7 +64,7 @@ public class TestGenerator {
 	    Map uriMap = resSet.getURIConverter().getURIMap();
 	    UMLResourcesUtil.initURIConverterURIMap(uriMap);
 	     
-	    IPath modelPath = new Path("../../../git/PlantUMLPrinterParser/de.cooperate.plantumlpp.examples/IntroductionCourse.uml").removeFileExtension();
+	    IPath modelPath = new Path("../de.cooperate.plantumlpp.examples/IntroductionCourse.uml").removeFileExtension();
 //	    IResource inputModelRes =  root.getRoot().getFile(modelPath.addFileExtension("uml")); 
 //	    IResource inputNotationRes =  root.getRoot().getFile(modelPath.addFileExtension("notation"));
 
@@ -80,7 +80,7 @@ public class TestGenerator {
 		notationResource.load(null);
 		EcoreUtil.resolveAll(notationResource);
 
-		String outBase = URI.createFileURI("../../../git/PlantUMLPrinterParser/de.cooperate.plantumlpp.examples/out/").toFileString();
+		String outBase = URI.createFileURI("../de.cooperate.plantumlpp.examples/out/").toFileString();
 		
 		fsa.setOutputPath(outBase);
 		
