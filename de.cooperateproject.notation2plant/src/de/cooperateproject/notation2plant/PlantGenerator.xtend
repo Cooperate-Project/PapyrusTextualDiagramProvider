@@ -21,18 +21,19 @@ class PlantGenerator implements IGenerator {
 	}
 	
 	def CharSequence compile(Diagram diagram) {
-		if(diagram.type == "PapyrusUMLClassDiagram"){
+		if(diagram.type == "PapyrusUMLClassDiagram") {
 			var generator = new ClassDiagramGenerator();
 			generator.compileClassDiagram(diagram)
-		}
-		else if(diagram.type == "PapyrusUMLActivityDiagram"){
+		} else if(diagram.type == "PapyrusUMLActivityDiagram") {
 			var generator = new ActivityDiagramGenerator();
 			generator.compileActivityDiagram(diagram)
+		} else if (diagram.type == "UseCase") {
+			var generator = new UseCaseDiagramGenerator();
+			generator.compileUseCaseDiagram(diagram)
 		}
-		else
-		 "(empty)"
+		else {
+			LOG.error("no matching diagram type found for: " + diagram.name);
+		 	"(empty)"
+		}
 	}
-	
-	
-	
 }

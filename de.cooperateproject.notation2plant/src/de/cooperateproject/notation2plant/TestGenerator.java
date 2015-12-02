@@ -4,10 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
@@ -15,15 +11,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.papyrus.infra.viewpoints.style.StylePackage;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.internal.resource.UMLResourceFactoryImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.xtext.generator.JavaIoFileSystemAccess;
@@ -34,15 +27,21 @@ import com.google.inject.Guice;
 
 import de.cooperateproject.notation2plant.PlantGenerator;
 
+
 public class TestGenerator {
 
 	public static void main(String[] args) throws IOException {
+		generate();
+	}
+	
+	public static void generate() throws IOException {
 		JavaIoFileSystemAccess fsa = new JavaIoFileSystemAccess();
 		
 		PlantGenerator generator = new PlantGenerator();
 		
 		Guice.createInjector(new AbstractGenericModule() {
 			
+			@SuppressWarnings("unused")
 			public Class<? extends IEncodingProvider> bindIEncodingProvider() {
 				return IEncodingProvider.Runtime.class;
 			}
@@ -61,8 +60,7 @@ public class TestGenerator {
 	    preg.replace(StylePackage.eNS_URI, StylePackage.eINSTANCE);
 
 	    ResourceSet resSet = new ResourceSetImpl();
-	    Map uriMap = resSet.getURIConverter().getURIMap();
-	    UMLResourcesUtil.initURIConverterURIMap(uriMap);
+	    UMLResourcesUtil.initURIConverterURIMap(resSet.getURIConverter().getURIMap());
 	     
 	    IPath modelPath = new Path("../de.cooperate.plantumlpp.examples/IntroductionCourse.uml").removeFileExtension();
 //	    IResource inputModelRes =  root.getRoot().getFile(modelPath.addFileExtension("uml")); 
@@ -85,8 +83,6 @@ public class TestGenerator {
 		fsa.setOutputPath(outBase);
 		
 		generator.doGenerate(notationResource, fsa);
-		
-
 	}
 	
 }
