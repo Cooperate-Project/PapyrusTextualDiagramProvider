@@ -1,0 +1,51 @@
+<plugin>
+ <extension
+        point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="de.cooperateproject.generator.PlantGeneratorHandler"
+           id="tld.domain.yourcodegencommand"
+           name="Create Your Code">
+     </command>
+  </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <menu
+              id="yourmenu"
+              label="UML to PlantUml">
+           <command
+                 commandId="tld.domain.yourcodegencommand"
+                 label="Create Your Code"
+                 style="push"
+                 tooltip="Create Code that ...">
+           </command>
+           <visibleWhen
+                 checkEnabled="false">
+              <with
+                    variable="activeMenuSelection">
+                 <iterate>
+                 <adapt type="org.eclipse.core.resources.IResource">
+             <or>             
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.di">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.notation">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.uml">
+                </test>
+             </or>
+                 </adapt>
+                 </iterate>
+              </with>
+           </visibleWhen>
+        </menu>
+     </menuContribution>
+  </extension>
+ </plugin>
