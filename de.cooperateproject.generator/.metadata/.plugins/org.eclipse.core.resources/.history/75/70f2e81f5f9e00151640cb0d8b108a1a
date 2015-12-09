@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_g2Q2YIhnEeWHNfw5-fuCdg" name="RootElement">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_hEb1QIhnEeWHNfw5-fuCdg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_qD-jIIhnEeWHNfw5-fuCdg" name="Mitarbeiter"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_ukruMIhnEeWHNfw5-fuCdg" name="Abteilungsleiter">
+    <generalization xmi:type="uml:Generalization" xmi:id="_AbibAIhoEeWHNfw5-fuCdg" general="_qD-jIIhnEeWHNfw5-fuCdg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_u3WykIhnEeWHNfw5-fuCdg" name="Verkäufer">
+    <generalization xmi:type="uml:Generalization" xmi:id="_BWluAIhoEeWHNfw5-fuCdg" general="_qD-jIIhnEeWHNfw5-fuCdg"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_BuUzYIh6EeWHNfw5-fuCdg" general="_ukruMIhnEeWHNfw5-fuCdg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_CM9VUIhoEeWHNfw5-fuCdg" name="Buchhandlung">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_FZossIhoEeWHNfw5-fuCdg" name="Buch kaufen">
+      <generalization xmi:type="uml:Generalization" xmi:id="_stAooIhsEeWHNfw5-fuCdg" general="_u3WykIhnEeWHNfw5-fuCdg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PT7S8J5eEeWg6OMNK3V-Ew" name="Actor1"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_REkKIJ5eEeWg6OMNK3V-Ew" memberEnd="_REmmYJ5eEeWg6OMNK3V-Ew _REnNcJ5eEeWg6OMNK3V-Ew">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_REl_UJ5eEeWg6OMNK3V-Ew" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_REl_UZ5eEeWg6OMNK3V-Ew" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_REmmYJ5eEeWg6OMNK3V-Ew" name="buch kaufen" type="_FZossIhoEeWHNfw5-fuCdg" association="_REkKIJ5eEeWg6OMNK3V-Ew"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_REnNcJ5eEeWg6OMNK3V-Ew" name="actor1" type="_PT7S8J5eEeWg6OMNK3V-Ew" association="_REkKIJ5eEeWg6OMNK3V-Ew"/>
+  </packagedElement>
+</uml:Model>

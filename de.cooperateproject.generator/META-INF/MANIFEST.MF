@@ -20,4 +20,5 @@ Require-Bundle: com.google.guava,
  org.eclipse.equinox.registry,
  org.apache.log4j;bundle-version="1.2.15",
  org.eclipse.papyrus.infra.viewpoints.policy
+Export-Package: de.cooperateproject.generator
 
