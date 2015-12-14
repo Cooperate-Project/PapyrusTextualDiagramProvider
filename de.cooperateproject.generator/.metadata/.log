@@ -11472,3 +11472,1498 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !ENTRY org.apache.log4j 2 0 2015-12-09 13:36:52.497
 !MESSAGE UseCaseGenerator  - Element ignored: Generalization
 
+!SESSION 2015-12-10 13:29:03.149 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 13:29:08.144
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:29:08.729
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:29:08.730
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:29:08.752
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 13:29:16.040
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 13:29:21.402
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.587
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.589
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.589
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.590
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.590
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.653
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.654
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.655
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.655
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:23.656
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:24.420
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:24.421
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:24.422
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:24.422
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:24.423
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:27.458
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:27.458
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:27.459
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:27.459
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:29:27.460
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+!SESSION 2015-12-10 13:39:35.269 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 13:39:39.789
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:39:40.168
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:39:40.169
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:39:40.198
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 13:39:47.433
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.jface 4 0 2015-12-10 13:39:51.758
+!MESSAGE /icons/cross.png
+!STACK 0
+java.io.FileNotFoundException: /icons/cross.png
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:37)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:169)
+	at java.net.URL.openConnection(Unknown Source)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.connect(PlatformURLConnection.java:112)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.getURLAsLocal(PlatformURLConnection.java:244)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.toFileURL(PlatformURLConverter.java:37)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:207)
+	at org.eclipse.jface.resource.URLImageDescriptor.getFilePath(URLImageDescriptor.java:219)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:283)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:164)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:52)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:86)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:76)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:86)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:192)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:1057)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:794)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:349)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:343)
+	at org.eclipse.jface.action.ToolBarManager.createControl(ToolBarManager.java:126)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolBarManagerRenderer.createToolbar(ToolBarManagerRenderer.java:521)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolBarManagerRenderer.createWidget(ToolBarManagerRenderer.java:374)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:971)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:640)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:525)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:509)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.adjustTopRight(StackRenderer.java:812)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1322)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:49)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:63)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:614)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1061)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+
+!ENTRY org.eclipse.jface 2 0 2015-12-10 13:39:51.764
+!MESSAGE The image could not be loaded: URLImageDescriptor(platform:/plugin/org.eclipse.ui.views_3.8.0.v20150422-0725/icons/cross.png)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(platform:/plugin/org.eclipse.ui.views_3.8.0.v20150422-0725/icons/cross.png)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:166)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:52)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:86)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:76)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:86)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:192)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:1057)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:794)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:349)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:343)
+	at org.eclipse.jface.action.ToolBarManager.createControl(ToolBarManager.java:126)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolBarManagerRenderer.createToolbar(ToolBarManagerRenderer.java:521)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolBarManagerRenderer.createWidget(ToolBarManagerRenderer.java:374)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:971)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:640)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:525)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:509)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.adjustTopRight(StackRenderer.java:812)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1322)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:49)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:63)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:151)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:614)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:654)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1061)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 13:39:53.259
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:01.978
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:01.979
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:01.980
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:01.980
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:01.981
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:02.045
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:02.045
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:02.046
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:02.046
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 13:40:02.047
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+!SESSION 2015-12-10 13:42:17.334 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 13:42:21.691
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:42:22.135
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:42:22.136
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:42:22.162
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 13:42:29.356
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 13:42:34.935
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-12-10 13:53:03.394 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 13:53:07.889
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:53:08.316
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:53:08.316
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 13:53:08.341
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 13:53:15.422
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 13:53:20.886
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-12-10 14:03:55.511 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 14:03:59.858
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:04:00.286
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:04:00.287
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:04:00.317
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 14:04:07.484
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 14:04:13.219
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-12-10 14:05:41.797 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-10 14:05:46.140
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:05:46.561
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:05:46.562
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-10 14:05:46.584
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-10 14:05:53.505
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-10 14:05:59.079
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.692
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.699
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.699
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.700
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.701
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.746
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.746
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.747
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.748
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:13.749
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:14.565
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:14.565
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:14.566
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:14.567
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-10 14:06:14.567
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+!SESSION 2015-12-14 10:18:29.404 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.emf.ecore.xcore.exporter 4 0 2015-12-14 10:18:37.658
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecore.xcore.exporter [262]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.ecore.xcore.ui; bundle-version="[1.2.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.emf.ecore.xcore.ui; bundle-version="1.2.1.v20150202-0452"; singleton:="true"
+       org.eclipse.emf.ecore.xcore.ui [265]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ui; bundle-version="[2.7.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.xtext.xbase.ui; bundle-version="2.9.0.v201512010527"; singleton:="true"
+              org.eclipse.xtext.xbase.ui [1480]
+                Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.emf.ecore.xcore.importer 4 0 2015-12-14 10:18:37.663
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecore.xcore.importer [263]
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.ecore.xcore.ui; bundle-version="[1.2.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.emf.ecore.xcore.ui; bundle-version="1.2.1.v20150202-0452"; singleton:="true"
+       org.eclipse.emf.ecore.xcore.ui [265]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ui; bundle-version="[2.7.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.xtext.xbase.ui; bundle-version="2.9.0.v201512010527"; singleton:="true"
+              org.eclipse.xtext.xbase.ui [1480]
+                Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.emf.ecore.xcore.ui 4 0 2015-12-14 10:18:37.666
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.emf.ecore.xcore.ui [265]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ui; bundle-version="[2.7.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtext.xbase.ui; bundle-version="2.9.0.v201512010527"; singleton:="true"
+       org.eclipse.xtext.xbase.ui [1480]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY de.cooperateproject.notation2plant 4 0 2015-12-14 10:18:42.292
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: de.cooperateproject.notation2plant [1412]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; bundle-version="2.8.3"
+    -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.9.0.v201512010527"; singleton:="true"
+       org.eclipse.xtext.generator [1461]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtend.ide 4 0 2015-12-14 10:18:42.296
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.ide [1442]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ui; bundle-version="[2.9.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtext.xbase.ui; bundle-version="2.9.0.v201512010527"; singleton:="true"
+       org.eclipse.xtext.xbase.ui [1480]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtend.ide.common 4 0 2015-12-14 10:18:42.299
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.ide.common [1443]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.generator 4 0 2015-12-14 10:18:42.302
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.generator [1461]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.idea.generator 4 0 2015-12-14 10:18:42.306
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.idea.generator [1463]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.9.0.v201512010527"; singleton:="true"
+       org.eclipse.xtext.generator [1461]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.purexbase.ui 4 0 2015-12-14 10:18:42.309
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.purexbase.ui [1468]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ui; bundle-version="[2.9.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtext.xbase.ui; bundle-version="2.9.0.v201512010527"; singleton:="true"
+       org.eclipse.xtext.xbase.ui [1480]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.xbase.ui 4 0 2015-12-14 10:18:42.313
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.xbase.ui [1480]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xbase.ide; bundle-version="[2.9.0,3.0.0)"; visibility:="reexport"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.xtext.ui 4 0 2015-12-14 10:18:42.326
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.xtext.ui [1481]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.wizard; bundle-version="[2.9.0,3.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-14 10:18:42.747
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:18:43.117
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:18:43.117
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:18:43.140
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-14 10:18:50.239
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-14 10:18:56.457
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-12-14 10:20:57.223 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data C:\Users\czogalik\Documents\cooperate\workspace\PlantUMLPrinterParser1\de.cooperateproject.generator -dev file:C:/Users/czogalik/Documents/cooperate/workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration (1)/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-12-14 10:21:04.191
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:21:04.559
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:21:04.560
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a package for 'http://www.eclipse.org/papyrus/umlrt/statemachine'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-12-14 10:21:04.588
+!MESSAGE Both 'org.eclipse.papyrus.umlrt' and 'org.eclipse.papyrusrt.umlrt.profile' register a URI mapping for 'pathmap://UML_RT_PROFILE/'
+
+!ENTRY org.eclipse.gmf.runtime.emf.type.core 4 28 2015-12-14 10:21:11.833
+!MESSAGE Error initializing specialization type "org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation" because it specializes type "org.eclipse.papyrus.uml.Abstraction" which does not exist.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-12-14 10:21:18.133
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.524
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.526
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.526
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.527
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.528
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.611
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.612
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.613
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.613
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:20.616
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:21.494
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:21.495
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:21.495
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:21.496
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:21.497
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:34.326
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:34.327
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:34.327
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:34.328
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:34.328
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:40.096
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:40.097
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:40.098
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:40.099
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:40.099
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:44.691
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:44.691
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:44.692
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:44.693
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:44.693
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:54.732
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:54.733
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:54.733
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:54.733
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:21:54.734
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.408
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.409
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.410
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.410
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.411
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.412
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.447
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.448
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.449
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.449
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.450
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:38.451
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:42.107
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:42.109
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:42.109
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:42.110
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:42.110
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.866
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.866
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.867
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.867
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.868
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:43.868
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:45.296
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:45.297
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:45.297
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:45.297
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:45.298
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.319
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.319
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.320
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.320
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.321
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:46.321
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:48.480
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:48.481
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:48.482
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:48.482
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:48.483
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.560
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.561
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.561
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.562
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.563
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:22:49.563
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.093
+!MESSAGE UseCaseGenerator  - Element ignored: Component
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:30.094
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:30.095
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.095
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.095
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.096
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.096
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.127
+!MESSAGE UseCaseGenerator  - Element ignored: Component
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:30.127
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:30.128
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.128
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.129
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.129
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:30.130
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:35.841
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:35.885
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:47.616
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:48.831
+!MESSAGE UseCaseGenerator  - Element ignored: Component
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:48.832
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:23:48.832
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:48.833
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:48.833
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:48.834
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:23:48.834
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:24:05.285
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:05.765
+!MESSAGE UseCaseGenerator  - Element ignored: Component
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:24:05.766
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:24:05.766
+!MESSAGE UseCaseGenerator  - Element is null
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:05.767
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:05.767
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:05.768
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:05.768
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:24:07.676
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:19.918
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:19.918
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:19.919
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:19.919
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:19.920
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.729
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.729
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.730
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.730
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.731
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.801
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.802
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.802
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.803
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:44.803
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.459
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.460
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.460
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.461
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.461
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:24:53.462
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.432
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.432
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.433
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.433
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.434
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:24.434
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-14 10:25:25.604
+!MESSAGE PlantGenerator  - no matching diagram type found for: Erstes Zustandsdiagramm
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.566
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.567
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.567
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.568
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.568
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:26.569
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:27.234
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:27.235
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:27.235
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:27.236
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:27.237
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.132
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.132
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.133
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.133
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.134
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.667
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.668
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.669
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.669
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.670
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:25:36.670
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.846
+!MESSAGE UseCaseGenerator  - Element ignored: Include
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.846
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.847
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.848
+!MESSAGE UseCaseGenerator  - Element ignored: Extend
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.848
+!MESSAGE UseCaseGenerator  - Element ignored: Connector
+
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 10:26:00.849
+!MESSAGE UseCaseGenerator  - Element ignored: Generalization
+

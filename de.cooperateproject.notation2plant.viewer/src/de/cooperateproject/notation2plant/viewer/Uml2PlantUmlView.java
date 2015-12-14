@@ -1,7 +1,11 @@
 package de.cooperateproject.notation2plant.viewer;
 
 import java.io.IOException;
+import java.net.URL;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -9,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.TextViewer;
 import org.eclipse.jface.viewers.ISelection;
@@ -19,14 +24,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.ViewPart;
+import org.osgi.framework.Bundle;
 
 import de.cooperateproject.generator.PlantGenerator;
 
 public class Uml2PlantUmlView extends ViewPart {
 
 	private TextViewer textviewer;
+	private static final String PLUGIN_ID = "de.cooperateproject.notation2plant.viewer";
 	private boolean toggle = true;
-	private Action toogleAction = new Action("Live Translation", IAction.AS_CHECK_BOX) {
+	private Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
 		public void run() {
 			toggle = !this.isChecked();
 		}
@@ -44,6 +51,13 @@ public class Uml2PlantUmlView extends ViewPart {
 			}
 		}
 	};
+
+	 private ImageDescriptor getImageDescriptor(String relativePath) {
+		 Bundle bundle = Platform.getBundle(PLUGIN_ID);
+		 URL url = FileLocator.find(bundle, new Path("icons/" + relativePath), null);
+		 return ImageDescriptor.createFromURL(url);
+	 }
+
 
 
 
@@ -91,8 +105,11 @@ public class Uml2PlantUmlView extends ViewPart {
 		textviewer = new TextViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		textviewer.setEditable(false);
 		
+		toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
+		toggleAction.setToolTipText("Disable live translation");
+		
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
-        mgr.add(toogleAction);
+        mgr.add(toggleAction);
 		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(listener);
 	}
 
