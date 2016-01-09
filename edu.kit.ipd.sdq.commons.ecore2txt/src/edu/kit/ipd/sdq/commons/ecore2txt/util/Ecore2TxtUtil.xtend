@@ -1,4 +1,4 @@
-package edu.kit.ipd.sdq.commons.ecore2txt.util
+package edu.kit.ipd.sdq.commons.ecore2txt.util 
 
 import com.google.inject.Guice
 import com.google.inject.Module

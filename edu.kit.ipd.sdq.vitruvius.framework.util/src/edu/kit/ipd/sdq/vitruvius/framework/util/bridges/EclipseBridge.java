@@ -220,7 +220,6 @@ public final class EclipseBridge {
      */
     public static <T> void sortExtensionsDescByPriority(final List<Pair<T, Integer>> extensionsWithPriority) {
         final Comparator<Pair<T, Integer>> priorityComparator = new Comparator<Pair<T, Integer>>() {
-            @Override
             public int compare(final Pair<T, Integer> arg0, final Pair<T, Integer> arg1) {
                 int comparison;
                 comparison = arg1.getSecond().compareTo(arg0.getSecond());
@@ -251,7 +250,6 @@ public final class EclipseBridge {
     public static <T> T callInProtectedMode(final Callable<T> callable) {
         final FutureTask<T> futureTask = new FutureTask<T>(callable);
         final ISafeRunnable safeRunnable = new ISafeRunnable() {
-            @Override
             public void handleException(final Throwable e) {
                 System.err.println("Exception while running in protected mode:");
                 // soften
@@ -263,7 +261,6 @@ public final class EclipseBridge {
                 // token)
             }
 
-            @Override
             public void run() throws Exception {
                 futureTask.run();
             }
@@ -294,7 +291,6 @@ public final class EclipseBridge {
         // computation is
         // finished to avoid concurrency problems
         final Callable<Boolean> callable = new Callable<Boolean>() {
-            @Override
             public Boolean call() throws Exception {
                 runnable.run();
                 return true;

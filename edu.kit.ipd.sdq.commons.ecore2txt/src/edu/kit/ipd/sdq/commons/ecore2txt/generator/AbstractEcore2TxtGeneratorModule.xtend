@@ -1,4 +1,4 @@
-package edu.kit.ipd.sdq.commons.ecore2txt.generator
+package edu.kit.ipd.sdq.commons.ecore2txt.generator 
 
 import org.eclipse.xtext.parser.IEncodingProvider
 import org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule

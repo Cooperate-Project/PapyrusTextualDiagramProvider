@@ -1,4 +1,4 @@
-package de.cooperateproject.notation2plant.viewer;
+ package de.cooperateproject.notation2plant.viewer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +28,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.framework.Bundle;
 
-import de.cooperateproject.generator.PlantGenerator;
+import de.cooperateproject.generator.PlantGenerator; 
 
 public class Uml2PlantUmlView extends ViewPart {
 
@@ -53,7 +53,6 @@ public class Uml2PlantUmlView extends ViewPart {
 	};
 
 	private ISelectionListener listener = new ISelectionListener() {
-		@Override
 		public void selectionChanged(IWorkbenchPart sourcepart, ISelection selection) {
 			if (sourcepart != Uml2PlantUmlView.this && toggle) {
 				try {

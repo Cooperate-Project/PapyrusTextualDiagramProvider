@@ -1,4 +1,4 @@
-package de.cooperateproject.generator
+package de.cooperateproject.generator 
 
 import org.apache.log4j.Logger
 import org.eclipse.emf.ecore.resource.Resource
@@ -9,7 +9,7 @@ import de.cooperateproject.notation2plant.ClassDiagramGenerator
 import de.cooperateproject.notation2plant.ActivityDiagramGenerator
 import de.cooperateproject.notation2plant.UseCaseDiagramGenerator
 
-class PlantGenerator implements IGenerator {
+class PlantGenerator implements IGenerator { 
 	
 	private static final Logger LOG =  Logger.getLogger("PlantGenerator");
 	
@@ -23,7 +23,7 @@ class PlantGenerator implements IGenerator {
 	
 	def CharSequence compile(Diagram diagram) {
 		if(diagram.type == "PapyrusUMLClassDiagram") {
-			var generator = new ClassDiagramGenerator();
+			var generator = new ClassDiagramGenerator(); 
 			generator.compileClassDiagram(diagram)
 		} else if(diagram.type == "PapyrusUMLActivityDiagram") {
 			var generator = new ActivityDiagramGenerator();
