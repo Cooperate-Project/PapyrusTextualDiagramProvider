@@ -41,46 +41,46 @@ class ActivityDiagramGenerator {
 	
 	
 	def compileActivityDiagram(Diagram diagram)'''
-	«initDiagram(diagram)»
+	Â«initDiagram(diagram)Â»
 		@startuml
-		title «diagram.name»
-		«FOR s: diagram.children.filter(Shape)»
-			«s.element.declaration(s)» 
-		«ENDFOR»
+		title Â«diagram.nameÂ»
+		Â«FOR s: diagram.children.filter(Shape)Â»
+			Â«s.element.declaration(s)Â» 
+		Â«ENDFORÂ»
 		@enduml
 	'''
 	
 	
 	def dispatch CharSequence declaration(Activity a, Shape s)'''
-«««		«defineActivity(a)» {
-		«FOR bc: s.children.filter(DecorationNode)»«"\t"»
-		«FOR start: bc.children.filter(Shape).map[c|c.element].filter(InitialNode)»
-			«start.declaration»
-		«ENDFOR»
-		«ENDFOR»
-«««		}
+Â«Â«Â«		Â«defineActivity(a)Â» {
+		Â«FOR bc: s.children.filter(DecorationNode)Â»Â«"\t"Â»
+		Â«FOR start: bc.children.filter(Shape).map[c|c.element].filter(InitialNode)Â»
+			Â«start.declarationÂ»
+		Â«ENDFORÂ»
+		Â«ENDFORÂ»
+Â«Â«Â«		}
 	'''
 	
 	
 	
 	def dispatch CharSequence declaration(InitialNode i)'''
 	start
-	«FOR flow: i.outgoings»
-	«flow.target.declaration()»
-	«ENDFOR»
+	Â«FOR flow: i.outgoingsÂ»
+	Â«flow.target.declaration()Â»
+	Â«ENDFORÂ»
 	'''
 	
 	def dispatch CharSequence declaration(FinalNode i)'''
 	stop'''
 	
 	def dispatch CharSequence declaration(ForkNode i)'''
-	fork«FOR flow: i.outgoings SEPARATOR "\nfork again"»
-	«" "»«flow.target.declaration()»
-	«ENDFOR»
+	forkÂ«FOR flow: i.outgoings SEPARATOR "\nfork again"Â»
+	Â«" "Â»Â«flow.target.declaration()Â»
+	Â«ENDFORÂ»
 	end fork
-	«FOR flow: endElement.outgoings»
-	«flow.target.declaration()»
-	«ENDFOR»
+	Â«FOR flow: endElement.outgoingsÂ»
+	Â«flow.target.declaration()Â»
+	Â«ENDFORÂ»
 	'''
 	
 	def dispatch CharSequence declaration(JoinNode i){
@@ -89,20 +89,20 @@ class ActivityDiagramGenerator {
 	}
 	
 	def dispatch CharSequence declaration(DecisionNode i)'''
-	«FOR flow: i.outgoings»
-	«IF flow == i.outgoings.head»
-	if() then («flow.guard.printBody»)
-	«ELSEIF flow == i.outgoings.last»
-	else («flow.guard.printBody»)
-	«ELSE»
-	elseif () then («flow.guard.printBody»)
-	«ENDIF»
-	«" "»«flow.target.declaration()»
-	«ENDFOR»
+	Â«FOR flow: i.outgoingsÂ»
+	Â«IF flow == i.outgoings.headÂ»
+	if() then (Â«flow.guard.printBodyÂ»)
+	Â«ELSEIF flow == i.outgoings.lastÂ»
+	else (Â«flow.guard.printBodyÂ»)
+	Â«ELSEÂ»
+	elseif () then (Â«flow.guard.printBodyÂ»)
+	Â«ENDIFÂ»
+	Â«" "Â»Â«flow.target.declaration()Â»
+	Â«ENDFORÂ»
 	endif
-	«FOR flow: endElement.outgoings»
-	«flow.target.declaration()»
-	«ENDFOR»
+	Â«FOR flow: endElement.outgoingsÂ»
+	Â«flow.target.declaration()Â»
+	Â«ENDFORÂ»
 	'''
 	
 	
@@ -113,15 +113,15 @@ class ActivityDiagramGenerator {
 	}
 	
 	def dispatch CharSequence declaration(OpaqueAction i)'''
-	 :«i.name»;
-	 «FOR flow: i.outgoings»
-	 «flow.target.declaration()»
-	 «ENDFOR»
+	 :Â«i.nameÂ»;
+	 Â«FOR flow: i.outgoingsÂ»
+	 Â«flow.target.declaration()Â»
+	 Â«ENDFORÂ»
 	 '''
 	
 	
 	def getNames(EList<Classifier> list)'''
-	«FOR c : list SEPARATOR ','»«c.name»«ENDFOR»
+	Â«FOR c : list SEPARATOR ','Â»Â«c.nameÂ»Â«ENDFORÂ»
 	'''
 	
 
@@ -138,11 +138,11 @@ class ActivityDiagramGenerator {
 	
 	
 	def dispatch CharSequence printBody(ValueSpecification specification)'''
-	«specification»
+	Â«specificationÂ»
 	'''
 	
 	def dispatch CharSequence printBody(OpaqueExpression specification)
-	'''«FOR b :specification.bodies»«b»«ENDFOR»'''
+	'''Â«FOR b :specification.bodiesÂ»Â«bÂ»Â«ENDFORÂ»'''
 	
 	
 	
@@ -178,16 +178,16 @@ class ActivityDiagramGenerator {
 	else if(p.lowerBound == 1 && p.upperBound == -1)
 		''' 1..*'''
 	else if(p.lowerBound == p.upperBound)
-		'''«p.lowerBound»'''
+		'''Â«p.lowerBoundÂ»'''
 	else
-		''' «p.lowerBound»..«p.upperBound»'''	
+		''' Â«p.lowerBoundÂ»..Â«p.upperBoundÂ»'''	
 	}
 	
 	
 	
 	
 	def defineActivity(Activity activity)'''
-	partition «activity.name»'''
+	partition Â«activity.nameÂ»'''
 	
 	
 }

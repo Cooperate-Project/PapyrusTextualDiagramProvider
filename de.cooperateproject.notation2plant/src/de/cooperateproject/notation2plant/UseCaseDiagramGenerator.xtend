@@ -31,52 +31,52 @@ class UseCaseDiagramGenerator {
 	var edges = diagram.edges.filter(Connector)
 	'''
 	@startuml
-	title «diagram.name»
-	«FOR shape : shapes»
-		«shape.element.declaration(shape)»
-	«ENDFOR»
-	«FOR edge : edges»
-		«IF edge.element != null»
-			«edge.element.declaration»
-		«ELSE» 
-			«edge.declaration»
-		«ENDIF»		
-	«ENDFOR»
-	«FOR comment : comments»
-		«comment.element.declaration(comment)»
-	«ENDFOR»
+	title Â«diagram.nameÂ»
+	Â«FOR shape : shapesÂ»
+		Â«shape.element.declaration(shape)Â»
+	Â«ENDFORÂ»
+	Â«FOR edge : edgesÂ»
+		Â«IF edge.element != nullÂ»
+			Â«edge.element.declarationÂ»
+		Â«ELSEÂ» 
+			Â«edge.declarationÂ»
+		Â«ENDIFÂ»		
+	Â«ENDFORÂ»
+	Â«FOR comment : commentsÂ»
+		Â«comment.element.declaration(comment)Â»
+	Â«ENDFORÂ»
 	@enduml
 	'''		
 	}
 	
 	private def dispatch declaration(Actor actor, Shape s) '''
-	«actor.printElement»
-	«IF actor.generalizations.size > 0»«actor.generalizations.printGeneralizations(actor)»
-	«ENDIF»
+	Â«actor.printElementÂ»
+	Â«IF actor.generalizations.size > 0Â»Â«actor.generalizations.printGeneralizations(actor)Â»
+	Â«ENDIFÂ»
 	'''
 	
 	private def dispatch declaration(Package pack, Shape s) '''
-	rectangle «pack.name» {
-	«FOR element : pack.packagedElements.filter(UseCase)»«element.declaration»
-	«ENDFOR»	
+	rectangle Â«pack.nameÂ» {
+	Â«FOR element : pack.packagedElements.filter(UseCase)Â»Â«element.declarationÂ»
+	Â«ENDFORÂ»	
 	}
-	«pack.printPackageImports»
-	«pack.printPackageMerges»
+	Â«pack.printPackageImportsÂ»
+	Â«pack.printPackageMergesÂ»
 	'''
 	
 	private def dispatch declaration(UseCase use, Shape s) '''
-	«use.declaration»
+	Â«use.declarationÂ»
 	'''
 		
 	private def dispatch declaration(Comment comment, Shape s) {
 		val noteName = "N" + comment.body.substring(0,3)
 	'''
-		note as «noteName»
-			«comment.body»
+		note as Â«noteNameÂ»
+			Â«comment.bodyÂ»
 		end note
-		«FOR ae: comment.annotatedElements»
-			«noteName» .. «ae.printElement»
-		«ENDFOR»
+		Â«FOR ae: comment.annotatedElementsÂ»
+			Â«noteNameÂ» .. Â«ae.printElementÂ»
+		Â«ENDFORÂ»
 	'''
 	}	
 		
@@ -101,7 +101,7 @@ class UseCaseDiagramGenerator {
 			val head = association.memberEnds.head
 			val tail = association.memberEnds.last
 			'''
-			«head.type.printElement» -- «tail.type.printElement»«association.name.printLabel»
+			Â«head.type.printElementÂ» -- Â«tail.type.printElementÂ»Â«association.name.printLabelÂ»
 			'''
 		}
 	} 
@@ -111,7 +111,7 @@ class UseCaseDiagramGenerator {
 		val tail = realization.suppliers.head;
 		if (head != null && tail != null) {
 			'''
-			«head.printElement» ..|> «tail.printElement»«realization.name.printLabel»
+			Â«head.printElementÂ» ..|> Â«tail.printElementÂ»Â«realization.name.printLabelÂ»
 			'''	
 		}	
 	} 
@@ -121,7 +121,7 @@ class UseCaseDiagramGenerator {
 		val tail = dependency.suppliers.head;
 		if (head != null && tail != null) {
 			'''
-			«head.printElement» ..> «tail.printElement»«dependency.name.printLabel»
+			Â«head.printElementÂ» ..> Â«tail.printElementÂ»Â«dependency.name.printLabelÂ»
 			'''	
 		}	
 	} 
@@ -131,7 +131,7 @@ class UseCaseDiagramGenerator {
 		val tail = usage.suppliers.head;
 		if (head != null && tail != null) {
 			'''
-			«head.printElement» ..> «tail.printElement» : use
+			Â«head.printElementÂ» ..> Â«tail.printElementÂ» : use
 			'''	
 		}	
 	} 
@@ -140,22 +140,22 @@ class UseCaseDiagramGenerator {
 		val tail = abstraction.suppliers.head;
 		if (head != null && tail != null) {
 			'''
-			«head.printElement» ..> «tail.printElement» : abstraction
+			Â«head.printElementÂ» ..> Â«tail.printElementÂ» : abstraction
 			'''	
 		}	
 	} 
 	
 	private def dispatch declaration(UseCase use) '''
-	«IF use.members.size > 0»«use.members.printMembers(use)»
-	«ELSE»«use.printElement»
-	«ENDIF»
-	«IF use.generalizations.size > 0»«use.generalizations.printGeneralizations(use)»
-	«ENDIF»	
+	Â«IF use.members.size > 0Â»Â«use.members.printMembers(use)Â»
+	Â«ELSEÂ»Â«use.printElementÂ»
+	Â«ENDIFÂ»
+	Â«IF use.generalizations.size > 0Â»Â«use.generalizations.printGeneralizations(use)Â»
+	Â«ENDIFÂ»	
 	'''
 	
 	def printElement(Element element) {
 		if (element instanceof NamedElement) 
-		'''«element.printElement»'''
+		'''Â«element.printElementÂ»'''
 	}
 	
 	private def printElement(NamedElement element) {
@@ -176,42 +176,42 @@ class UseCaseDiagramGenerator {
 	}	
 	
 	def printStereotypeName(EObject object)'''
-	«" "»<< «object.eClass.name» >>
+	Â«" "Â»<< Â«object.eClass.nameÂ» >>
 	'''
 	
 	private def printLabel(String label) '''
-	«IF label != null» : «label»
-	«ENDIF»
+	Â«IF label != nullÂ» : Â«labelÂ»
+	Â«ENDIFÂ»
 	'''
 	
 	private def printGeneralizations(List<Generalization> elements, NamedElement parent) '''
-	«FOR element : elements»
-		«parent.printElement» --|> «element.general.printElement»
-	«ENDFOR»
+	Â«FOR element : elementsÂ»
+		Â«parent.printElementÂ» --|> Â«element.general.printElementÂ»
+	Â«ENDFORÂ»
 	'''
 	
 	private def printMembers(List<NamedElement> elements, NamedElement parent) '''
-	«FOR element : elements»
-		«IF element instanceof Include»«parent.printElement» .> («element.addition.name») : include
-			«ELSE»
-			«IF element instanceof Extend»«parent.printElement» .> («element.extendedCase.name») : extend
-			«ENDIF»
-		«ENDIF»
-	«ENDFOR»
+	Â«FOR element : elementsÂ»
+		Â«IF element instanceof IncludeÂ»Â«parent.printElementÂ» .> (Â«element.addition.nameÂ») : include
+			Â«ELSEÂ»
+			Â«IF element instanceof ExtendÂ»Â«parent.printElementÂ» .> (Â«element.extendedCase.nameÂ») : extend
+			Â«ENDIFÂ»
+		Â«ENDIFÂ»
+	Â«ENDFORÂ»
 	'''
 
 	private def printPackageImports(Package pack) '''
-	«IF pack.packageImports.size > 0»
-		«FOR imp : pack.packageImports»«pack.name» ..> «imp.importedPackage.name» : import
-		«ENDFOR»
-	«ENDIF»	
+	Â«IF pack.packageImports.size > 0Â»
+		Â«FOR imp : pack.packageImportsÂ»Â«pack.nameÂ» ..> Â«imp.importedPackage.nameÂ» : import
+		Â«ENDFORÂ»
+	Â«ENDIFÂ»	
 	'''
 	
 	private def printPackageMerges(Package pack) '''
-	«IF pack.packageMerges.size > 0»
-		«FOR imp : pack.packageMerges»«pack.name» ..> «imp.mergedPackage.name» : merge
-		«ENDFOR»
-	«ENDIF»
+	Â«IF pack.packageMerges.size > 0Â»
+		Â«FOR imp : pack.packageMergesÂ»Â«pack.nameÂ» ..> Â«imp.mergedPackage.nameÂ» : merge
+		Â«ENDFORÂ»
+	Â«ENDIFÂ»
 	'''
 	
 	private def dispatch declaration(EObject o, Shape s) {

@@ -93,17 +93,15 @@
 					<version>${xtext.version}</version>
 					<executions>
 						<execution>
-							<goals>
-								<goal>compile</goal>
-								<goal>xtend-install-debug-info</goal>
-								<goal>testCompile</goal>
-								<goal>xtend-test-install-debug-info</goal>
-							</goals>
+							<phase>generate-sources</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>xtend-gen</outputDirectory>
+						</configuration>
 						</execution>
 					</executions>
-					<configuration>
-						<outputDirectory>xtend-gen</outputDirectory>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -118,7 +116,7 @@
 							<configuration>
 								<filesets>
 									<fileset>
-										<directory>${basedir}/xtend-gen</directory>
+										<directory>xtend-gen</directory>
 									</fileset>
 								</filesets>
 							</configuration>
