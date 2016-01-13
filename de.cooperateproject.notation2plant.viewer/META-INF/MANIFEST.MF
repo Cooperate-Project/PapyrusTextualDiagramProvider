@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Viewer
-Bundle-SymbolicName: de.cooperateproject.notation2plant.viewer;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.1.2",
- org.apache.log4j,
- de.cooperateproject.generator;bundle-version="1.0.0"
