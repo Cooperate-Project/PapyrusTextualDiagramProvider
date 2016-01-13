@@ -18,7 +18,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<!-- We use the nightly profile as defaults -->
 		<deployUser>${env.DEPLOY_USERNAME}</deployUser>
 		<deployKey>${env.DEPLOY_PASSWORD}</deployKey>
-		<deployRepository>tycho.tries</deployRepository>
+		<deployRepository>de.cooperateproject</deployRepository>
 		<deployPackage>updatesites</deployPackage>
 		<deployVersion>latest</deployVersion>
 	</properties>
@@ -79,7 +79,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/../tries.updatesite.tycho.releng/deploy.py</executable>
+							<executable>${basedir}/../de.cooperateproject.releng/deploy.py</executable>
 							<arguments>
 								<argument>${deployUser}</argument>
 								<argument>${deployKey}</argument>
