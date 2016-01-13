@@ -79,8 +79,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/../de.cooperateproject.releng/deploy.py</executable>
+							<executable>python</executable>
 							<arguments>
+								<argument>${basedir}/../de.cooperateproject.relang/deploy.py</argument>
 								<argument>${deployUser}</argument>
 								<argument>${deployKey}</argument>
 								<argument>${deployRepository}</argument>
