@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>de.cooperateproject</groupId>
-    <artifactId>parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../de.cooperateproject.relang/pom.xml</relativePath>
-  </parent>
-    
+
+	<parent>
+		<groupId>de.cooperateproject</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../de.cooperateproject.relang/pom.xml</relativePath>
+	</parent>
 
 	<artifactId>de.cooperateproject.updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
@@ -18,8 +17,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<!-- We use the nightly profile as defaults -->
 		<deployUser>${env.DEPLOY_USERNAME}</deployUser>
 		<deployKey>${env.DEPLOY_PASSWORD}</deployKey>
-		<deployRepository>de.cooperateproject</deployRepository>
-		<deployPackage>updatesites</deployPackage>
+		<deploySubject>cooperate-project</deploySubject>
+		<deployRepository>Notation2Plant</deployRepository>
+		<deployPackage>updatesite</deployPackage>
 		<deployVersion>latest</deployVersion>
 	</properties>
 
@@ -79,13 +79,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>python</executable>
-							<workingDirectory>${basedir}/../de.cooperateproject.relang</workingDirectory>
+							<executable>${basedir}/../de.cooperateproject.releng/deploy.py</executable>
+
 							<arguments>
-								<argument>deploy.py</argument>
-								
 								<argument>${deployUser}</argument>
 								<argument>${deployKey}</argument>
+								<argument>${deploySubject}</argument>
 								<argument>${deployRepository}</argument>
 								<argument>${deployPackage}</argument>
 								<argument>${deployVersion}</argument>
