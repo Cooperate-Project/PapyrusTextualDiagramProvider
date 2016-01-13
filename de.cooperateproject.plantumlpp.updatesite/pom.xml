@@ -79,7 +79,7 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/../de.cooperateproject.relang/deploy.py</executable>
+							<executable>${basedir}/../de.cooperateproject.plantumlpp.releng/deploy.py</executable>
 
 							<arguments>
 								<argument>${deployUser}</argument>
