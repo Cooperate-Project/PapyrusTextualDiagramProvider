@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import argparse
 import base64
 import os

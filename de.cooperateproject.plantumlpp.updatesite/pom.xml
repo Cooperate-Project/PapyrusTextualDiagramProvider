@@ -79,9 +79,9 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/../de.cooperateproject.plantumlpp.releng/deploy.py</executable>
-
+							<executable>python</executable>
 							<arguments>
+								<argument>${basedir}/../de.cooperateproject.plantumlpp.releng/deploy.py</argument>
 								<argument>${deployUser}</argument>
 								<argument>${deployKey}</argument>
 								<argument>${deploySubject}</argument>
