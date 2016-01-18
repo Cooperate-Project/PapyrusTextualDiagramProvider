@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator Tests
+Bundle-SymbolicName: de.cooperateproject.plantumlpp.notation2plant.generator.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.cooperateproject.plantumlpp.notation2plant.generator.tests.Activator
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ de.cooperateproject.plantumlpp.notation2plant.generator;bundle-version="1.0.0",
+ org.eclipse.core.resources,
+ edu.kit.ipd.sdq.commons.ecore2txt;bundle-version="1.0.0",
+ org.mockito;bundle-version="1.9.5",
+ org.eclipse.xtext.generator;bundle-version="2.9.0",
+ org.eclipse.gmf.runtime.notation.edit,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

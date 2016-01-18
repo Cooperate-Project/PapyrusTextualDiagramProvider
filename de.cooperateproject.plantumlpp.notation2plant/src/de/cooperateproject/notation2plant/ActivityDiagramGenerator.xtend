@@ -42,12 +42,12 @@ class ActivityDiagramGenerator {
 	
 	def compileActivityDiagram(Diagram diagram)'''
 	«initDiagram(diagram)»
-		@startuml
-		title «diagram.name»
-		«FOR s: diagram.children.filter(Shape)»
-			«s.element.declaration(s)» 
-		«ENDFOR»
-		@enduml
+	@startuml
+	title «diagram.name»
+	«FOR s: diagram.children.filter(Shape)»
+		«s.element.declaration(s)» 
+	«ENDFOR»
+	@enduml
 	'''
 	
 	

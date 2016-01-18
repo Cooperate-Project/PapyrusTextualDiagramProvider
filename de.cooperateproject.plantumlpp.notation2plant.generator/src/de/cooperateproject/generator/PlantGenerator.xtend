@@ -14,6 +14,9 @@ class PlantGenerator implements IGenerator {
 	private static final Logger LOG =  Logger.getLogger("PlantGenerator");
 	
 	override doGenerate(Resource resource, IFileSystemAccess fsa) {
+		if (resource == null || fsa == null) {
+			return;
+		}
 		for(d: resource.allContents.toIterable.filter(Diagram)) {
    			 fsa.generateFile(
       			d.name.replace(' ', '_') + ".pu",
@@ -22,20 +25,22 @@ class PlantGenerator implements IGenerator {
 	}
 	
 	def CharSequence compile(Diagram diagram) {
+		if (diagram == null) {
+			return "(empty)"
+		}
 		if(diagram.type == "PapyrusUMLClassDiagram") {
-			var generator = new ClassDiagramGenerator(); 
+			var generator = new ClassDiagramGenerator()
 			generator.compileClassDiagram(diagram)
 		} else if(diagram.type == "PapyrusUMLActivityDiagram") {
-			var generator = new ActivityDiagramGenerator();
+			var generator = new ActivityDiagramGenerator()
 			generator.compileActivityDiagram(diagram)
 		} else if (diagram.type == "UseCase") {
-			var generator = new UseCaseDiagramGenerator();
+			var generator = new UseCaseDiagramGenerator()
 			generator.compileUseCaseDiagram(diagram)
 		}
 		else {
-			LOG.error("no matching diagram type found for: " + diagram.name);
+			LOG.error("no matching diagram type found for: " + diagram.name)
 		 	"(empty)"
 		}
-	}
-	
+	}	
 }

@@ -34,6 +34,9 @@ public class PlantGeneratorHandler extends AbstractEcore2TxtHandler {
 
 	@Override
 	public void executeEcore2TxtGenerator(Iterable<IFile> files, ExecutionEvent event) throws IOException {
+		if (files == null) {
+			return;
+		}
 		JavaIoFileSystemAccess fsa = new JavaIoFileSystemAccess();
 		
 		PlantGenerator generator = new PlantGenerator();
