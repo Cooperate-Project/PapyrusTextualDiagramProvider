@@ -1,4 +1,4 @@
-package de.cooperateproject.generator 
+package de.cooperateproject.generator
 
 import org.apache.log4j.Logger
 import org.eclipse.emf.ecore.resource.Resource

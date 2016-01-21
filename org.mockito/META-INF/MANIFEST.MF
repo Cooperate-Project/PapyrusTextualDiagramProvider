@@ -2,8 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mockito Wrapper Plugin
 Bundle-SymbolicName: org.mockito
-Bundle-Version: 1.9.5
-Bundle-Vendor: www.splevo.org / www.mockito.org
+Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: lib/mockito-all-1.9.5.jar,
  .

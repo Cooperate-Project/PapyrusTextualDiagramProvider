@@ -1,20 +1,23 @@
 package de.cooperateproject.plantumlpp.notation2plant.generator.tests;
 
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-import java.util.Iterator;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import de.cooperateproject.generator.PlantGenerator;
 
-public class PlantGeneratorTests {
+public class PlantGeneratorTest {
 
 	private static PlantGenerator generator;
 	@BeforeClass
@@ -27,20 +30,17 @@ public class PlantGeneratorTests {
 	}
 	
 	@Test
-	@SuppressWarnings("unchecked")
 	public void PlantGeneratorEmptyDiagramTest() {
 		Diagram diagram = mock(Diagram.class);
 		when(diagram.getType())
-			.thenReturn("PapyrusUMLClassDiagram", "PapyrusUMLClassDiagram", "UseCase");
+			.thenReturn("PapyrusUMLClassDiagram", "PapyrusUMLActivityDiagram", "UseCase");
 		when(diagram.getElement()).thenReturn(null);
-		when(diagram.getChildren()).thenReturn(null);
+		when(diagram.getChildren()).thenReturn(null);		
 		
-		EList<EObject> l = mock(EList.class);
-		Iterator<EObject> i = mock(Iterator.class);
-		when(l.iterator()).thenReturn(i);
+		EList<EObject> list = new BasicEList<EObject>();
 		
-		when(diagram.getEdges()).thenReturn(l);
-		when(diagram.getChildren()).thenReturn(l);
+		when(diagram.getEdges()).thenReturn(list);
+		when(diagram.getChildren()).thenReturn(list);
 		
 		assertEquals("@startuml\r\ntitle \r\n@enduml\r\n", 
 				generator.compile(diagram).toString());
@@ -51,26 +51,28 @@ public class PlantGeneratorTests {
 	}
 	
 	@Test
-	public void doGenerateNullTest() {
-		generator.doGenerate(null, null);
+	public void doGenerateResourceNullTest() {
+		IFileSystemAccess fsa = mock(IFileSystemAccess.class);
+		generator.doGenerate(null, fsa);
 	}
-	/*@SuppressWarnings("unchecked")
+	@Test
+	public void doGenerateFileSystemNullTest() {
+		Resource resource = mock(Resource.class);
+		generator.doGenerate(resource, null);
+	}
+	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void doGenerateTest() {
 		Resource resource = mock(Resource.class);
-		TreeIterator tree = mock(TreeIterator.class);
-		when(resource.getAllContents()).thenReturn(tree);		
+		IFileSystemAccess fsa = mock(IFileSystemAccess.class);
+		TreeIterator<EObject> tree = mock(TreeIterator.class);
+		when(resource.getAllContents()).thenReturn(tree);
+		Diagram d = mock(Diagram.class);
+		when(tree.next()).thenReturn(d);
 		
-		/*Iterable<EObject> iter = IteratorExtensions.<EObject>toIterable(tree);
-		Iterable<Diagram> iter2 = Iterables.<Diagram>filter(iter, Diagram.class);
-		
-		Diagram d = mock(Diagram.class);	
-		Iterator<Diagram> iterD = iter2.iterator();
-		when(iterD.next()).thenReturn(d);
-		
-		
-		generator.doGenerate(resource, null);
-	}*/
+		generator.doGenerate(resource, fsa);
+	}
 	
 	@AfterClass
 	public static void cleanUp() {

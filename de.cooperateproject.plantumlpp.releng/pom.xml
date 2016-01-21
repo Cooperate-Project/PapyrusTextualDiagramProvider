@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.cooperateproject.plantumlpp</groupId>
 	<artifactId>parent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>pom</packaging> 
+	<packaging>pom</packaging>
 
 
 	<properties>
@@ -15,6 +15,16 @@
 		<xtext.version>2.7.2</xtext.version>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<!-- <dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>-->
 
 	<repositories>
 		<repository>
@@ -27,6 +37,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/maintenance/</url>
 		</repository>
+		<repository>
+			<id>Orbit Build R20151118145958</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20151118145958/repository/</url>
+		</repository>		
 	</repositories>
 
 	<build>
@@ -41,6 +56,23 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+			</plugin> 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>-->
 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

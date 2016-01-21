@@ -1,6 +1,7 @@
 package de.cooperateproject.plantumlpp.notation2plant.generator.tests;
 
 
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.junit.Test;
 
 import de.cooperateproject.generator.PlantGeneratorHandler;
 
-public class PlantGeneratorHandlerTests {
+public class PlantGeneratorHandlerTest {
 
 	private static PlantGeneratorHandler generatorHandler;
 	
