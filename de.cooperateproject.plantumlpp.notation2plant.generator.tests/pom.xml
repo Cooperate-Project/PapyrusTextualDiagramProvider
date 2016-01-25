@@ -13,7 +13,7 @@
 	<artifactId>de.cooperateproject.plantumlpp.notation2plant.generator.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 	<name>PlantUml Generator Tests</name>
-	<dependencies>
+	<!--<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -28,7 +28,7 @@
 		</dependency>
 
 	</dependencies>
-	<!--<build> <sourceDirectory>${basedir}/src</sourceDirectory> <plugins> 
+	<build> <sourceDirectory>${basedir}/src</sourceDirectory> <plugins> 
 		<plugin> <groupId>org.eclipse.tycho</groupId> <artifactId>tycho-surefire-plugin</artifactId> 
 		<version>${tycho.version}</version> <configuration> <useUIHarness>true</useUIHarness> 
 		</configuration> </plugin> </plugins> </build> -->

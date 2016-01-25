@@ -42,12 +42,12 @@ public class PlantGeneratorTest {
 		when(diagram.getEdges()).thenReturn(list);
 		when(diagram.getChildren()).thenReturn(list);
 		
-		assertEquals("@startuml\r\ntitle \r\n@enduml\r\n", 
-				generator.compile(diagram).toString());
-		assertEquals("@startuml\r\ntitle \r\n@enduml\r\n", 
-				generator.compile(diagram).toString());
-		assertEquals("@startuml\r\ntitle \r\n@enduml\r\n", 
-				generator.compile(diagram).toString());
+		assertEquals("@startuml\ntitle \n@enduml\n", 
+				generator.compile(diagram).toString().replace("\r", ""));
+		assertEquals("@startuml\ntitle \n@enduml\n", 
+				generator.compile(diagram).toString().replace("\r", ""));
+		assertEquals("@startuml\ntitle \n@enduml\n", 
+				generator.compile(diagram).toString().replace("\r", ""));
 	}
 	
 	@Test
