@@ -1,6 +1,5 @@
 package de.cooperateproject.plantumlpp.notation2plant.generator.tests;
 
-
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
@@ -15,7 +14,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.cooperateproject.generator.PlantGenerator;
+import de.cooperateproject.generator.PlantGenerator; 
 
 public class PlantGeneratorTest {
 
@@ -33,7 +32,7 @@ public class PlantGeneratorTest {
 	public void PlantGeneratorEmptyDiagramTest() {
 		Diagram diagram = mock(Diagram.class);
 		when(diagram.getType())
-			.thenReturn("PapyrusUMLClassDiagram", "PapyrusUMLActivityDiagram", "UseCase");
+			.thenReturn("PapyrusUMLClassDiagram", "PapyrusUMLActivityDiagram", "UseCase", "");
 		when(diagram.getElement()).thenReturn(null);
 		when(diagram.getChildren()).thenReturn(null);		
 		
@@ -42,12 +41,12 @@ public class PlantGeneratorTest {
 		when(diagram.getEdges()).thenReturn(list);
 		when(diagram.getChildren()).thenReturn(list);
 		
-		assertEquals("@startuml\ntitle \n@enduml\n", 
-				generator.compile(diagram).toString().replace("\r", ""));
-		assertEquals("@startuml\ntitle \n@enduml\n", 
-				generator.compile(diagram).toString().replace("\r", ""));
-		assertEquals("@startuml\ntitle \n@enduml\n", 
-				generator.compile(diagram).toString().replace("\r", ""));
+		for(int i = 0; i< 3; i++) {
+			assertEquals("@startuml\ntitle \n@enduml\n", 
+					generator.compile(diagram).toString().replace("\r", ""));
+		}	
+		assertEquals("(empty)", generator.compile(diagram).toString().replace("\r", ""));
+		
 	}
 	
 	@Test
@@ -67,9 +66,12 @@ public class PlantGeneratorTest {
 		Resource resource = mock(Resource.class);
 		IFileSystemAccess fsa = mock(IFileSystemAccess.class);
 		TreeIterator<EObject> tree = mock(TreeIterator.class);
-		when(resource.getAllContents()).thenReturn(tree);
-		Diagram d = mock(Diagram.class);
-		when(tree.next()).thenReturn(d);
+		Diagram diagram = mock(Diagram.class);
+		
+		when(resource.getAllContents()).thenReturn(tree);		
+		when(diagram.getName()).thenReturn("");
+		when(tree.next()).thenReturn(diagram);
+		when(tree.hasNext()).thenReturn(true, false);
 		
 		generator.doGenerate(resource, fsa);
 	}

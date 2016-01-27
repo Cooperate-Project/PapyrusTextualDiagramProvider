@@ -9,7 +9,7 @@ import de.cooperateproject.notation2plant.ClassDiagramGenerator
 import de.cooperateproject.notation2plant.ActivityDiagramGenerator
 import de.cooperateproject.notation2plant.UseCaseDiagramGenerator
 
-class PlantGenerator implements IGenerator { 
+class PlantGenerator implements IGenerator {
 	
 	private static final Logger LOG =  Logger.getLogger("PlantGenerator");
 	
@@ -28,13 +28,14 @@ class PlantGenerator implements IGenerator {
 		if (diagram == null) {
 			return "(empty)"
 		}
-		if(diagram.type == "PapyrusUMLClassDiagram") {
+		var type = diagram.type;
+		if(type == "PapyrusUMLClassDiagram") {
 			var generator = new ClassDiagramGenerator()
 			generator.compileClassDiagram(diagram)
-		} else if(diagram.type == "PapyrusUMLActivityDiagram") {
+		} else if(type == "PapyrusUMLActivityDiagram") {
 			var generator = new ActivityDiagramGenerator()
 			generator.compileActivityDiagram(diagram)
-		} else if (diagram.type == "UseCase") {
+		} else if (type == "UseCase") {
 			var generator = new UseCaseDiagramGenerator()
 			generator.compileUseCaseDiagram(diagram)
 		}

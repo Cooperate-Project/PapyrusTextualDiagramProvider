@@ -120,7 +120,7 @@ public class Uml2PlantUmlView extends ViewPart {
 		textviewer = new TextViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		textviewer.setEditable(false);
 
-		toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
+		//toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
 		toggleAction.setToolTipText("Disable live translation");
 
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();

@@ -3,5 +3,5 @@
    <feature url="features/de.cooperateproject.plantumlpp.feature_1.0.0.qualifier.jar" id="de.cooperateproject.plantumlpp.feature" version="1.0.0.qualifier">
       <category name="default"/>
    </feature>
-   <category-def name="default" label="Default"/>
+   <category-def name="default" label="Viewer"/>
 </site>

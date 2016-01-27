@@ -24,14 +24,14 @@ import org.eclipse.uml2.uml.OpaqueExpression
 import org.eclipse.uml2.uml.Property
 import org.eclipse.uml2.uml.ValueSpecification
 
-class ActivityDiagramGenerator {
+public class ActivityDiagramGenerator {
 	
 	private static final Logger LOG =  Logger.getLogger("PlantGenerator");
-	var Activity rootActivity;
-	var ActivityNode endElement;
-	var controlFlow = new HashMap<ActivityNode, ControlFlow>();
+	private var Activity rootActivity;
+	private var ActivityNode endElement;
+	private var controlFlow = new HashMap<ActivityNode, ControlFlow>();
 	
-	def initDiagram(Diagram diagram){
+	private def initDiagram(Diagram diagram){
 		var rootElement = diagram.element
  		if(rootElement instanceof Activity)
 			rootActivity = rootElement
@@ -39,8 +39,11 @@ class ActivityDiagramGenerator {
 			controlFlow.put(c.source, c)
 	}
 	
-	
-	def compileActivityDiagram(Diagram diagram)'''
+	public def compileActivityDiagram(Diagram diagram) {
+	if (diagram == null) {
+		return "";
+	}
+	'''
 	«initDiagram(diagram)»
 	@startuml
 	title «diagram.name»
@@ -49,9 +52,9 @@ class ActivityDiagramGenerator {
 	«ENDFOR»
 	@enduml
 	'''
+	}
 	
-	
-	def dispatch CharSequence declaration(Activity a, Shape s)'''
+	private def dispatch CharSequence declaration(Activity a, Shape s)'''
 «««		«defineActivity(a)» {
 		«FOR bc: s.children.filter(DecorationNode)»«"\t"»
 		«FOR start: bc.children.filter(Shape).map[c|c.element].filter(InitialNode)»
@@ -61,19 +64,17 @@ class ActivityDiagramGenerator {
 «««		}
 	'''
 	
-	
-	
-	def dispatch CharSequence declaration(InitialNode i)'''
+	private def dispatch CharSequence declaration(InitialNode i)'''
 	start
 	«FOR flow: i.outgoings»
 	«flow.target.declaration()»
 	«ENDFOR»
 	'''
 	
-	def dispatch CharSequence declaration(FinalNode i)'''
+	private def dispatch CharSequence declaration(FinalNode i)'''
 	stop'''
 	
-	def dispatch CharSequence declaration(ForkNode i)'''
+	private def dispatch CharSequence declaration(ForkNode i)'''
 	fork«FOR flow: i.outgoings SEPARATOR "\nfork again"»
 	«" "»«flow.target.declaration()»
 	«ENDFOR»
@@ -83,12 +84,12 @@ class ActivityDiagramGenerator {
 	«ENDFOR»
 	'''
 	
-	def dispatch CharSequence declaration(JoinNode i){
+	private def dispatch CharSequence declaration(JoinNode i){
 			endElement = i;		
 			return ""
 	}
 	
-	def dispatch CharSequence declaration(DecisionNode i)'''
+	private def dispatch CharSequence declaration(DecisionNode i)'''
 	«FOR flow: i.outgoings»
 	«IF flow == i.outgoings.head»
 	if() then («flow.guard.printBody»)
@@ -105,48 +106,35 @@ class ActivityDiagramGenerator {
 	«ENDFOR»
 	'''
 	
-	
-	
-	def dispatch CharSequence declaration(MergeNode i){
+	private def dispatch CharSequence declaration(MergeNode i){
 		endElement = i;
 		return ""
 	}
 	
-	def dispatch CharSequence declaration(OpaqueAction i)'''
+	private def dispatch CharSequence declaration(OpaqueAction i)'''
 	 :«i.name»;
 	 «FOR flow: i.outgoings»
 	 «flow.target.declaration()»
 	 «ENDFOR»
 	 '''
 	
-	
-	def getNames(EList<Classifier> list)'''
+	private def getNames(EList<Classifier> list)'''
 	«FOR c : list SEPARATOR ','»«c.name»«ENDFOR»
 	'''
 	
-
-	
-	
-	
-	def dispatch declaration(EObject e, Shape s){
+	private def dispatch declaration(EObject e, Shape s){
 		LOG.error("encountered a " + e.eClass.name);
 		throw new UnsupportedOperationException		
 	}
 	
-	
-	
-	
-	
-	def dispatch CharSequence printBody(ValueSpecification specification)'''
+	private def dispatch CharSequence printBody(ValueSpecification specification)'''
 	«specification»
 	'''
 	
-	def dispatch CharSequence printBody(OpaqueExpression specification)
+	private def dispatch CharSequence printBody(OpaqueExpression specification)
 	'''«FOR b :specification.bodies»«b»«ENDFOR»'''
 	
-	
-	
-	def leftArrow(Property property){
+	private def leftArrow(Property property){
 		val opp = property.otherEnd 
 		switch opp.aggregation.value{
 			case AggregationKind.COMPOSITE : "*"
@@ -159,7 +147,7 @@ class ActivityDiagramGenerator {
 			}
 	}
 	
-	def rightArrow(Property property){
+	private def rightArrow(Property property){
 		val opp = property.otherEnd
 		switch opp.aggregation.value{
 			case AggregationKind.COMPOSITE : "*"
@@ -172,7 +160,7 @@ class ActivityDiagramGenerator {
 			}
 	}
 		
-	def cardinality(Property p){
+	private def cardinality(Property p){
 	if(p.lowerBound == 0 && p.upperBound == -1)
 		''' *'''
 	else if(p.lowerBound == 1 && p.upperBound == -1)
@@ -183,11 +171,7 @@ class ActivityDiagramGenerator {
 		''' «p.lowerBound»..«p.upperBound»'''	
 	}
 	
-	
-	
-	
-	def defineActivity(Activity activity)'''
+	private def defineActivity(Activity activity)'''
 	partition «activity.name»'''
-	
 	
 }

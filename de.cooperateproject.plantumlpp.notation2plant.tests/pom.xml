@@ -9,7 +9,7 @@
 		<relativePath>../de.cooperateproject.plantumlpp.releng/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>de.cooperateproject.plantumlpp.notation2plant.generator.tests</artifactId>
+	<artifactId>de.cooperateproject.plantumlpp.notation2plant.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 	<name>PlantUml Generator Tests</name>
 </project>

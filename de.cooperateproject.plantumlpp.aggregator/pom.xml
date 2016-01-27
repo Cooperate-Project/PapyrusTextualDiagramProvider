@@ -14,6 +14,7 @@
 	<modules>
 		<module>../de.cooperateproject.plantumlpp.feature</module>
 		<module>../de.cooperateproject.plantumlpp.notation2plant</module>
+		<module>../de.cooperateproject.plantumlpp.notation2plant.tests</module>
 		<module>../de.cooperateproject.plantumlpp.notation2plant.generator</module>
 		<module>../de.cooperateproject.plantumlpp.notation2plant.generator.tests</module>
 		<module>../edu.kit.ipd.sdq.commons.ecore2txt</module>
