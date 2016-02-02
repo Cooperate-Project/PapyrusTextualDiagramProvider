@@ -11,7 +11,8 @@ after_success:
 before_deploy:
 - pip install --user requests
 deploy:
-- mvn deploy
+  provider: script
+  script: mvn deploy
 cache:
   directories:
   - "$HOME/.m2"
