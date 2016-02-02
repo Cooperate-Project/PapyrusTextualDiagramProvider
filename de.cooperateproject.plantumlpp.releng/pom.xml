@@ -150,6 +150,7 @@
 				<version>0.7.5.201505241946</version>
 				<executions>
 					<execution>
+						<id>prepare</id>
 						<goals>
 							<goal>prepare-agent</goal>
 							<goal>prepare-agent-integration</goal>
@@ -163,6 +164,7 @@
 						</goals>
 					</execution>
 					<execution>
+						<id>check</id>
 						<goals>
 							<goal>check</goal>
 						</goals>
