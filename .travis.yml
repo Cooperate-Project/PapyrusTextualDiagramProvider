@@ -5,9 +5,13 @@ jdk:
 before_script:
 - pip install --user codecov
 script:
-- mvn clean deploy
+- mvn clean install
 after_success:
   - codecov
+before_deploy:
+- pip install --user requests
+deploy:
+- mvn deploy
 cache:
   directories:
   - "$HOME/.m2"
