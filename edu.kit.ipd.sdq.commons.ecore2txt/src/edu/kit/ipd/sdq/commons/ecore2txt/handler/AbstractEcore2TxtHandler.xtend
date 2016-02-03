@@ -1,4 +1,4 @@
-package edu.kit.ipd.sdq.commons.ecore2txt.handler; 
+package edu.kit.ipd.sdq.commons.ecore2txt.handler;
 
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.commands.ExecutionEvent
@@ -15,7 +15,7 @@ public abstract class AbstractEcore2TxtHandler extends AbstractHandler implement
 	override execute(ExecutionEvent event) throws ExecutionException {
 		val selection = HandlerUtil.getCurrentSelection(event)
 		if (selection instanceof IStructuredSelection) {
-			val structuredSelection = selection as IStructuredSelection
+			val structuredSelection = selection
 			val files = structuredSelection.toList.map[x|(x as IAdaptable).getAdapter(IFile)]			
 			if (files.size > 0) {
 				executeEcore2TxtGenerator(files, event)

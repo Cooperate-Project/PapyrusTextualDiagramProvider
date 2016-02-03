@@ -12,4 +12,34 @@
 	<artifactId>de.cooperateproject.plantumlpp.notation2plant.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 	<name>PlantUml Generator Tests</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.5.201505241946</version>
+				<configuration>
+							<!-- Where to put jacoco coverage report -->
+							<destFile>${basedir}/../de.cooperateproject.plantumlpp.notation2plant/target/jacoco-it.exec</destFile>
+						</configuration>
+				<executions>
+					<execution>
+						<id>prepare</id>
+						<goals>
+							<goal>prepare-agent</goal>
+							<goal>prepare-agent-integration</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<goals>
+							<goal>report</goal>
+							<goal>report-integration</goal>
+						</goals>
+						
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
