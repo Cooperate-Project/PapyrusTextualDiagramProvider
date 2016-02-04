@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WivxkMs2EeWMc4t-7olJNA" name="RootElement">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_aE0KIMs2EeWMc4t-7olJNA" name="Actor1"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0qnkEMs2EeWMc4t-7olJNA" name="UseCase1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_31Jw8Ms3EeWMc4t-7olJNA" name="Package1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ybJw8Ms4EeWMc4t-7olJNA" name="Package2">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_yz0IkMs4EeWMc4t-7olJNA" name="Actor1"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_zAvxUMs4EeWMc4t-7olJNA" name="UseCase1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_73jvEMs6EeWMc4t-7olJNA" name="Actor1"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_8FePQMs6EeWMc4t-7olJNA" name="UseCase1"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8sYeQMs6EeWMc4t-7olJNA" memberEnd="_8sZsYMs6EeWMc4t-7olJNA _8sZsYcs6EeWMc4t-7olJNA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8sZFUMs6EeWMc4t-7olJNA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8sZFUcs6EeWMc4t-7olJNA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8sZsYMs6EeWMc4t-7olJNA" name="usecase1" type="_8FePQMs6EeWMc4t-7olJNA" association="_8sYeQMs6EeWMc4t-7olJNA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8sZsYcs6EeWMc4t-7olJNA" name="actor1" type="_73jvEMs6EeWMc4t-7olJNA" association="_8sYeQMs6EeWMc4t-7olJNA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_hI--MMs7EeWMc4t-7olJNA" name="UseCase2"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_hVH8wMs7EeWMc4t-7olJNA" name="UseCase3">
+    <generalization xmi:type="uml:Generalization" xmi:id="_htv4IMs7EeWMc4t-7olJNA" general="_hI--MMs7EeWMc4t-7olJNA"/>
+  </packagedElement>
+</uml:Model>

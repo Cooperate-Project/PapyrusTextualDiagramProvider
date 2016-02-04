@@ -26,6 +26,9 @@ class UseCaseDiagramGenerator {
 	private static final Logger LOG =  Logger.getLogger("UseCaseGenerator");
 	
 	def compileUseCaseDiagram(Diagram diagram) {
+	if (diagram == null) {
+		return "";
+	}
 	var shapes = diagram.children.filter(Shape).filter[x|!(x.element instanceof Comment)]
 	var comments = diagram.children.filter(Shape).filter[x|x.element instanceof Comment]
 	var edges = diagram.edges.filter(Connector)
@@ -50,14 +53,17 @@ class UseCaseDiagramGenerator {
 	}
 	
 	private def dispatch declaration(Actor actor, Shape s) '''
-	«actor.printElement»
+	«actor.declaration»
 	«IF actor.generalizations.size > 0»«actor.generalizations.printGeneralizations(actor)»
 	«ENDIF»
 	'''
-	
+	private def dispatch declaration(Actor actor) {
+		actor.printElement
+	}
+	//TODO: filter auch auf andere Elemente wie actor
 	private def dispatch declaration(Package pack, Shape s) '''
-	rectangle «pack.name» {
-	«FOR element : pack.packagedElements.filter(UseCase)»«element.declaration»
+	rectangle «pack.name» { 
+	«FOR element : pack.packagedElements.filter[x | x instanceof Actor || x instanceof UseCase]»«element.declaration»
 	«ENDFOR»	
 	}
 	«pack.printPackageImports»
