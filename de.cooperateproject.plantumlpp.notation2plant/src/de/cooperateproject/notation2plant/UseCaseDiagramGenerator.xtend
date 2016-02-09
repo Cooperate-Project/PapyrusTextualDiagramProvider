@@ -60,7 +60,7 @@ class UseCaseDiagramGenerator {
 	private def dispatch declaration(Actor actor) {
 		actor.printElement
 	}
-	//TODO: filter auch auf andere Elemente wie actor
+	
 	private def dispatch declaration(Package pack, Shape s) '''
 	rectangle «pack.name» { 
 	«FOR element : pack.packagedElements.filter[x | x instanceof Actor || x instanceof UseCase]»«element.declaration»
@@ -93,63 +93,50 @@ class UseCaseDiagramGenerator {
 		defineRealization(r)
 	}
 	private def dispatch declaration(Dependency d){
-		defineRealization(d)
+		defineDependency(d)
 	}
 	private def dispatch declaration(Usage u){
-		defineRealization(u)
+		defineUsage(u)
 	}
 	private def dispatch declaration(Abstraction a){
-		defineRealization(a)
+		defineAbstraction(a)
 	}
 	
 	private def defineAssociation(Association association) {
-		if (association.binary) {
-			val head = association.memberEnds.head
-			val tail = association.memberEnds.last
-			'''
-			«head.type.printElement» -- «tail.type.printElement»«association.name.printLabel»
-			'''
-		}
+		val head = association.memberEnds.head
+		val tail = association.memberEnds.last
+		printConnection(head, tail, association.name.printLabel.toString, " -- ");			
 	} 
 	
 	private def defineRealization(Realization realization) {
 		val head = realization.clients.head;
 		val tail = realization.suppliers.head;
-		if (head != null && tail != null) {
-			'''
-			«head.printElement» ..|> «tail.printElement»«realization.name.printLabel»
-			'''	
-		}	
+		printConnection(head, tail, realization.name.printLabel.toString, " ..|> ");
 	} 
 	
-	private def defineRealization(Dependency dependency) {
+	private def defineDependency(Dependency dependency) {
 		val head = dependency.clients.head;
 		val tail = dependency.suppliers.head;
-		if (head != null && tail != null) {
-			'''
-			«head.printElement» ..> «tail.printElement»«dependency.name.printLabel»
-			'''	
-		}	
+		printConnection(head, tail, dependency.name.printLabel.toString, " ..> ");
 	} 
 	
-	private def defineRealization(Usage usage) {
+	private def defineUsage(Usage usage) {
 		val head = usage.clients.head;
 		val tail = usage.suppliers.head;
-		if (head != null && tail != null) {
-			'''
-			«head.printElement» ..> «tail.printElement» : use
-			'''	
-		}	
+		printConnection(head, tail, " : use", " ..> ");	
 	} 
-	private def defineRealization(Abstraction abstraction) {
+	private def defineAbstraction(Abstraction abstraction) {
 		val head = abstraction.clients.head;
 		val tail = abstraction.suppliers.head;
+		printConnection(head, tail, " : abstraction", " ..> ");	
+	} 
+	private def printConnection(NamedElement head, NamedElement tail, String label, String connector) {
 		if (head != null && tail != null) {
 			'''
-			«head.printElement» ..> «tail.printElement» : abstraction
+			«head.printElement»«connector»«tail.printElement» : «label»
 			'''	
 		}	
-	} 
+	}
 	
 	private def dispatch declaration(UseCase use) '''
 	«IF use.members.size > 0»«use.members.printMembers(use)»
@@ -159,7 +146,7 @@ class UseCaseDiagramGenerator {
 	«ENDIF»	
 	'''
 	
-	def printElement(Element element) {
+	private def printElement(Element element) {
 		if (element instanceof NamedElement) 
 		'''«element.printElement»'''
 	}

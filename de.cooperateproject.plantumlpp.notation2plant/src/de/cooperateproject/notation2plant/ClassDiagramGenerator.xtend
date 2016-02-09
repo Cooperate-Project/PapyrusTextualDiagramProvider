@@ -40,7 +40,11 @@ class ClassDiagramGenerator {
 	private static final Logger LOG =  Logger.getLogger("PlantGenerator");
 	
 	
-	def compileClassDiagram(Diagram diagram)''' 
+	def compileClassDiagram(Diagram diagram) {
+		if (diagram == null) {
+			return "";
+		}
+	''' 
 		@startuml
 		title «diagram.name»
 		«FOR s: diagram.children.filter(Shape)»
@@ -55,24 +59,25 @@ class ClassDiagramGenerator {
 		«ENDFOR»
 		@enduml
 	'''
+	}
 	
-	def dispatch declaration(Connector g){
+	private def dispatch declaration(Connector g){
 		LOG.error("encountered unsupported connector " + g.eClass.name);
 	}
 	
-	def dispatch declaration(Generalization g){
+	private def dispatch declaration(Generalization g){
 		defineGeneralization(g)
 	}
 	
-	def dispatch declaration(Association a){
+	private def dispatch declaration(Association a){
 		defineAssociation(a)
 	}
 	
-	def dispatch declaration(InterfaceRealization a){
+	private def dispatch declaration(InterfaceRealization a){
 		defineRealization(a)
 	}
 	
-	def dispatch CharSequence declaration(Class c, Shape s)'''
+	private def dispatch CharSequence declaration(Class c, Shape s)'''
 		«defineClass(c)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -81,7 +86,7 @@ class ClassDiagramGenerator {
 		«ENDFOR»}
 	'''
 	
-	def dispatch CharSequence declaration(Interface i, Shape s)'''
+	private def dispatch CharSequence declaration(Interface i, Shape s)'''
 		«defineInterface(i)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -90,7 +95,7 @@ class ClassDiagramGenerator {
 		«ENDFOR»}
 	'''
 	
-	def dispatch CharSequence declaration(Package p, Shape s)'''
+	private def dispatch CharSequence declaration(Package p, Shape s)'''
 		«definePackage(p)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -99,7 +104,7 @@ class ClassDiagramGenerator {
 		«ENDFOR»}
 	'''
 	
-	def dispatch CharSequence declaration(Enumeration e, Shape s)'''
+	private def dispatch CharSequence declaration(Enumeration e, Shape s)'''
 		«defineEnum(e)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -109,7 +114,7 @@ class ClassDiagramGenerator {
 	'''
 	
 	
-	def dispatch CharSequence declaration(DataType d, Shape s)'''
+	private def dispatch CharSequence declaration(DataType d, Shape s)'''
 		«defineDataType(d)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -118,7 +123,7 @@ class ClassDiagramGenerator {
 		«ENDFOR»}
 	'''
 	
-	def dispatch CharSequence declaration(Signal sig, Shape s)'''
+	private def dispatch CharSequence declaration(Signal sig, Shape s)'''
 		«defineSignal(sig)» {
 		«FOR bc: s.children.filter(BasicCompartment)»«"\t"»
 			«FOR innerShape: bc.children.filter(Shape)»
@@ -127,24 +132,24 @@ class ClassDiagramGenerator {
 		«ENDFOR»}
 	'''
 	//InformationItem
-	def dispatch CharSequence declaration(InformationItem i, Shape s)'''
+	private def dispatch CharSequence declaration(InformationItem i, Shape s)'''
 		class «i.name» << (>,orchid) >> {
 		}
 	'''
 
 	//InstanceSpecification (no objects in class diagrams)
-	def dispatch CharSequence declaration(InstanceSpecification i, Shape s)'''
+	private def dispatch CharSequence declaration(InstanceSpecification i, Shape s)'''
 		class "«i.name»:«i.classifiers.getNames»" << (i,pink) >> {
 		}
 	'''
 	
-	def getNames(EList<Classifier> list)'''
+	private def getNames(EList<Classifier> list)'''
 	«FOR c : list SEPARATOR ','»«c.name»«ENDFOR»
 	'''
 	
 
 	
-	def dispatch CharSequence declaration(Comment c, Shape s){
+	private def dispatch CharSequence declaration(Comment c, Shape s){
 		val noteName = "N" + c.body.substring(0,3)
 	'''
 		note as «noteName»
@@ -157,7 +162,7 @@ class ClassDiagramGenerator {
 	}
 	
 	//Hacky duration commetn
-	def dispatch CharSequence declaration(DurationObservation c, Shape s){
+	private def dispatch CharSequence declaration(DurationObservation c, Shape s){
 		val noteName = "NDuration" + c.name
 	'''
 		note as «noteName»
@@ -169,49 +174,49 @@ class ClassDiagramGenerator {
 	'''
 	}
 	
-	def dispatch declaration(EObject e, Shape s){
+	private def dispatch declaration(EObject e, Shape s){
 		LOG.error("encountered a " + e.eClass.name);
 		throw new UnsupportedOperationException		
 	}
 	
 	
-	def dispatch declaration(Property element)'''
+	private def dispatch declaration(Property element)'''
 		«IF element.static»{static}«ENDIF»
 		«element.visibility.declareVisibility»«element.name»«element.declareType»
 	'''
 	
-	def dispatch declaration(Operation element)'''
+	private def dispatch declaration(Operation element)'''
 		«IF element.abstract»{abstract}«ENDIF»
 		«IF element.static»{static}«ENDIF»
 		«element.visibility.declareVisibility»«element.name»(«element.inputParameters.declareParameters»)«element.declareReturnType»
 	'''
 	
-	def dispatch declaration(EnumerationLiteral element)'''
+	private def dispatch declaration(EnumerationLiteral element)'''
 		«element.name»
 	'''
 	
-	def declareReturnType(Operation o){
+	private def declareReturnType(Operation o){
 		val retTypes = o.outputParameters.filter(p | p.direction == ParameterDirectionKind.RETURN_LITERAL)
 		val retType = retTypes.head	
 		if(retType != null)
 		''': «retType.type.name»«IF retType.multivalued»[]«ENDIF»'''
 	}
 	
-	def declareType(Property p){
+	private def declareType(Property p){
 	val dataType = p.type 	
 	if(dataType != null)
 	''': «dataType.name»«IF p.multivalued»[]«ENDIF»'''
 	}
 	
 	
-	def dispatch declaration(EObject element){
+	private def dispatch declaration(EObject element){
 		element.toString
 	}
 	
-	def declareParameters(EList<Parameter> parameters)'''
+	private def declareParameters(EList<Parameter> parameters)'''
 		«FOR p : parameters SEPARATOR ","»«p.name»: «p.type.name»«IF p.multivalued»[]«ENDIF»«ENDFOR»'''
 	
-	def declareVisibility(VisibilityKind vis){
+	private def declareVisibility(VisibilityKind vis){
 		switch vis{
 			case PRIVATE_LITERAL : "-"
 			case PROTECTED_LITERAL : "#"
@@ -221,7 +226,7 @@ class ClassDiagramGenerator {
 		}
 	}
 	
-	def defineAssociation(Association association) '''
+	private def defineAssociation(Association association) '''
 	«IF association.binary»
 	 «val head = association.memberEnds.head»
 	 «val tail = association.memberEnds.last»
@@ -229,7 +234,7 @@ class ClassDiagramGenerator {
 	«ENDIF»
 	'''
 	
-	def leftArrow(Property property){
+	private def leftArrow(Property property){
 		val opp = property.otherEnd 
 		switch opp.aggregation.value{
 			case AggregationKind.COMPOSITE : "*"
@@ -242,7 +247,7 @@ class ClassDiagramGenerator {
 			}
 	}
 	
-	def rightArrow(Property property){
+	private def rightArrow(Property property){
 		val opp = property.otherEnd
 		switch opp.aggregation.value{
 			case AggregationKind.COMPOSITE : "*"
@@ -255,7 +260,7 @@ class ClassDiagramGenerator {
 			}
 	}
 		
-	def cardinality(Property p){
+	private def cardinality(Property p){
 	if(p.lowerBound == 0 && p.upperBound == -1)
 		''' *'''
 	else if(p.lowerBound == 1 && p.upperBound == -1)
@@ -267,51 +272,51 @@ class ClassDiagramGenerator {
 	}
 	
 	
-	def defineGeneralization(Generalization generalization)'''
+	private def defineGeneralization(Generalization generalization)'''
 	«generalization.general.name» <|-- «generalization.specific.name»
 	'''
 	
-	def defineRealization(InterfaceRealization i)'''
+	private def defineRealization(InterfaceRealization i)'''
 	«i.contract.name» <|-- «i.implementingClassifier.name»
 	'''
 		
-	def definePackage(Package p)'''
+	private def definePackage(Package p)'''
 	package «p.name»'''
 	
-	def defineEnum(Enumeration e)'''
+	private def defineEnum(Enumeration e)'''
 	enum «e.name»'''
 	
-	def defineDataType(DataType d)'''
+	private def defineDataType(DataType d)'''
 	class «d.name» << (D,blue) >>'''
 	
-	def defineSignal(Signal sig)'''
+	private def defineSignal(Signal sig)'''
 	class «sig.name» << (S,red) >>'''
 	
-	def defineInterface(Interface i)'''
+	private def defineInterface(Interface i)'''
 	interface «i.name»«for(st: i.stereotypeApplications){st.stereotypeName}»'''
 	
-	def defineClass(Class clazz)'''
+	private def defineClass(Class clazz)'''
 	«IF clazz.abstract»abstract «ENDIF»class «clazz.name»«clazz.templateName»«for(st: clazz.stereotypeApplications){st.stereotypeName}»'''
 	
-	def getTemplateName(Class c){
+	private def getTemplateName(Class c){
 		if(c.template)
 			'''<«FOR p: c.ownedTemplateSignature.parameters SEPARATOR ", "»«p.templateParDef»«ENDFOR»>'''
 	}
 	
-	def dispatch templateParDef(TemplateParameter p){
+	private def dispatch templateParDef(TemplateParameter p){
 		(p.parameteredElement as NamedElement).name
 	}
 	
-	def dispatch templateParDef(ConnectableElementTemplateParameter p){
+	private def dispatch templateParDef(ConnectableElementTemplateParameter p){
 		val conEl = p.parameteredElement as ConnectableElement
 	'''«conEl.name»: «conEl.type.name»«IF p.^default != null» = «(p.^default as ValueSpecification).stringValue»«ENDIF»'''
 	}
 	
-	def dispatch templateParDef(ClassifierTemplateParameter p)'''
+	private def dispatch templateParDef(ClassifierTemplateParameter p)'''
 		«(p.parameteredElement as NamedElement).name»«IF !p.constrainingClassifiers.empty» extends «p.constrainingClassifiers.head.name»«ENDIF»'''
 	
 	
-	def getStereotypeName(EObject object)'''
+	private def getStereotypeName(EObject object)'''
 		<<«(object as NamedElement).name»>>
 	'''
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_6bmfYM8UEeWnwsEFChDC3A" name="Actor" metaclassReference="_6boUkM8UEeWnwsEFChDC3A">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6b1I4M8UEeWnwsEFChDC3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_6b1I4c8UEeWnwsEFChDC3A" name="Actor" nsURI="http:///schemas/Actor/_6bzTsM8UEeWnwsEFChDC3A/0" nsPrefix="Actor">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6b2XAM8UEeWnwsEFChDC3A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6b2XAc8UEeWnwsEFChDC3A" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6b2XAs8UEeWnwsEFChDC3A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6b2XA88UEeWnwsEFChDC3A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6b2XBM8UEeWnwsEFChDC3A" key="Date" value="09.02.16 11:07"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6b2XBc8UEeWnwsEFChDC3A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_6b1I4s8UEeWnwsEFChDC3A" name="Human">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6b1I488UEeWnwsEFChDC3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_6bnGcM8UEeWnwsEFChDC3A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_6b1I5M8UEeWnwsEFChDC3A" name="base_Actor" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Actor"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_6b1I5s8UEeWnwsEFChDC3A" name="newProperty" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_6boUkM8UEeWnwsEFChDC3A">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_6bnGcM8UEeWnwsEFChDC3A" name="Human">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6bpisM8UEeWnwsEFChDC3A" name="base_Actor" association="_6bo7oM8UEeWnwsEFChDC3A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6bpisc8UEeWnwsEFChDC3A" name="newProperty">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_6bo7oM8UEeWnwsEFChDC3A" name="Actor_Human" memberEnd="_6bo7oc8UEeWnwsEFChDC3A _6bpisM8UEeWnwsEFChDC3A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6bo7oc8UEeWnwsEFChDC3A" name="extension_Human" type="_6bnGcM8UEeWnwsEFChDC3A" aggregation="composite" association="_6bo7oM8UEeWnwsEFChDC3A"/>
+  </packagedElement>
+</uml:Profile>
