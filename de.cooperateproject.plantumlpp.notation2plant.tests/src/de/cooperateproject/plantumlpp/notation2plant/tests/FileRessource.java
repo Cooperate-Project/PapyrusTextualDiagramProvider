@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
+import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 public class FileRessource {
@@ -51,5 +52,14 @@ public class FileRessource {
 		preg.replace(NotationPackage.eNS_URI, NotationPackage.eINSTANCE);
 		preg.replace(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
 		preg.replace(StylePackage.eNS_URI, StylePackage.eINSTANCE);
+	}
+	
+	protected Diagram getDiagram(Iterable<Diagram> diagrams, String name) {
+		return Iterables.find(diagrams, new Predicate<Diagram>() {
+			@Override
+			public boolean apply(Diagram input) {				
+				return input.getName().equals(name);
+			}
+		});	
 	}
 }
