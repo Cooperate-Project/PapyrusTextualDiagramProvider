@@ -1,69 +1,134 @@
 package de.cooperateproject.plantumlpp.notation2plant.tests;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import java.io.IOException;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.google.common.collect.Iterables;
-
 import de.cooperateproject.notation2plant.ActivityDiagramGenerator;
 
-public class ActivityDiagramGeneratorTest {
+public class ActivityDiagramGeneratorTest extends FileRessource{
 
 	private static ActivityDiagramGenerator generator;
+	private Iterable<Diagram> diagrams;
+	
 	@BeforeClass
 	public static void setUp() {
 		generator = new ActivityDiagramGenerator();
+		ressourceSetUp();
 	}
+	
+	@Before
+	public void getDiagram() throws IOException {
+		diagrams = getDiagrams("testdiagrams/activityDiagrams.notation");
+	}
+	
+	@After
+	public void cleanDiagram() {
+		diagrams = null;
+	}
+
 	@Test
 	public void nullDiagramTest() {
 		generator.compileActivityDiagram(null);
 	}
+	
+	@Test
+	public void EmptyActivityTest() {
+		Diagram d = getDiagram(diagrams, "EmptyActivity");
+				
+		assertEquals("@startuml\ntitle EmptyActivity\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void InitialNodeTest() {
+		Diagram d = getDiagram(diagrams, "InitialNode");
+		
+		assertEquals("@startuml\ntitle InitialNode\nstart\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void FinalNodeTest() {
+		Diagram d = getDiagram(diagrams, "FinalNode");
+				
+		assertEquals("@startuml\ntitle FinalNode\nstart\nstop\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void SingleForkTest() {
+		Diagram d = getDiagram(diagrams, "SingleFork");
+				
+		assertEquals("@startuml\ntitle SingleFork\nstart\nfork\n :Action;\n"
+				+ "end fork\nstop\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void MultipleForkTest() {
+		Diagram d = getDiagram(diagrams, "MultipleFork");
+				
+		assertEquals("@startuml\ntitle MultipleFork\nstart\nfork\n :Action1;\n"
+				+ "fork again\n :Action2;\nend fork\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void DecisionNodeTest() {
+		Diagram d = getDiagram(diagrams, "DecisionNode");
+				
+		assertEquals("@startuml\ntitle DecisionNode\nstart\nif() then (p)\n "
+				+ ":Action;\nelse (!p)\nendif\nstop\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
+	@Test
+	public void MergeNodeTest() {
+		Diagram d = getDiagram(diagrams, "MergeNode");
+		
+		String s = generator.compileActivityDiagram(d).toString().replace("\r", "");
+		s=s;
+				
+		assertEquals("@startuml\ntitle MergeNode\nstart\n"
+				+ "if() then (!p)\nelse (p)\nendif\nstop\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
+	}
+	
 	/*@Test
-	public void test1() throws IOException {
-		List<IFile> list = new ArrayList<IFile>();
-		File f = new File("testdiagrams/activityDiagrams.di");
-		//list.add((IFile) f);
+	public void MultipleDecisionNodeTest() {
+		Diagram d = getDiagram(diagrams, "MultipleDecisionNode");
 		
-		
-		ResourceSet resSet = new ResourceSetImpl();
-		IPath modelPath = (new Path(f.getAbsolutePath())).removeFileExtension();	
-    	IPath p = modelPath.addFileExtension("uml");
-    	String s = p.toOSString();
-	    File umlFile = new File(s);
-	    String s2 = umlFile.getAbsolutePath();
-	    URI inputModelURI = URI.createFileURI(s2);
-	    Resource modelResource = resSet.getResource(inputModelURI, true);
-	    modelResource.load(null);
-	    
-	    File notationFile = new File(modelPath.addFileExtension("notation").toOSString());
-		URI inputNotationURI = URI.createFileURI(notationFile.getAbsolutePath());
-		Resource notationResource = resSet.getResource(inputNotationURI, true);
-		notationResource.load(null);
-		EcoreUtil.resolveAll(notationResource);  
-		
-		TreeIterator<EObject> _allContents = notationResource.getAllContents();
-	    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-	    Iterable<Diagram> _filter = Iterables.<Diagram>filter(_iterable, Diagram.class);
-	    _filter = _filter;
+		String s = generator.compileActivityDiagram(d).toString().replace("\r", "");
+		s=s;
+				
+		assertEquals("@startuml\ntitle MultipleDecisionNode\nstart\nif() then (p1)\n "
+				+ ":Action1;\nelse (!p1)\n if() then (p2)\n :Action2;\nelse (!p2)\n"
+				+ "endif\nendif\nstop\n@enduml\n", 
+				generator.compileActivityDiagram(d).toString().replace("\r", ""));
 	}*/
+	
+	@Test (expected = UnsupportedOperationException.class)
+	public void unsupportedEObjectShapeTest() {
+		EClass value = mock(EClass.class);
+		generator.compileActivityDiagram(setUpDiagram(value, value));
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void IllegalArgumentDeclarationTest() {
+		EClass value = mock(EClass.class);
+		generator.compileActivityDiagram(setUpDiagram(value, null));
+	}
+	
 	@AfterClass
 	public static void cleanUp() {
 		generator = null;

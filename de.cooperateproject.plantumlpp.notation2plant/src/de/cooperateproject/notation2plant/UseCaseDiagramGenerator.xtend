@@ -105,7 +105,8 @@ class UseCaseDiagramGenerator {
 	private def defineAssociation(Association association) {
 		val head = association.memberEnds.head
 		val tail = association.memberEnds.last
-		printConnection(head, tail, association.name.printLabel.toString, " -- ");			
+		
+		printConnection(head.type, tail.type, association.name.printLabel.toString, " -- ");			
 	} 
 	
 	private def defineRealization(Realization realization) {
@@ -133,7 +134,7 @@ class UseCaseDiagramGenerator {
 	private def printConnection(NamedElement head, NamedElement tail, String label, String connector) {
 		if (head != null && tail != null) {
 			'''
-			«head.printElement»«connector»«tail.printElement» : «label»
+			«head.printElement»«connector»«tail.printElement»«label»
 			'''	
 		}	
 	}

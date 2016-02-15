@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -298,22 +297,8 @@ public class ClassDiagramGeneratorTest extends FileRessource {
 	
 	@Test (expected = UnsupportedOperationException.class)
 	public void unsupportedEObjectShapeTest() {
-		Diagram diagram = mock(Diagram.class);
-		
-		EList<EObject> edges = new BasicEList<EObject>();
-		EList<EObject> children = new BasicEList<EObject>();
-		
-		Shape s = mock(Shape.class);
 		EClass value = mock(EClass.class);
-		
-		when(s.getElement()).thenReturn(value);
-		when(value.eClass()).thenReturn(value);
-		when(value.getName()).thenReturn("notSupported");		
-		when(diagram.getEdges()).thenReturn(edges);
-		when(diagram.getChildren()).thenReturn(children);
-		
-		children.add(s);
-		generator.compileClassDiagram(diagram);
+		generator.compileClassDiagram(setUpDiagram(value, value));
 	}
 	
 	@AfterClass
