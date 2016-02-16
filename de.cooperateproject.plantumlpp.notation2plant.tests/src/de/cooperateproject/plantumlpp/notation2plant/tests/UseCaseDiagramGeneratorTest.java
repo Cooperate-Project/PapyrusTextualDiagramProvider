@@ -19,6 +19,7 @@ public class UseCaseDiagramGeneratorTest extends FileRessource{
 
 	private static UseCaseDiagramGenerator generator;
 	private Iterable<Diagram> diagrams;
+	private static final String LINE_SEP = System.getProperty("line.separator");
 
 	@BeforeClass
 	public static void setUp() {
@@ -45,157 +46,236 @@ public class UseCaseDiagramGeneratorTest extends FileRessource{
 	public void ActorTest() {
 		Diagram d = getDiagram(diagrams, "Actor");
 				
-		assertEquals("@startuml\ntitle Actor\n:Actor:\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Actor" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseTest() {
 		Diagram d = getDiagram(diagrams, "UseCase");
 		
-		assertEquals("@startuml\ntitle UseCase\n(UseCase)\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCase" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void EmptyPackageTest() {
 		Diagram d = getDiagram(diagrams, "EmptyPackage");
 		
-		assertEquals("@startuml\ntitle EmptyPackage\nrectangle Package { \n}\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title EmptyPackage" 
+				+ LINE_SEP + "rectangle Package { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseActorPackageTest() {
 		Diagram d = getDiagram(diagrams, "UseCaseActorPackage");
 		
-		assertEquals("@startuml\ntitle UseCaseActorPackage\nrectangle Package { "
-				+ "\n:Actor:\n(UseCase)\n}\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCaseActorPackage" 
+				+ LINE_SEP + "rectangle Package { "
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void AssociationActorUseCaseTest() {
 		Diagram d = getDiagram(diagrams, "AssociationActorUseCase");
 		
-		assertEquals("@startuml\ntitle AssociationActorUseCase\n:Actor:\n(UseCase)\n"
-				+ "(UseCase) -- :Actor:\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title AssociationActorUseCase" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "(UseCase) -- :Actor:" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseUseCaseGeneralizationTest() {
 		Diagram d = getDiagram(diagrams, "UseCaseUseCaseGeneralization");
 		
-		assertEquals("@startuml\ntitle UseCaseUseCaseGeneralization\n(A)\n(B)\n"
-				+ "(B) --|> (A)\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCaseUseCaseGeneralization" 
+				+ LINE_SEP + "(A)" 
+				+ LINE_SEP + "(B)" 
+				+ LINE_SEP + "(B) --|> (A)" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseUseCaseRealizationTest() {
 		Diagram d = getDiagram(diagrams, "UseCaseUseCaseRealization");
 		
-		assertEquals("@startuml\ntitle UseCaseUseCaseRealization\n(UseCase)\n"
-				+ "(UseCase)\n(UseCase) ..|> (UseCase) : label\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCaseUseCaseRealization" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "(UseCase) ..|> (UseCase) : label" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void ActorUseCaseAssociationLabelTest() {
 		Diagram d = getDiagram(diagrams, "ActorUseCaseAssociationLabel");
 		
-		assertEquals("@startuml\ntitle ActorUseCaseAssociationLabel\n:Actor:\n"
-				+ "(UseCase)\n(UseCase) -- :Actor: : label\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ActorUseCaseAssociationLabel" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "(UseCase) -- :Actor: : label" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void ActorPackageUsageTest() {
 		Diagram d = getDiagram(diagrams, "ActorPackageUsage");
 		
-		assertEquals("@startuml\ntitle ActorPackageUsage\nrectangle Package { \n}\n"
-				+ ":Actor:\n:Actor: ..> Package : use\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ActorPackageUsage" 
+				+ LINE_SEP + "rectangle Package { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + ":Actor: ..> Package : use" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void PackagePackageDependencyTest() {
 		Diagram d = getDiagram(diagrams, "PackagePackageDependency");
 		
-		assertEquals("@startuml\ntitle PackagePackageDependency\nrectangle A { \n}\n"
-				+ "rectangle B { \n}\nB ..> A : label\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title PackagePackageDependency" 
+				+ LINE_SEP + "rectangle A { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "rectangle B { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "B ..> A : label" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void PackagePackageAbstractionTest() {
 		Diagram d = getDiagram(diagrams, "PackagePackageAbstraction");
 		
-		assertEquals("@startuml\ntitle PackagePackageAbstraction\nrectangle A { \n}\n"
-				+ "rectangle B { \n}\nB ..> A : abstraction\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title PackagePackageAbstraction" 
+				+ LINE_SEP + "rectangle A { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "rectangle B { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "B ..> A : abstraction" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void ActorUseCaseGeneralizationTest() {
 		Diagram d = getDiagram(diagrams, "ActorUseCaseGeneralization");
 		
-		assertEquals("@startuml\ntitle ActorUseCaseGeneralization\n:Actor:\n"
-				+ ":Actor: --|> (UseCase)\n(UseCase)\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ActorUseCaseGeneralization" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + ":Actor: --|> (UseCase)" 
+				+ LINE_SEP + "(UseCase)" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseUseCaseIncludeTest() {
 		Diagram d = getDiagram(diagrams, "UseCaseUseCaseInclude");
 		
-		assertEquals("@startuml\ntitle UseCaseUseCaseInclude\n(A)\n"
-				+ "(B) .> (A) : include\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCaseUseCaseInclude" 
+				+ LINE_SEP + "(A)" 
+				+ LINE_SEP + "(B) .> (A) : include" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void UseCaseUseCaseExtendTest() {
 		Diagram d = getDiagram(diagrams, "UseCaseUseCaseExtend");
 		
-		assertEquals("@startuml\ntitle UseCaseUseCaseExtend\n(B) .> (A) : extend\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title UseCaseUseCaseExtend" 
+				+ LINE_SEP + "(B) .> (A) : extend" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void PackageMergeTest() {
 		Diagram d = getDiagram(diagrams, "PackageMerge");
 		
-		assertEquals("@startuml\ntitle PackageMerge\nrectangle A { \n}\n"
-				+ "A ..> B : merge\nrectangle B { \n}\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title PackageMerge" 
+				+ LINE_SEP + "rectangle A { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "A ..> B : merge" 
+				+ LINE_SEP + "rectangle B { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void PackageImportTest() {
 		Diagram d = getDiagram(diagrams, "PackageImport");
 		
-		assertEquals("@startuml\ntitle PackageImport\nrectangle A { \n}\n"
-				+ "A ..> B : import\nrectangle B { \n}\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title PackageImport" 
+				+ LINE_SEP + "rectangle A { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "A ..> B : import" 
+				+ LINE_SEP + "rectangle B { " 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void ActorStereotypeTest() {
 		Diagram d = getDiagram(diagrams, "ActorStereotype");
 		
-		assertEquals("@startuml\ntitle ActorStereotype\n:Person: << Human >>\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ActorStereotype" 
+				+ LINE_SEP + ":Person: << Human >>" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 	
 	@Test
 	public void ActorCommentTest() {
 		Diagram d = getDiagram(diagrams, "ActorComment");
 		
-		assertEquals("@startuml\ntitle ActorComment\n:Actor:\nnote as Ncom\n\t"
-				+ "comment\nend note\nNcom .. :Actor:\n@enduml\n", 
-				generator.compileUseCaseDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ActorComment" 
+				+ LINE_SEP + ":Actor:" 
+				+ LINE_SEP + "note as Ncom" 
+				+ LINE_SEP + "\tcomment" 
+				+ LINE_SEP + "end note" 
+				+ LINE_SEP + "Ncom .. :Actor:" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileUseCaseDiagram(d).toString());
 	}
 		
 	@Test

@@ -24,6 +24,7 @@ public class ClassDiagramGeneratorTest extends FileRessource {
 	private static ClassDiagramGenerator generator;
 	//private static Diagram diagram;
 	private Iterable<Diagram> diagrams;
+	private static final String LINE_SEP = System.getProperty("line.separator");
 	
 	@BeforeClass
 	public static void setUp() {
@@ -52,228 +53,331 @@ public class ClassDiagramGeneratorTest extends FileRessource {
 	public void ClassAttributOperationTest() {
 		Diagram d = getDiagram(diagrams, "ClassAttrOp");
 		
-		assertEquals("@startuml\ntitle ClassAttrOp\n"
-				+ "class A {\n\t+Attribute1: String\n\t"
-				+ "+Attribute2: String[]\n\t+Operation1()\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassAttrOp" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "\t+Attribute1: String" 
+				+ LINE_SEP + "\t+Attribute2: String[]" 
+				+ LINE_SEP + "\t+Operation1()" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void InterfaceTest() {
 		Diagram d = getDiagram(diagrams, "Interface");
 		
-		assertEquals("@startuml\ntitle Interface\n"
-				+ "interface Interface {\n\t"
-				+ "+Attribute1\n\t+Operation1()\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Interface" 
+				+ LINE_SEP + "interface Interface {" 
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t+Operation1()" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void EmptyPackageTest() {
 		Diagram d = getDiagram(diagrams, "EmptyPackage");
 		
-		assertEquals("@startuml\ntitle EmptyPackage\n"
-				+ "package Package {\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title EmptyPackage" 
+				+ LINE_SEP + "package Package {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void PackageWithClassTest() {
 		Diagram d = getDiagram(diagrams, "PackageClass");
 		
-		assertEquals("@startuml\ntitle PackageClass\n"
-				+ "package Package {\n\t"
-				+ "class Class {\n\t}\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title PackageClass" 
+				+ LINE_SEP + "package Package {" 
+				+ LINE_SEP + "\tclass Class {" 
+				+ LINE_SEP + "\t}" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void EnumerationTest() {
 		Diagram d = getDiagram(diagrams, "Enumeration");		
 		
-		assertEquals("@startuml\ntitle Enumeration\n"
-				+ "enum Enumeration {\n\tEnumerationLiteral1\n\t"
-				+ "EnumerationLiteral2\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Enumeration" 
+				+ LINE_SEP + "enum Enumeration {" 
+				+ LINE_SEP + "\tEnumerationLiteral1" 
+				+ LINE_SEP + "\tEnumerationLiteral2" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void DataTypeTest() {
 		Diagram d = getDiagram(diagrams, "DataType");
 		
-		assertEquals("@startuml\ntitle DataType\n"
-				+ "class DataType << (D,blue) >> {\n\t"
-				+ "+Attribute1\n\t+Operation1()\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title DataType" 
+				+ LINE_SEP + "class DataType << (D,blue) >> {" 
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t+Operation1()" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void SignalTest() {
 		Diagram d = getDiagram(diagrams, "Signal");
 				
-		assertEquals("@startuml\ntitle Signal\n"
-				+ "class Signal << (S,red) >> {\n\t"
-				+ "+Attribute1\n\t+Attribute2\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Signal" 
+				+ LINE_SEP + "class Signal << (S,red) >> {" 
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t+Attribute2" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void InformationItemTest() {
 		Diagram d = getDiagram(diagrams, "InformationItem");
 				
-		assertEquals("@startuml\ntitle InformationItem\n"
-				+ "class InformationItem << (>,orchid) >> {\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title InformationItem" 
+				+ LINE_SEP + "class InformationItem << (>,orchid) >> {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void InstanceSpecificationTest() {
 		Diagram d = getDiagram(diagrams, "InstanceSpecification");
 				
-		assertEquals("@startuml\ntitle InstanceSpecification\n"
-				+ "class \"InstanceSpecification:\" << (i,pink) >> {\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title InstanceSpecification" 
+				+ LINE_SEP + "class \"InstanceSpecification:\" << (i,pink) >> {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void CommentTest() {
 		Diagram d = getDiagram(diagrams, "Comment");
 		
-		assertEquals("@startuml\ntitle Comment\nclass Class {\n}\n"
-				+ "note as Ncom\n\tcomment\nend note\n\tNcom..Class\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Comment" 
+				+ LINE_SEP + "class Class {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "note as Ncom" 
+				+ LINE_SEP + "\tcomment" 
+				+ LINE_SEP + "end note" 
+				+ LINE_SEP + "\tNcom..Class" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void DurationObservationTest() {
 		Diagram d = getDiagram(diagrams, "DurationObservation");
 				
-		assertEquals("@startuml\ntitle DurationObservation\n"
-				+ "note as NDurationDurationObservation\n\t\nend note\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title DurationObservation" 
+				+ LINE_SEP + "note as NDurationDurationObservation" 
+				+ LINE_SEP + "\t" 
+				+ LINE_SEP + "end note" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void DurationObservationWithEventTest() {
 		Diagram d = getDiagram(diagrams, "DurationObservationWithEvent");
 
-		assertEquals("@startuml\ntitle DurationObservationWithEvent\n"
-				+ "note as NDurationDurationObservation\n\t\nend note\n\t"
-				+ "NDurationDurationObservation..A\n"
-				+ "class A {\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title DurationObservationWithEvent" 
+				+ LINE_SEP + "note as NDurationDurationObservation" 
+				+ LINE_SEP + "\t" 
+				+ LINE_SEP + "end note" 
+				+ LINE_SEP + "\tNDurationDurationObservation..A" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void ClassAssociationTest() {
 		Diagram d = getDiagram(diagrams, "ClassAssociation");
 		
-		assertEquals("@startuml\ntitle ClassAssociation\n"
-				+ "class A {\n}\nclass B {\n}\nB \""
-				+ "b  *\" <-->  \"a  0..1\" A : label\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassAssociation" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "B \"b  *\" <-->  \"a  0..1\" A : label" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void GeneralizationTest() {
 		Diagram d = getDiagram(diagrams, "Generalization");
 		
-		assertEquals("@startuml\ntitle Generalization\n"
-				+ "abstract class A {\n}\nclass B {\n}\n"
-				+ "A <|-- B\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Generalization" 
+				+ LINE_SEP + "abstract class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "A <|-- B" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void RealizationTest() {
 		Diagram d = getDiagram(diagrams, "Realization");
 		
-		assertEquals("@startuml\ntitle Realization\n"
-				+ "class B {\n}\ninterface A {\n}\n"
-				+ "A <|-- B\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Realization" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "interface A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "A <|-- B" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void SharedAssociationTest() {
 		Diagram d = getDiagram(diagrams, "SharedAssociation");
 		
-		assertEquals("@startuml\ntitle SharedAssociation\n"
-				+ "class A {\n}\nclass B {\n}\nclass C {\n}\n"
-				+ "class D {\n}\nA \"a  1..*\" o-->  \"b 1\" B \nD \""
-				+ "d  1..*\" <--o  \"c 1\" C \n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title SharedAssociation" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class C {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class D {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "A \"a  1..*\" o-->  \"b 1\" B " 
+				+ LINE_SEP + "D \"d  1..*\" <--o  \"c 1\" C " 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void CompositeTest() {
 		Diagram d = getDiagram(diagrams, "Composite");
 		
-		assertEquals("@startuml\ntitle Composite\nclass A {\n}\n"
-				+ "class B {\n}\nclass C {\n}\nclass D {\n}\n"
-				+ "B \"b  *\" <--*  \"a  *\" A \nD \""
-				+ "d 1\" *-->  \"c 1\" C \n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title Composite" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class C {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class D {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "B \"b  *\" <--*  \"a  *\" A " 
+				+ LINE_SEP + "D \"d 1\" *-->  \"c 1\" C " 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void InstanceSpecificationTwoClassifierTest() {
 		Diagram d = getDiagram(diagrams, "InstanceSpecificationTwoClassifier");
 		
-		assertEquals("@startuml\ntitle InstanceSpecificationTwoClassifier\n"
-				+ "class \"InstanceSpecification:A,B\n\" << (i,pink) >> "
-				+ "{\n}\nclass A {\n}\nclass B {\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title InstanceSpecificationTwoClassifier" 
+				+ LINE_SEP + "class \"InstanceSpecification:A,B" 
+				+ LINE_SEP + "\" << (i,pink) >> {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "class B {" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void ClassAttributeStaticOperationAbstractStaticTest() {
 		Diagram d = getDiagram(diagrams, "ClassAttributeStaticOperationAbstractStatic");
 		
-		assertEquals("@startuml\ntitle ClassAttributeStaticOperationAbstractStatic\n"
-				+ "class A {\n\t{static}\n\t+Attribute1\n\t{abstract}\n\t"
-				+ "+Operation1()\n\t{static}\n\t+Operation2()\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassAttributeStaticOperationAbstractStatic" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "\t{static}" 
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t{abstract}" 
+				+ LINE_SEP + "\t+Operation1()" 
+				+ LINE_SEP + "\t{static}" 
+				+ LINE_SEP + "\t+Operation2()" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void ClassVisibilityTest() {
 		Diagram d = getDiagram(diagrams, "ClassVisibility");		
 		
-		assertEquals("@startuml\ntitle ClassVisibility\nclass A {\n\t"
-				+ "+Attribute1\n\t-Attribute2\n\t#Attribute3\n\t~Attribute4\n}\n"
-				+ "@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassVisibility" 
+				+ LINE_SEP + "class A {"
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t-Attribute2" 
+				+ LINE_SEP + "\t#Attribute3" 
+				+ LINE_SEP + "\t~Attribute4" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void ClassOperationReturnTest() {
 		Diagram d = getDiagram(diagrams, "ClassOperationReturn");
 		
-		assertEquals("@startuml\ntitle ClassOperationReturn\n"
-				+ "class A {\n\t+Operation1(): String\n\t"
-				+ "+Operation2(): String[]\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassOperationReturn" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "\t+Operation1(): String" 
+				+ LINE_SEP + "\t+Operation2(): String[]" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test
 	public void ClassOperationParameterTest() {
 		Diagram d = getDiagram(diagrams, "ClassOperationParameter");
 		
-		assertEquals("@startuml\ntitle ClassOperationParameter\n"
-				+ "class A {\n\t+Attribute1\n\t"
-				+ "+Operation1(: String,: String)\n\t"
-				+ "+Operation2(: String[])\n}\n@enduml\n", 
-				generator.compileClassDiagram(d).toString().replace("\r", ""));
+		assertEquals("@startuml" 
+				+ LINE_SEP + "title ClassOperationParameter" 
+				+ LINE_SEP + "class A {" 
+				+ LINE_SEP + "\t+Attribute1" 
+				+ LINE_SEP + "\t+Operation1(: String,: String)" 
+				+ LINE_SEP + "\t+Operation2(: String[])" 
+				+ LINE_SEP + "}" 
+				+ LINE_SEP + "@enduml" + LINE_SEP, 
+				generator.compileClassDiagram(d).toString());
 	}
 	
 	@Test 
