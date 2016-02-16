@@ -118,11 +118,6 @@ public class ActivityDiagramGenerator {
 	 «ENDFOR»
 	 '''
 	
-	//????
-	/*private def getNames(EList<Classifier> list)'''
-	«FOR c : list SEPARATOR ','»«c.name»«ENDFOR»
-	'''*/
-	
 	private def dispatch declaration(EObject e, Shape s){
 		LOG.error("encountered a " + e.eClass.name);
 		throw new UnsupportedOperationException		
@@ -134,44 +129,6 @@ public class ActivityDiagramGenerator {
 	
 	private def dispatch CharSequence printBody(OpaqueExpression specification)
 	'''«FOR b :specification.bodies»«b»«ENDFOR»'''
-	
-	//????
-	/*private def leftArrow(Property property){
-		val opp = property.otherEnd 
-		switch opp.aggregation.value{
-			case AggregationKind.COMPOSITE : "*"
-		 	case AggregationKind.SHARED : "o"
-		 	default :
-		 		if(!opp.navigable)
-		 			"<"
-				else
-					""
-			}
-	}
-	//????
-	private def rightArrow(Property property){
-		val opp = property.otherEnd
-		switch opp.aggregation.value{
-			case AggregationKind.COMPOSITE : "*"
-		 	case AggregationKind.SHARED : "o"
-		 	default :
-		 		if(!opp.navigable)
-		 			">"
-				else
-					""
-			}
-	}
-		//????
-	private def cardinality(Property p){
-	if(p.lowerBound == 0 && p.upperBound == -1)
-		''' *'''
-	else if(p.lowerBound == 1 && p.upperBound == -1)
-		''' 1..*'''
-	else if(p.lowerBound == p.upperBound)
-		'''«p.lowerBound»'''
-	else
-		''' «p.lowerBound»..«p.upperBound»'''	
-	}*/
 	
 	/*private def defineActivity(Activity activity)'''
 	partition «activity.name»'''
