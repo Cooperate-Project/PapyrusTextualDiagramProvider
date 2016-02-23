@@ -81,7 +81,7 @@
 						<configuration>
 							<executable>python</executable>
 							<arguments>
-								<argument>${basedir}/../releng/deploy.py</argument>
+								<argument>${basedir}/../deploy.py</argument>
 								<argument>${deployUser}</argument>
 								<argument>${deployKey}</argument>
 								<argument>${deploySubject}</argument>
