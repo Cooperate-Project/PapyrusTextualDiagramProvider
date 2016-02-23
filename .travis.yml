@@ -7,8 +7,10 @@ before_install:
 - tar zxvf apache-maven-3.3.9-bin.tar.gz
 - chmod +x apache-maven-3.3.9/bin/mvn
 - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
+- hash -r
 before_script:
 - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
+- hash -r
 - pip install --user codecov
 script:
 - mvn clean install
