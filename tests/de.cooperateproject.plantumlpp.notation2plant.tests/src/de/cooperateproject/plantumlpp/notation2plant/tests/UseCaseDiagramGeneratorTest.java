@@ -37,7 +37,7 @@ import com.google.common.collect.Iterables;
 
 import de.cooperateproject.notation2plant.UseCaseDiagramGenerator;
 
-public class UseCaseDiagramGeneratorTest extends FileRessource{
+public class UseCaseDiagramGeneratorTest extends AbstractDiagramGeneratorTest{
 
 	private static UseCaseDiagramGenerator generator;
 

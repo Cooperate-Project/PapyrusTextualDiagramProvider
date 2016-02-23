@@ -20,7 +20,7 @@ import org.junit.Test;
 
 import de.cooperateproject.notation2plant.ClassDiagramGenerator;
 
-public class ClassDiagramGeneratorTest extends FileRessource {
+public class ClassDiagramGeneratorTest extends AbstractDiagramGeneratorTest {
 	
 	private static ClassDiagramGenerator generator;
 	//private static Diagram diagram;
