@@ -24,7 +24,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.framework.Bundle;
 
@@ -66,8 +68,12 @@ public class Uml2PlantUmlView extends ViewPart {
 	
 	private void showActualSelection() throws IOException {
 		IEditorPart actualEditor = getSite().getWorkbenchWindow().getActivePage().getActiveEditor();
-		ISelection actualSelection = actualEditor.getEditorSite().getSelectionProvider().getSelection();
-		showSelection(actualEditor.getSite().getPart(), actualSelection);
+		if (actualEditor != null) {
+			ISelection actualSelection = actualEditor.getEditorSite().getSelectionProvider().getSelection();
+			showSelection(actualEditor.getSite().getPart(), actualSelection);
+		} else {
+			showText("No Model Available");
+		}
 	}
 
 	private ImageDescriptor getImageDescriptor(String relativePath) {

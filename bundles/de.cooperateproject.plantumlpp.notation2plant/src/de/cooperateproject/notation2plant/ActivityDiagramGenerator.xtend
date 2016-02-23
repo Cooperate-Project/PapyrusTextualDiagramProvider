@@ -2,7 +2,7 @@ package de.cooperateproject.notation2plant
 
 import java.util.HashMap
 import org.apache.log4j.Logger
-import org.eclipse.emf.common.util.EList
+//import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.gmf.runtime.notation.Connector
 import org.eclipse.gmf.runtime.notation.DecorationNode
@@ -10,8 +10,8 @@ import org.eclipse.gmf.runtime.notation.Diagram
 import org.eclipse.gmf.runtime.notation.Shape
 import org.eclipse.uml2.uml.Activity
 import org.eclipse.uml2.uml.ActivityNode
-import org.eclipse.uml2.uml.AggregationKind
-import org.eclipse.uml2.uml.Classifier
+//import org.eclipse.uml2.uml.AggregationKind
+//import org.eclipse.uml2.uml.Classifier
 import org.eclipse.uml2.uml.ControlFlow
 import org.eclipse.uml2.uml.DecisionNode
 import org.eclipse.uml2.uml.FinalNode
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.JoinNode
 import org.eclipse.uml2.uml.MergeNode
 import org.eclipse.uml2.uml.OpaqueAction
 import org.eclipse.uml2.uml.OpaqueExpression
-import org.eclipse.uml2.uml.Property
+//import org.eclipse.uml2.uml.Property
 import org.eclipse.uml2.uml.ValueSpecification
 
 public class ActivityDiagramGenerator {
@@ -118,10 +118,6 @@ public class ActivityDiagramGenerator {
 	 «ENDFOR»
 	 '''
 	
-	private def getNames(EList<Classifier> list)'''
-	«FOR c : list SEPARATOR ','»«c.name»«ENDFOR»
-	'''
-	
 	private def dispatch declaration(EObject e, Shape s){
 		LOG.error("encountered a " + e.eClass.name);
 		throw new UnsupportedOperationException		
@@ -134,44 +130,7 @@ public class ActivityDiagramGenerator {
 	private def dispatch CharSequence printBody(OpaqueExpression specification)
 	'''«FOR b :specification.bodies»«b»«ENDFOR»'''
 	
-	private def leftArrow(Property property){
-		val opp = property.otherEnd 
-		switch opp.aggregation.value{
-			case AggregationKind.COMPOSITE : "*"
-		 	case AggregationKind.SHARED : "o"
-		 	default :
-		 		if(!opp.navigable)
-		 			"<"
-				else
-					""
-			}
-	}
-	
-	private def rightArrow(Property property){
-		val opp = property.otherEnd
-		switch opp.aggregation.value{
-			case AggregationKind.COMPOSITE : "*"
-		 	case AggregationKind.SHARED : "o"
-		 	default :
-		 		if(!opp.navigable)
-		 			">"
-				else
-					""
-			}
-	}
-		
-	private def cardinality(Property p){
-	if(p.lowerBound == 0 && p.upperBound == -1)
-		''' *'''
-	else if(p.lowerBound == 1 && p.upperBound == -1)
-		''' 1..*'''
-	else if(p.lowerBound == p.upperBound)
-		'''«p.lowerBound»'''
-	else
-		''' «p.lowerBound»..«p.upperBound»'''	
-	}
-	
-	private def defineActivity(Activity activity)'''
+	/*private def defineActivity(Activity activity)'''
 	partition «activity.name»'''
-	
+	*/
 }
