@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.cooperateproject.plantumlpp</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../de.cooperateproject.plantumlpp.parent</relativePath>
+	</parent>
+	<artifactId>de.cooperateproject.plantumlpp.aggregator</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>../../features/de.cooperateproject.plantumlpp.feature</module>
+		<module>../../bundles/de.cooperateproject.plantumlpp.notation2plant</module>
+		<module>../../tests/de.cooperateproject.plantumlpp.notation2plant.tests</module>
+		<module>../../bundles/de.cooperateproject.plantumlpp.notation2plant.generator</module>
+		<module>../../tests/de.cooperateproject.plantumlpp.notation2plant.generator.tests</module>
+		<module>../../bundles/edu.kit.ipd.sdq.commons.ecore2txt</module>
+		<module>../../bundles/edu.kit.ipd.sdq.vitruvius.framework.util</module>
+		<module>../../bundles/de.cooperateproject.plantumlpp.notation2plant.viewer</module>
+	</modules>
+</project> 

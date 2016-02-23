@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: edu.kit.ipd.sdq.vitruvius.framework.util
+Export-Package: edu.kit.ipd.sdq.vitruvius.framework.util,edu.kit.ipd.s
+ dq.vitruvius.framework.util.bridges,edu.kit.ipd.sdq.vitruvius.framewo
+ rk.util.datatypes,edu.kit.ipd.sdq.vitruvius.framework.util.doers
+Bundle-Name: Util
+Bundle-Version: 1.0.0.201602231201
+Require-Bundle: org.eclipse.core.resources,org.eclipse.equinox.registr
+ y,org.eclipse.osgi,org.eclipse.swt,org.eclipse.emf.common,org.eclipse
+ .emf.ecore,org.eclipse.core.runtime,org.eclipse.emf.transaction,org.e
+ clipse.emf.ecore.xmi,com.google.guava,org.eclipse.xtext.xbase.lib,org
+ .eclipse.xtend.lib,org.eclipse.xtend.lib.macro
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+

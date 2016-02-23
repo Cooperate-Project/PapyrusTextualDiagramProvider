@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: edu.kit.ipd.sdq.commons.ecore2txt
+Export-Package: edu.kit.ipd.sdq.commons.ecore2txt.handler,edu.kit.ipd.
+ sdq.commons.ecore2txt.generator,edu.kit.ipd.sdq.commons.ecore2txt.uti
+ l
+Bundle-Name: Ecore2Txt
+Bundle-Version: 1.0.0.201602231201
+Require-Bundle: com.google.guava,org.eclipse.xtext.xbase.lib,org.eclip
+ se.xtend.lib,org.eclipse.xtend.lib.macro,org.eclipse.xtext.generator,
+ org.eclipse.core.resources,org.eclipse.core.runtime,org.eclipse.core.
+ commands,org.eclipse.jface;visibility:=reexport,org.eclipse.ui.workbe
+ nch,com.google.inject,edu.kit.ipd.sdq.vitruvius.framework.util,org.ec
+ lipse.xtext.generator,org.eclipse.xtext.builder,org.eclipse.xtext
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: SDQ
+
