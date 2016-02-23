@@ -20,6 +20,5 @@
 		<module>../edu.kit.ipd.sdq.commons.ecore2txt</module>
 		<module>../edu.kit.ipd.sdq.vitruvius.framework.util</module>
 		<module>../de.cooperateproject.plantumlpp.notation2plant.viewer</module>
-		<module>../org.mockito</module>
 	</modules>
 </project> 
