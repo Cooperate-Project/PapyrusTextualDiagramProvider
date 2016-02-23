@@ -9,16 +9,12 @@ before_install:
 - chmod +x $M2_HOME/bin/mvn
 - export PATH=$M2_HOME/bin:$PATH
 - pip install --user codecov
+- pip install --user requests
 install: true
 script:
-- mvn clean install
+- ./.travis.sh
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-before_deploy:
-- pip install --user requests
-deploy:
-  provider: script
-  script: mvn deploy
 cache:
   directories:
   - "$HOME/.m2"

@@ -174,23 +174,17 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>default-check</id>
+						<id>prepare-integration-tests</id>
+						<phase>pre-integration-test</phase>
 						<goals>
-							<goal>check</goal>
+							<goal>prepare-agent</goal>
 						</goals>
 						<configuration>
-							<rules><!-- implementation is needed only for Maven 2 -->
-								<rule implementation="org.jacoco.maven.RuleConfiguration">
-									<element>BUNDLE</element>
-									<limits><!-- implementation is needed only for Maven 2 -->
-										<limit implementation="org.jacoco.report.check.Limit">
-											<counter>COMPLEXITY</counter>
-											<value>COVEREDRATIO</value>
-											<minimum>0.60</minimum>
-										</limit>
-									</limits>
-								</rule>
-							</rules>
+							<include>de.*</include>
+							<include>edu.*</include>
+							<!-- Where to put jacoco coverage report -->
+							<destFile>${sonar.jacoco.reportPath}</destFile>
+							<append>true</append>
 						</configuration>
 					</execution>
 				</executions>
