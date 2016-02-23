@@ -2,7 +2,13 @@ language: java
 sudo: false
 jdk:
   - oraclejdk8
+before_install:
+- wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+- tar zxvf apache-maven-3.3.9-bin.tar.gz
+- chmod +x apache-maven-3.3.9/bin/mvn
+- export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
 before_script:
+- export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
 - pip install --user codecov
 script:
 - mvn clean install
