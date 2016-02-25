@@ -1,9 +1,7 @@
- package de.cooperateproject.notation2plant.viewer;
+package de.cooperateproject.notation2plant.viewer;
 
-import java.io.IOException;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -23,50 +21,87 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IPartListener2;
+import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.framework.Bundle;
 
-import de.cooperateproject.generator.PlantGenerator; 
+import de.cooperateproject.generator.PlantGenerator;
 
 public class Uml2PlantUmlView extends ViewPart {
 
 	private TextViewer textviewer;
-	private static final String PLUGIN_ID = "de.cooperateproject.notation2plant.viewer";
-	private static final Logger LOG =  Logger.getLogger("Uml2PlantView");
+	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
+	//private static final Logger LOG = Logger.getLogger("Uml2PlantView");
 	private boolean toggle = true;
-	
+
+	/***
+	 * Action to toggle if the diagram should be always translated when an change happen. 
+	 */
 	private Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
 		public void run() {
 			if (this.isChecked()) {
-				removeSelectionListener();
+				toggle = false;
 			} else {
-				addSelectionListener();
-				try {
-					showActualSelection();
-				} catch (IOException e) {
-					LOG.error("couldn't get actual Selection", e);
-				}
+				toggle = true;
+				showActualSelection();
 			}
 		}
 	};
 
-	private ISelectionListener listener = new ISelectionListener() {
-		public void selectionChanged(IWorkbenchPart sourcepart, ISelection selection) {
-			if (sourcepart != Uml2PlantUmlView.this && toggle) {
-				try {
-					showSelection(sourcepart, selection);
-				} catch (IOException e) {
-					LOG.error("couldn't show Selection", e);
-				}
-			}
+	/**
+	 * Listener fires if there was a change in the papyrus diagram editor.
+	 */
+	private IPropertyListener propertyListener = new IPropertyListener() {
+		@Override
+		public void propertyChanged(Object source, int propId) {
+			showActualSelection();
 		}
-	};
+	}; 
 	
-	private void showActualSelection() throws IOException {
+	/**
+	 * Listener for the part life cycle that adds and removes property listeners,
+	 * if a editor has been selected or deselected.
+	 */
+	private IPartListener2 partListener = new IPartListener2() {
+		@Override
+		public void partActivated(IWorkbenchPartReference partRef) {
+			partRef.addPropertyListener(propertyListener);
+		}
+
+		@Override
+		public void partBroughtToTop(IWorkbenchPartReference partRef) {
+			showActualSelection();
+		}
+		
+		@Override
+		public void partDeactivated(IWorkbenchPartReference partRef) {
+			partRef.removePropertyListener(propertyListener);
+		}
+
+		@Override
+		public void partClosed(IWorkbenchPartReference partRef) { }
+
+		@Override
+		public void partOpened(IWorkbenchPartReference partRef) { }
+
+		@Override
+		public void partHidden(IWorkbenchPartReference partRef) { }
+		
+		@Override
+		public void partVisible(IWorkbenchPartReference partRef) { }
+		
+		@Override
+		public void partInputChanged(IWorkbenchPartReference partRef) { }
+	};
+
+	/**
+	 * Gets the selection from the actual editor and shows it.
+	 */
+	private void showActualSelection() {
 		IEditorPart actualEditor = getSite().getWorkbenchWindow().getActivePage().getActiveEditor();
 		if (actualEditor != null) {
 			ISelection actualSelection = actualEditor.getEditorSite().getSelectionProvider().getSelection();
@@ -76,6 +111,11 @@ public class Uml2PlantUmlView extends ViewPart {
 		}
 	}
 
+	/**
+	 * Returns an ImageDescriptor for the given image.
+	 * @param relativePath the path to the image
+	 * @return an ImageDescriptor for the given image
+	 */
 	private ImageDescriptor getImageDescriptor(String relativePath) {
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
 		URL url = FileLocator.find(bundle, new Path("icons/" + relativePath), null);
@@ -84,18 +124,20 @@ public class Uml2PlantUmlView extends ViewPart {
 
 	/**
 	 * Shows the given selection in this view.
-	 * 
-	 * @throws IOException
 	 */
-	public void showSelection(IWorkbenchPart sourcepart, ISelection selection) throws IOException {
-		setContentDescription(sourcepart.getTitle() + " (" + selection.getClass().getName() + ")");
+	public void showSelection(IWorkbenchPart sourcepart, ISelection selection) {
+		setContentDescription(sourcepart.getTitle());
 
-		if (selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection && toggle) {
 			IStructuredSelection ss = (IStructuredSelection) selection;
 			showItems(ss.getFirstElement());
 		}
 	}
 
+	/**
+	 * Gets the diagram of the given item and compiles the diagram.
+	 * @param item the item to get the diagram for
+	 */
 	private void showItems(Object item) {
 		if (item instanceof PapyrusDiagramEditPart) {
 			Object model = ((PapyrusDiagramEditPart) item).getModel();
@@ -112,11 +154,19 @@ public class Uml2PlantUmlView extends ViewPart {
 		}
 	}
 
+	/**
+	 * Compiles the given diagram and shows the result.
+	 * @param diagram the diagram to translate
+	 */
 	private void showPlantUml(Diagram diagram) {
 		PlantGenerator p = new PlantGenerator();
 		showText(p.compile(diagram).toString());
 	}
 
+	/**
+	 * Shows the given text in the textviewer.
+	 * @param text the text to show in the textviewer
+	 */
 	private void showText(String text) {
 		textviewer.setDocument(new Document(text));
 	}
@@ -126,32 +176,30 @@ public class Uml2PlantUmlView extends ViewPart {
 		textviewer = new TextViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		textviewer.setEditable(false);
 
-		//toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
+		toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
 		toggleAction.setToolTipText("Disable live translation");
 
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
 		mgr.add(toggleAction);
-		addSelectionListener();
-		try {
-			showActualSelection();
-		} catch (IOException e) {
-			LOG.error("couldn't get actual Selection", e);
-		}
-				
+
+		getSite().getPage().addPartListener(partListener);
+		showActualSelection();
 	}
 
 	@Override
 	public void dispose() {
-		removeSelectionListener();
+		removeAllPropertyListeners();
 		super.dispose();
 	}
-	
-	private void addSelectionListener() {
-		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(listener);
-	}
-	
-	private void removeSelectionListener() {
-		getSite().getWorkbenchWindow().getSelectionService().removeSelectionListener(listener);
+
+	/**
+	 * Removes all PropertyListeners.
+	 */
+	private void removeAllPropertyListeners() {
+		IEditorReference[] ref = getSite().getPage().getEditorReferences();
+		for (IEditorReference editor : ref) {
+			editor.removePropertyListener(propertyListener);
+		}
 	}
 
 	@Override
