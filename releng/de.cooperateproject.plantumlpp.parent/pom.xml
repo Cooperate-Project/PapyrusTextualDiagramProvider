@@ -65,7 +65,7 @@
     <artifactId>target-platform</artifactId> 
     <version>1.0.0-SNAPSHOT</version> 
             </artifact> 
-        </target> 
+        </target> <!--
 					<pomDependencies>consider</pomDependencies>					
 					<environments>
 						<environment>
@@ -93,7 +93,7 @@
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
 						</environment>
-					</environments>
+					</environments>-->
 				</configuration>
 			</plugin>
 			<plugin>
