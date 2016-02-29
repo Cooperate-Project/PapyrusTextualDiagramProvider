@@ -15,7 +15,7 @@
 		<xtext.version>2.7.2</xtext.version>
 		<java.version>1.8</java.version>
 		<maven.deploy-plugin.version>2.8.2</maven.deploy-plugin.version>
-		<sonar.jacoco.reportPath>../jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.jacoco.reportPath>../../target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
 
 	<repositories>
@@ -148,6 +148,13 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.6.201602180812</version>
+				<configuration>
+					<append>true</append>
+					<includes>
+						<include>*</include>
+					</includes>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+				</configuration>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>
@@ -189,7 +196,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -208,6 +214,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			
 			<!-- we only want to deploy the update site, so we skip deployment for 
 				all other artifacts -->
 			<plugin>
