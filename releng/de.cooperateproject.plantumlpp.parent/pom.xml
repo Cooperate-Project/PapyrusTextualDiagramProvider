@@ -59,13 +59,14 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho.version}</version>
 				<configuration>
-				        <target> 
-            <artifact> 
-	<groupId>de.cooperateproject.plantumlpp</groupId>
-    <artifactId>target-platform</artifactId> 
-    <version>1.0.0-SNAPSHOT</version> 
-            </artifact> 
-        </target> <!--
+					<target> 
+						<artifact> 
+							<groupId>de.cooperateproject.plantumlpp</groupId>
+							<artifactId>target-platform</artifactId> 
+							<version>1.0.0-SNAPSHOT</version> 
+						</artifact> 
+					</target>
+					<!--
 					<pomDependencies>consider</pomDependencies>					
 					<environments>
 						<environment>
@@ -204,7 +205,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<!-- we only want to deploy the update site, so we skip deployment for 
 				all other artifacts -->
 			<plugin>
