@@ -8,13 +8,10 @@ before_install:
 - export M2_HOME=/tmp/apache-maven-3.3.9
 - chmod +x $M2_HOME/bin/mvn
 - export PATH=$M2_HOME/bin:$PATH
-- pip install --user codecov
 - pip install --user requests
 install: true
 script:
 - ./.travis.sh
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
 cache:
   directories:
   - "$HOME/.m2"
