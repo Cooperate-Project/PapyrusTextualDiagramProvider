@@ -7,8 +7,8 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>releng/de.cooperateproject.plantumlpp.parent</relativePath>
 	</parent>
-	
 	<artifactId>de.cooperateproject.plantumlpp.main</artifactId>
+	<name>PlantUMLPP</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
