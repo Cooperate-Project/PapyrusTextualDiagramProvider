@@ -12,6 +12,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>../de.cooperateproject.plantumlpp.dummy</module>
 		<module>../de.cooperateproject.plantumlpp.target</module>
 		<module>../../features/de.cooperateproject.plantumlpp.feature</module>
 		<module>../../bundles/de.cooperateproject.plantumlpp.notation2plant</module>

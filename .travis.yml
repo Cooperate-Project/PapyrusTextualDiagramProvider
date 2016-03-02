@@ -17,9 +17,7 @@ before_install:
 - pip install --user requests
 install: true
 script:
-- ./.travis.sh
-after_success:
-- mvn -Djavax.net.ssl.trustStore=/tmp/cacerts sonar:sonar
+- ./.travis.sh "-Djavax.net.ssl.trustStore=/tmp/cacerts"
 cache:
   directories:
   - "$HOME/.m2/repository"
