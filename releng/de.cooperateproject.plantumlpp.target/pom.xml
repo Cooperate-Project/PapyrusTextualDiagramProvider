@@ -10,6 +10,7 @@
 		<relativePath>../de.cooperateproject.plantumlpp.parent</relativePath>
 	</parent>
     <artifactId>target-platform</artifactId> 
-    <packaging>eclipse-target-definition</packaging> 
+    <packaging>eclipse-target-definition</packaging>
+	<name>Target Platform (Mars)</name>
 	
 </project>

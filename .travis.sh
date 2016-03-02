@@ -1,14 +1,15 @@
 #!/bin/bash
+set -e
 
 if [[ "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]]; then
 	echo mvn $1 clean deploy sonar:sonar
-	mvn clean deploy
+	mvn $1 clean deploy sonar:sonar
 elif [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; then
 	echo mvn $1 -Dsonar.branch="$TRAVIS_BRANCH" clean verify sonar:sonar
-	mvn clean verify
+	mvn mvn $1 -Dsonar.branch="$TRAVIS_BRANCH" clean verify sonar:sonar
 else
 	echo mvn $1 clean verify
-	mvn clean verify
+	mvn $1 clean verify
 fi
 
 

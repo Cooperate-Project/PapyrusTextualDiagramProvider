@@ -11,7 +11,7 @@
 
 	<artifactId>de.cooperateproject.plantumlpp.updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
-	<name>Notation2Plant Update Site</name>
+	<name>Update Site</name>
 
 	<properties>
 		<!-- We use the nightly profile as defaults -->

@@ -10,6 +10,6 @@
 	</parent>
 	<artifactId>de.cooperateproject.plantumlpp.dummy</artifactId>
 	<packaging>pom</packaging>
-	<name>Dummy Module (no dependencies)</name>
+	<name>Empty Module</name>
 
 </project> 
