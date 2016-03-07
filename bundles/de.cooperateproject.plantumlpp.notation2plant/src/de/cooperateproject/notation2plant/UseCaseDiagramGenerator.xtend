@@ -62,7 +62,7 @@ class UseCaseDiagramGenerator {
 	}
 	
 	private def dispatch declaration(Package pack, Shape s) '''
-	rectangle «pack.name» { 
+	rectangle «pack.name» {
 	«FOR element : pack.packagedElements.filter[x | x instanceof Actor || x instanceof UseCase]»«element.declaration»
 	«ENDFOR»	
 	}

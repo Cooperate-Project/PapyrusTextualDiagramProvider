@@ -1,11 +1,12 @@
 package de.cooperateproject.plantumlpp.notation2plant.tests;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -32,10 +33,12 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
 
 public class AbstractDiagramGeneratorTest {
     
-	protected Iterable<Diagram> getDiagrams(String url) throws IOException {
+	protected static List<Diagram> getDiagrams(String url) throws IOException {
 		File f = new File(url);
 
 		ResourceSet resSet = new ResourceSetImpl();
@@ -48,7 +51,7 @@ public class AbstractDiagramGeneratorTest {
 		TreeIterator<EObject> _allContents = notationResource.getAllContents();
 		Iterable<EObject> _iterable = IteratorExtensions.<EObject> toIterable(_allContents);
 		Iterable<Diagram> _filter = Iterables.<Diagram> filter(_iterable, Diagram.class);
-		return _filter;
+		return Lists.newArrayList(_filter);
 	}
 	
 	protected static void ressourceSetUp() {
@@ -63,8 +66,8 @@ public class AbstractDiagramGeneratorTest {
 		preg.replace(StylePackage.eNS_URI, StylePackage.eINSTANCE);
 	}
 	
-	protected Diagram getDiagram(Iterable<Diagram> diagrams, String name) {
-		return Iterables.find(diagrams, new Predicate<Diagram>() {
+	protected Diagram getDiagram(Iterator<Diagram> diagrams, String name) {
+		return Iterators.find(diagrams, new Predicate<Diagram>() {
 			@Override
 			public boolean apply(Diagram input) {				
 				return input.getName().equals(name);
@@ -86,10 +89,4 @@ public class AbstractDiagramGeneratorTest {
 		children.add(s);
 		return diagram;
 	}
-	
-    protected void assertGeneratorOutput(String expected, String actual) {
-        String normalizedExpected = expected.replaceAll("\r", "");
-        String normalizedActual = actual.replaceAll("\r", "");
-        assertEquals(normalizedExpected, normalizedActual);
-    }
 }
