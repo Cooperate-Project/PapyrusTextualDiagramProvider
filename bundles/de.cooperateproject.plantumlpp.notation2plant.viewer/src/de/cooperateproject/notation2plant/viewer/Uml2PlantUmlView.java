@@ -35,20 +35,27 @@ public class Uml2PlantUmlView extends ViewPart {
 
 	private TextViewer textviewer;
 	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
+	private static final String TERMINATE = "terminate.png";
+	private static final String START = "start.png";
+	private static final String ENABLE_TOOLTIP = "Enable Live Translation";
+	private static final String DISABLE_TOOLTIP = "Disable Live Translation";
 	//private static final Logger LOG = Logger.getLogger("Uml2PlantView");
-	private boolean toggle = true;
+	private boolean toggleLive = true;
 
-	/***
+	/**
 	 * Action to toggle if the diagram should be always translated when an change happen. 
 	 */
-	private Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
+	private Action toggleLiveAction = new Action("", IAction.AS_PUSH_BUTTON) {
 		public void run() {
-			if (this.isChecked()) {
-				toggle = false;
+			toggleLive = !toggleLive;
+			if (toggleLive) {
+				toggleLiveAction.setImageDescriptor(getImage(TERMINATE));
+				toggleLiveAction.setToolTipText(DISABLE_TOOLTIP);
+				showActualSelection();					
 			} else {
-				toggle = true;
-				showActualSelection();
-			}
+				toggleLiveAction.setImageDescriptor(getImage(START));
+				toggleLiveAction.setToolTipText(ENABLE_TOOLTIP);
+			}	
 		}
 	};
 
@@ -116,7 +123,7 @@ public class Uml2PlantUmlView extends ViewPart {
 	 * @param relativePath the path to the image
 	 * @return an ImageDescriptor for the given image
 	 */
-	private ImageDescriptor getImageDescriptor(String relativePath) {
+	private ImageDescriptor getImage(String relativePath) {
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
 		URL url = FileLocator.find(bundle, new Path("icons/" + relativePath), null);
 		return ImageDescriptor.createFromURL(url);
@@ -128,7 +135,7 @@ public class Uml2PlantUmlView extends ViewPart {
 	public void showSelection(IWorkbenchPart sourcepart, ISelection selection) {
 		setContentDescription(sourcepart.getTitle());
 
-		if (selection instanceof IStructuredSelection && toggle) {
+		if (selection instanceof IStructuredSelection && toggleLive) {
 			IStructuredSelection ss = (IStructuredSelection) selection;
 			showItems(ss.getFirstElement());
 		}
@@ -176,11 +183,11 @@ public class Uml2PlantUmlView extends ViewPart {
 		textviewer = new TextViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		textviewer.setEditable(false);
 
-		toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
-		toggleAction.setToolTipText("Disable live translation");
+		toggleLiveAction.setImageDescriptor(getImage(TERMINATE));		
+		toggleLiveAction.setToolTipText(DISABLE_TOOLTIP);
 
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
-		mgr.add(toggleAction);
+		mgr.add(toggleLiveAction);
 
 		getSite().getPage().addPartListener(partListener);
 		showActualSelection();
