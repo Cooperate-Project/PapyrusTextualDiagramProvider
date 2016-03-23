@@ -37,8 +37,8 @@ public class Uml2PlantUmlView extends ViewPart {
 	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
 	private static final String TERMINATE = "terminate.png";
 	private static final String START = "start.png";
-	private static final String ENABLE_TOOLTIP = "Enable Live Translation";
-	private static final String DISABLE_TOOLTIP = "Disable Live Translation";
+	private static final String ENABLE_TOOLTIP = "Enable Live Transformation";
+	private static final String DISABLE_TOOLTIP = "Disable Live Transformation";
 	//private static final Logger LOG = Logger.getLogger("Uml2PlantView");
 	private boolean toggleLive = true;
 

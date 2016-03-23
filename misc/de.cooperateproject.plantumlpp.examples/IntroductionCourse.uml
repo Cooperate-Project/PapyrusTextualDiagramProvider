@@ -12,7 +12,7 @@
       <edge xmi:type="uml:ControlFlow" xmi:id="_TJwQ8G56EeW555CSe72RXg" target="_Lmy10G56EeW555CSe72RXg" source="_jxCBsG55EeW555CSe72RXg">
         <guard xmi:type="uml:OpaqueExpression" xmi:id="_JvbxwHM_EeWQVvduhnWo6A">
           <language>Natural language</language>
-          <body>Abkürzungen einbeziehen</body>
+          <body>Include Shortcuts</body>
         </guard>
       </edge>
       <edge xmi:type="uml:ControlFlow" xmi:id="_o48hQG56EeW555CSe72RXg" target="_gWbtoG56EeW555CSe72RXg" source="_EPWuMG56EeW555CSe72RXg"/>
@@ -22,7 +22,7 @@
       <edge xmi:type="uml:ControlFlow" xmi:id="_mC81QHNAEeWQVvduhnWo6A" target="_jFrL0HNAEeWQVvduhnWo6A" source="_jxCBsG55EeW555CSe72RXg">
         <guard xmi:type="uml:OpaqueExpression" xmi:id="_oiTzoHNAEeWQVvduhnWo6A">
           <language>Natural language</language>
-          <body>sonst</body>
+          <body>Else</body>
         </guard>
       </edge>
       <edge xmi:type="uml:ControlFlow" xmi:id="_qpYN0HNAEeWQVvduhnWo6A" target="_jFrL0HNAEeWQVvduhnWo6A" source="_Lmy10G56EeW555CSe72RXg"/>
@@ -30,12 +30,12 @@
       <node xmi:type="uml:InitialNode" xmi:id="_Dfo98G55EeW555CSe72RXg" name="Start" outgoing="_q0F0wG55EeW555CSe72RXg"/>
       <node xmi:type="uml:ForkNode" xmi:id="_LHhVUG55EeW555CSe72RXg" incoming="_q0F0wG55EeW555CSe72RXg" outgoing="_PgNXYG56EeW555CSe72RXg _RdQ58G56EeW555CSe72RXg"/>
       <node xmi:type="uml:DecisionNode" xmi:id="_jxCBsG55EeW555CSe72RXg" incoming="_SXP18G56EeW555CSe72RXg" outgoing="_TJwQ8G56EeW555CSe72RXg _mC81QHNAEeWQVvduhnWo6A"/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_EPWuMG56EeW555CSe72RXg" name="Aktuelle Position ermitteln" incoming="_PgNXYG56EeW555CSe72RXg" outgoing="_o48hQG56EeW555CSe72RXg" language="" body=""/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_IylBwG56EeW555CSe72RXg" name="Zielort eingeben" incoming="_RdQ58G56EeW555CSe72RXg" outgoing="_SXP18G56EeW555CSe72RXg"/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_Lmy10G56EeW555CSe72RXg" name="Wege mitberechnen" incoming="_TJwQ8G56EeW555CSe72RXg" outgoing="_qpYN0HNAEeWQVvduhnWo6A"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_EPWuMG56EeW555CSe72RXg" name="Get Actuall Position" incoming="_PgNXYG56EeW555CSe72RXg" outgoing="_o48hQG56EeW555CSe72RXg" language="" body=""/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_IylBwG56EeW555CSe72RXg" name="Destination Input" incoming="_RdQ58G56EeW555CSe72RXg" outgoing="_SXP18G56EeW555CSe72RXg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_Lmy10G56EeW555CSe72RXg" name="Calculate Routes" incoming="_TJwQ8G56EeW555CSe72RXg" outgoing="_qpYN0HNAEeWQVvduhnWo6A"/>
       <node xmi:type="uml:JoinNode" xmi:id="_gWbtoG56EeW555CSe72RXg" incoming="_o48hQG56EeW555CSe72RXg _sWtSUHNAEeWQVvduhnWo6A" outgoing="_60cdgG56EeW555CSe72RXg"/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_uYq5UG56EeW555CSe72RXg" name="Route berechnen" incoming="_60cdgG56EeW555CSe72RXg" outgoing="_7jhxEG56EeW555CSe72RXg"/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_vnjuUG56EeW555CSe72RXg" name="Route ausgeben" incoming="_7jhxEG56EeW555CSe72RXg" outgoing="_OsqjIG6REeWD5eaXOvxoHA"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_uYq5UG56EeW555CSe72RXg" name="Calculate Routes" incoming="_60cdgG56EeW555CSe72RXg" outgoing="_7jhxEG56EeW555CSe72RXg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_vnjuUG56EeW555CSe72RXg" name="Return Route" incoming="_7jhxEG56EeW555CSe72RXg" outgoing="_OsqjIG6REeWD5eaXOvxoHA"/>
       <node xmi:type="uml:ActivityFinalNode" xmi:id="_L63w8G6REeWD5eaXOvxoHA" name="Ziel" incoming="_OsqjIG6REeWD5eaXOvxoHA"/>
       <node xmi:type="uml:MergeNode" xmi:id="_jFrL0HNAEeWQVvduhnWo6A" incoming="_mC81QHNAEeWQVvduhnWo6A _qpYN0HNAEeWQVvduhnWo6A" outgoing="_sWtSUHNAEeWQVvduhnWo6A"/>
     </packagedElement>
@@ -51,7 +51,7 @@
         <transition xmi:type="uml:Transition" xmi:id="_Ceu3cIOqEeWT7qQ-eeh93Q" source="_SxcmAG53EeW555CSe72RXg" target="_drLIoG53EeW555CSe72RXg">
           <trigger xmi:type="uml:Trigger" xmi:id="_PZn8YIOxEeWQZomqvYU-Dw" name="Automatisches ausschalten" event="_PQ7TYIOxEeWQZomqvYU-Dw"/>
         </transition>
-        <subvertex xmi:type="uml:State" xmi:id="_SxcmAG53EeW555CSe72RXg" name="Navi Ein">
+        <subvertex xmi:type="uml:State" xmi:id="_SxcmAG53EeW555CSe72RXg" name="Navi On">
           <region xmi:type="uml:Region" xmi:id="_Ti_XsG53EeW555CSe72RXg" name="Region1">
             <transition xmi:type="uml:Transition" xmi:id="_FDQiQG54EeW555CSe72RXg" source="_343kkG53EeW555CSe72RXg" target="_CXrFwG54EeW555CSe72RXg"/>
             <transition xmi:type="uml:Transition" xmi:id="_LXL-cG54EeW555CSe72RXg" source="_CXrFwG54EeW555CSe72RXg" target="_Gm6GUG54EeW555CSe72RXg">
@@ -64,39 +64,39 @@
               </effect>
               <trigger xmi:type="uml:Trigger" xmi:id="_Rw22gIPSEeWuTNa-diif4w" name="GPS Signal verloren und nicht wiederfindbar" event="_Ri56EIPSEeWuTNa-diif4w"/>
             </transition>
-            <subvertex xmi:type="uml:Pseudostate" xmi:id="_343kkG53EeW555CSe72RXg" name="Navi Ein Start"/>
-            <subvertex xmi:type="uml:State" xmi:id="_CXrFwG54EeW555CSe72RXg" name="Kein GPS Signal"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_343kkG53EeW555CSe72RXg" name="Navi On Start"/>
+            <subvertex xmi:type="uml:State" xmi:id="_CXrFwG54EeW555CSe72RXg" name="No GPS Signal"/>
             <subvertex xmi:type="uml:State" xmi:id="_Gm6GUG54EeW555CSe72RXg" name="GPS Signal"/>
           </region>
         </subvertex>
         <subvertex xmi:type="uml:Pseudostate" xmi:id="_YA67kG53EeW555CSe72RXg" name="Start"/>
-        <subvertex xmi:type="uml:State" xmi:id="_drLIoG53EeW555CSe72RXg" name="Navi Aus"/>
+        <subvertex xmi:type="uml:State" xmi:id="_drLIoG53EeW555CSe72RXg" name="Navi Off"/>
       </region>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_YAOC4G51EeW555CSe72RXg" name="Navigerät">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_gV0r4IO-EeWev9Rsf3o_lA" name="berechneRoute" visibility="public">
+    <packagedElement xmi:type="uml:Class" xmi:id="_YAOC4G51EeW555CSe72RXg" name="Navigation">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_gV0r4IO-EeWev9Rsf3o_lA" name="calculateRoute" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_V-6tAIO_EeWev9Rsf3o_lA" type="_YNMu8G51EeW555CSe72RXg" direction="return"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bNwwcIO_EeWev9Rsf3o_lA" name="start" type="_Ybr24G51EeW555CSe72RXg"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_myR8gIO_EeWev9Rsf3o_lA" name="end" type="_Ybr24G51EeW555CSe72RXg"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YNMu8G51EeW555CSe72RXg" name="Route">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_zXlcoG51EeW555CSe72RXg" name="Länge">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zXlcoG51EeW555CSe72RXg" name="Distance">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_1kziIG51EeW555CSe72RXg" name="Dauer">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1kziIG51EeW555CSe72RXg" name="Duration">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ybr24G51EeW555CSe72RXg" name="Position"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_YraU8G51EeW555CSe72RXg" name="Routenabschnitt">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_40GvsG51EeW555CSe72RXg" name="Straßenname">
+    <packagedElement xmi:type="uml:Class" xmi:id="_YraU8G51EeW555CSe72RXg" name="Routingstage">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_40GvsG51EeW555CSe72RXg" name="Streetname">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_7ZrDwG51EeW555CSe72RXg" name="Anfangspunkt" type="_Ybr24G51EeW555CSe72RXg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_-rVBwG51EeW555CSe72RXg" name="Endpunkt" type="_Ybr24G51EeW555CSe72RXg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7ZrDwG51EeW555CSe72RXg" name="StartPosition" type="_Ybr24G51EeW555CSe72RXg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_-rVBwG51EeW555CSe72RXg" name="EndPosition" type="_Ybr24G51EeW555CSe72RXg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_eZn08G51EeW555CSe72RXg" name="berechnet" memberEnd="_eZrfUG51EeW555CSe72RXg _eZrfUW51EeW555CSe72RXg">
+    <packagedElement xmi:type="uml:Association" xmi:id="_eZn08G51EeW555CSe72RXg" name="calculate" memberEnd="_eZrfUG51EeW555CSe72RXg _eZrfUW51EeW555CSe72RXg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eZpqIG51EeW555CSe72RXg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eZqRMG51EeW555CSe72RXg" key="nature" value="UML_Nature"/>
       </eAnnotations>
@@ -104,7 +104,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iZ8PwG51EeW555CSe72RXg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iZ_TEG51EeW555CSe72RXg" value="*"/>
       </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_eZrfUG51EeW555CSe72RXg" name="navigerät" type="_YAOC4G51EeW555CSe72RXg" association="_eZn08G51EeW555CSe72RXg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_eZrfUG51EeW555CSe72RXg" name="navigation" type="_YAOC4G51EeW555CSe72RXg" association="_eZn08G51EeW555CSe72RXg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hTUl8G51EeW555CSe72RXg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hTZecG51EeW555CSe72RXg" value="*"/>
       </ownedEnd>
@@ -117,13 +117,13 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rGzSMG51EeW555CSe72RXg" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rG2VgG51EeW555CSe72RXg" value="1"/>
       </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_my1iom51EeW555CSe72RXg" name="routenabschnitt" type="_YraU8G51EeW555CSe72RXg" aggregation="composite" association="_my07kG51EeW555CSe72RXg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_my1iom51EeW555CSe72RXg" name="routingstage" type="_YraU8G51EeW555CSe72RXg" aggregation="composite" association="_my07kG51EeW555CSe72RXg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tlfiMG51EeW555CSe72RXg" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tlilgG51EeW555CSe72RXg" value="*"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Actor" xmi:id="_NqiMAG52EeW555CSe72RXg" name="Person"/>
-    <packagedElement xmi:type="uml:Actor" xmi:id="_N8_1AG52EeW555CSe72RXg" name="GPS Satellitensystem"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_N8_1AG52EeW555CSe72RXg" name="GPS Satellite System"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_0iRRoG52EeW555CSe72RXg" memberEnd="_0iR4sm52EeW555CSe72RXg _0iSfwG52EeW555CSe72RXg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0iR4sG52EeW555CSe72RXg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0iR4sW52EeW555CSe72RXg" key="nature" value="UML_Nature"/>
@@ -145,43 +145,14 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_1x34UG52EeW555CSe72RXg" name="aktuelle position ermitterln" type="_f08uAG52EeW555CSe72RXg" association="_1x2qMG52EeW555CSe72RXg"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_1x34UW52EeW555CSe72RXg" name="gps satellitensystem" type="_N8_1AG52EeW555CSe72RXg" association="_1x2qMG52EeW555CSe72RXg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:StateMachine" xmi:id="_knrz4HigEeW5l_YQtpEqRw" name="StateMachine2">
-      <region xmi:type="uml:Region" xmi:id="_l2lP8HigEeW5l_YQtpEqRw" name="Region1">
-        <transition xmi:type="uml:Transition" xmi:id="_bj_JUHihEeW5l_YQtpEqRw" guard="_h_KOQHinEeW5l_YQtpEqRw" source="_MqjP4HihEeW5l_YQtpEqRw" target="_Y7SowHihEeW5l_YQtpEqRw">
-          <ownedRule xmi:type="uml:Constraint" xmi:id="_h_KOQHinEeW5l_YQtpEqRw" name="Pin ist korrekt">
-            <specification xmi:type="uml:OpaqueExpression" xmi:id="_h_K1UHinEeW5l_YQtpEqRw">
-              <language>Natural language</language>
-              <body>korrekt</body>
-            </specification>
-          </ownedRule>
-          <trigger xmi:type="uml:Trigger" xmi:id="_Nf9HsHi-EeW5l_YQtpEqRw" name="Pin wird geprüft" event="_KhLpcHi-EeW5l_YQtpEqRw"/>
-        </transition>
-        <transition xmi:type="uml:Transition" xmi:id="_WMB7QHijEeW5l_YQtpEqRw" guard="_vGmTsHipEeW5l_YQtpEqRw" source="_MqjP4HihEeW5l_YQtpEqRw" target="_MqjP4HihEeW5l_YQtpEqRw">
-          <ownedRule xmi:type="uml:Constraint" xmi:id="_vGmTsHipEeW5l_YQtpEqRw" name="Pin ist inkorrekt">
-            <specification xmi:type="uml:OpaqueExpression" xmi:id="_vGmTsXipEeW5l_YQtpEqRw">
-              <language>Natural language</language>
-              <body>inkorrekt</body>
-            </specification>
-          </ownedRule>
-          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Y5SaoHjCEeW5l_YQtpEqRw">
-            <language>Natural language</language>
-            <body>erhöheFehlerZähler</body>
-          </effect>
-          <trigger xmi:type="uml:Trigger" xmi:id="_KrIPoHi-EeW5l_YQtpEqRw" name="Pin wird geprüft" event="_KhLpcHi-EeW5l_YQtpEqRw"/>
-        </transition>
-        <subvertex xmi:type="uml:State" xmi:id="_MqjP4HihEeW5l_YQtpEqRw" name="Authentifizierung"/>
-        <subvertex xmi:type="uml:State" xmi:id="_Y7SowHihEeW5l_YQtpEqRw" name="Geld abheben"/>
-      </region>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_OppVoHioEeW5l_YQtpEqRw" name="Navigationsapp">
-      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_ecaNwG52EeW555CSe72RXg" name="Zielort eingeben"/>
-      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_eweZQG52EeW555CSe72RXg" name="Zum Zielen gehen">
+    <packagedElement xmi:type="uml:Component" xmi:id="_OppVoHioEeW5l_YQtpEqRw" name="Navigationapp">
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_ecaNwG52EeW555CSe72RXg" name="Destination Input"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_eweZQG52EeW555CSe72RXg" name="Go To Destination">
         <include xmi:type="uml:Include" xmi:id="_yRuLUG52EeW555CSe72RXg" addition="_ecaNwG52EeW555CSe72RXg"/>
         <include xmi:type="uml:Include" xmi:id="_ywSWoG52EeW555CSe72RXg" addition="_f08uAG52EeW555CSe72RXg"/>
       </ownedUseCase>
-      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_f08uAG52EeW555CSe72RXg" name="Aktuelle Position ermitterln"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_f08uAG52EeW555CSe72RXg" name="Get Actuall Position"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:CallEvent" xmi:id="_KhLpcHi-EeW5l_YQtpEqRw" name="PrüfePin" operation="_MShwIIPTEeW4HO7Y69cQGg"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_bt0K8H5YEeWPcOqj_b2how" name="GPS empfangen" signal="_Td_jMIPREeWuTNa-diif4w"/>
     <packagedElement xmi:type="uml:ChangeEvent" xmi:id="_PldDQH5eEeWPcOqj_b2how" name="Es wird eingeschalten">
       <changeExpression xmi:type="uml:OpaqueExpression" xmi:id="_PldDQX5eEeWPcOqj_b2how" name="einschalten">
@@ -210,8 +181,8 @@
         <body>Kein GPS Signal erreichbar</body>
       </changeExpression>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_KiO3MIPTEeW4HO7Y69cQGg" name="Bankautomat">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_MShwIIPTEeW4HO7Y69cQGg" name="prüfePin">
+    <packagedElement xmi:type="uml:Class" xmi:id="_KiO3MIPTEeW4HO7Y69cQGg" name="CashMachine">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MShwIIPTEeW4HO7Y69cQGg" name="checkPin">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_RjPb0IPTEeW4HO7Y69cQGg">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
