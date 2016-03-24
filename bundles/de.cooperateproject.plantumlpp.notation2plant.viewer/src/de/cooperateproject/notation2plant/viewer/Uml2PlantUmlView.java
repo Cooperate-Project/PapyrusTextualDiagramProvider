@@ -25,34 +25,45 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IPartListener2;
 import org.eclipse.ui.IPropertyListener;
+import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.framework.Bundle;
 
 import de.cooperateproject.generator.PlantGenerator;
 
 public class Uml2PlantUmlView extends ViewPart {
-
 	
 	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
+	private static final String TERMINATE = "terminate.png";
+	private static final String START = "start.png";
+	private static final String ENABLE_TOOLTIP = "Enable Live Transformation";
+	private static final String DISABLE_TOOLTIP = "Disable Live Transformation";
+	private static final String VISUALIZATION_ENABLE_TOOLTIP = "Enable Graphical Visualizations";
+	private static final String VISUALIZATION_DISABLE_TOOLTIP = "Disable Graphical Visualizations";
+	private static final Logger LOGGER = Logger.getLogger(Uml2PlantUmlView.class);
 	
 	private final Uml2PlantUmlViewGraphicalVisualization visualization = new Uml2PlantUmlViewGraphicalVisualization();
+	private boolean toggleLive = true;
 	private TextViewer textviewer;
-	private static final Logger LOGGER = Logger.getLogger("Uml2PlantView");
-	private boolean toggle = true;
 	
     private class ShowVisualizationAction extends Action {
         public ShowVisualizationAction() {
             super("", IAction.AS_CHECK_BOX);
             setChecked(false);
-            setText("Visualization");
-            setToolTipText("Show graphical visualizations of PlantUML code.");
+            PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_ETOOL_DEF_PERSPECTIVE);
         }
         
         @Override
         public void run() {
+            if (this.isChecked()) {
+                setToolTipText(VISUALIZATION_DISABLE_TOOLTIP);
+            } else {
+                setToolTipText(VISUALIZATION_ENABLE_TOOLTIP);
+            }
             try {
                 visualization.changeEnabledStatus(this.isChecked());
                 showActualSelection();
@@ -62,17 +73,20 @@ public class Uml2PlantUmlView extends ViewPart {
         }
     }
 	
-	/***
+	/**
 	 * Action to toggle if the diagram should be always translated when an change happen. 
 	 */
-	private final Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
+	private Action toggleLiveAction = new Action("", IAction.AS_PUSH_BUTTON) {
 		public void run() {
-			if (this.isChecked()) {
-				toggle = false;
+			toggleLive = !toggleLive;
+			if (toggleLive) {
+				toggleLiveAction.setImageDescriptor(getImage(TERMINATE));
+				toggleLiveAction.setToolTipText(DISABLE_TOOLTIP);
+				showActualSelection();					
 			} else {
-				toggle = true;
-				showActualSelection();
-			}
+				toggleLiveAction.setImageDescriptor(getImage(START));
+				toggleLiveAction.setToolTipText(ENABLE_TOOLTIP);
+			}	
 		}
 	};
 	
@@ -144,7 +158,7 @@ public class Uml2PlantUmlView extends ViewPart {
 	 * @param relativePath the path to the image
 	 * @return an ImageDescriptor for the given image
 	 */
-	private ImageDescriptor getImageDescriptor(String relativePath) {
+	private ImageDescriptor getImage(String relativePath) {
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
 		URL url = FileLocator.find(bundle, new Path("icons/" + relativePath), null);
 		return ImageDescriptor.createFromURL(url);
@@ -156,7 +170,7 @@ public class Uml2PlantUmlView extends ViewPart {
 	public void showSelection(IWorkbenchPart sourcepart, ISelection selection) {
 		setContentDescription(sourcepart.getTitle());
 
-		if (selection instanceof IStructuredSelection && toggle) {
+		if (selection instanceof IStructuredSelection && toggleLive) {
 			IStructuredSelection ss = (IStructuredSelection) selection;
 			showItems(ss.getFirstElement());
 		}
@@ -209,11 +223,12 @@ public class Uml2PlantUmlView extends ViewPart {
 		textviewer = new TextViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		textviewer.setEditable(false);
 
-		toggleAction.setImageDescriptor(getImageDescriptor("cross.png"));
-		toggleAction.setToolTipText("Disable live translation");
+		toggleLiveAction.setImageDescriptor(getImage(TERMINATE));		
+		toggleLiveAction.setToolTipText(DISABLE_TOOLTIP);
 
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
-		mgr.add(toggleAction);
+
+		mgr.add(toggleLiveAction);
 		mgr.add(showDiagramAction);
 
 		getSite().getPage().addPartListener(partListener);

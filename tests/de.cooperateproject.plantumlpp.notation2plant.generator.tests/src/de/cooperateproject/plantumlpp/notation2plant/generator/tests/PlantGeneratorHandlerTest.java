@@ -1,37 +1,31 @@
 package de.cooperateproject.plantumlpp.notation2plant.generator.tests;
 
-import java.io.File;
-import java.io.IOException;
+//import java.io.File;
+//import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 import java.util.List;
 
-import static org.mockito.Mockito.*;
+//import static org.mockito.Mockito.*;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IPath;
+/*import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.ResourceSet;*/
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.InjectMocks;
+/*import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.MockitoAnnotations;*/
 
 import de.cooperateproject.generator.PlantGeneratorHandler;
 
 public class PlantGeneratorHandlerTest {
-	/*@Mock 
-	ResourceSet resSet;
-	
-	@InjectMocks
-	PlantGeneratorHandler mockHandler;*/
-	
-
+		
 	private static PlantGeneratorHandler generatorHandler;
 
 	@BeforeClass
