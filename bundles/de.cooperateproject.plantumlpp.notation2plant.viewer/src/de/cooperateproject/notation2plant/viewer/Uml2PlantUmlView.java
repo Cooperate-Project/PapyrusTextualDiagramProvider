@@ -2,6 +2,7 @@ package de.cooperateproject.notation2plant.viewer;
 
 import java.net.URL;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -26,6 +27,7 @@ import org.eclipse.ui.IPartListener2;
 import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartReference;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.framework.Bundle;
 
@@ -33,15 +35,37 @@ import de.cooperateproject.generator.PlantGenerator;
 
 public class Uml2PlantUmlView extends ViewPart {
 
-	private TextViewer textviewer;
+	
 	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
-	//private static final Logger LOG = Logger.getLogger("Uml2PlantView");
+	
+	private final Uml2PlantUmlViewGraphicalVisualization visualization = new Uml2PlantUmlViewGraphicalVisualization();
+	private TextViewer textviewer;
+	private static final Logger LOGGER = Logger.getLogger("Uml2PlantView");
 	private boolean toggle = true;
-
+	
+    private class ShowVisualizationAction extends Action {
+        public ShowVisualizationAction() {
+            super("", IAction.AS_CHECK_BOX);
+            setChecked(false);
+            setText("Visualization");
+            setToolTipText("Show graphical visualizations of PlantUML code.");
+        }
+        
+        @Override
+        public void run() {
+            try {
+                visualization.changeEnabledStatus(this.isChecked());
+                showActualSelection();
+            } catch (PartInitException e) {
+                LOGGER.warn("The status of the graphical visualization could not be set.", e);
+            }
+        }
+    }
+	
 	/***
 	 * Action to toggle if the diagram should be always translated when an change happen. 
 	 */
-	private Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
+	private final Action toggleAction = new Action("", IAction.AS_CHECK_BOX) {
 		public void run() {
 			if (this.isChecked()) {
 				toggle = false;
@@ -51,6 +75,10 @@ public class Uml2PlantUmlView extends ViewPart {
 			}
 		}
 	};
+	
+
+	private final Action showDiagramAction = new ShowVisualizationAction();
+	
 
 	/**
 	 * Listener fires if there was a change in the papyrus diagram editor.
@@ -169,6 +197,11 @@ public class Uml2PlantUmlView extends ViewPart {
 	 */
 	private void showText(String text) {
 		textviewer.setDocument(new Document(text));
+		try {
+            visualization.updateVisualization(text);
+        } catch (PartInitException e) {
+            LOGGER.warn("The graphical visualization could not be updated.", e);
+        }
 	}
 
 	@Override
@@ -181,6 +214,7 @@ public class Uml2PlantUmlView extends ViewPart {
 
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
 		mgr.add(toggleAction);
+		mgr.add(showDiagramAction);
 
 		getSite().getPage().addPartListener(partListener);
 		showActualSelection();

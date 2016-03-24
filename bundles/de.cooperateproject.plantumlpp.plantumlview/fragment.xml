@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            class="de.cooperateproject.plantumlpp.plantumlview.PlantUMLView"
+            id="de.cooperateproject.plantumlpp.plantumlview.PlantUMLView"
+            name="PlantUML Viewer"
+            restorable="false">
+      </view>
+   </extension>
+   <extension
+         point="de.cooperateproject.plantumlpp.notation2plant.viewer.graphicalvisualizer">
+      <provides
+            provider="de.cooperateproject.plantumlpp.plantumlview.PlantUMLGraphicalVisualizer">
+      </provides>
+   </extension>
+
+</fragment>

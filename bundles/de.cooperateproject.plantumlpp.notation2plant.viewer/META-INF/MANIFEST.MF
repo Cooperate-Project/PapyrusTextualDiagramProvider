@@ -6,4 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.1.2",
  org.apache.log4j,
- de.cooperateproject.plantumlpp.notation2plant.generator;bundle-version="1.0.0"
+ de.cooperateproject.plantumlpp.notation2plant.generator;bundle-version="1.0.0",
+ com.google.guava;bundle-version="15.0.0",
+ edu.kit.ipd.sdq.vitruvius.framework.util;bundle-version="1.0.0"
+Export-Package: de.cooperateproject.notation2plant.viewer.extensions

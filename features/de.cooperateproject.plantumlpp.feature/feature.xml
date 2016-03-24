@@ -16,12 +16,9 @@
       [Enter License Description here.]
    </license>
 
-   <includes
-         id="org.eclipse.papyrus.infra.gmfdiag.feature"
-         version="0.0.0"/>
-
    <requires>
       <import feature="org.eclipse.papyrus.sdk.feature" version="1.1.2.201509161440"/>
+      <import feature="net.sourceforge.plantuml.feature" version="1.1.8.8037"/>
    </requires>
 
    <plugin
@@ -57,6 +54,14 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.cooperateproject.plantumlpp.plantumlview"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
          unpack="false"/>
 
 </feature>

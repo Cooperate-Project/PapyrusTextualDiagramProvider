@@ -23,5 +23,6 @@
 		<module>../../bundles/edu.kit.ipd.sdq.commons.ecore2txt</module>
 		<module>../../bundles/edu.kit.ipd.sdq.vitruvius.framework.util</module>
 		<module>../../bundles/de.cooperateproject.plantumlpp.notation2plant.viewer</module>
+		<module>../../bundles/de.cooperateproject.plantumlpp.plantumlview</module>
 	</modules>
 </project> 
