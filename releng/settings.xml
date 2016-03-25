@@ -12,7 +12,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<sonar.host.url>https://mammutbaum36.fzi.de/sonar</sonar.host.url>
+				<sonar.host.url>https://mammutbaum36.fzi.de</sonar.host.url>
 				<sonar.login>${env.SONAR_USERNAME}</sonar.login>
 				<sonar.password>${env.SONAR_PASSWORD}</sonar.password>
 			</properties>
