@@ -18,7 +18,7 @@
 		<deployUser>${env.DEPLOY_USERNAME}</deployUser>
 		<deployKey>${env.DEPLOY_PASSWORD}</deployKey>
 		<deploySubject>cooperate-project</deploySubject>
-		<deployRepository>Notation2Plant</deployRepository>
+		<deployRepository>PapyrusTextualDiagramProvider</deployRepository>
 		<deployPackage>updatesite</deployPackage>
 		<deployVersion>latest</deployVersion>
 	</properties>
