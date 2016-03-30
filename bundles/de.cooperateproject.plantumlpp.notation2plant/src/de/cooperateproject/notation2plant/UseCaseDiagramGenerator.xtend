@@ -98,6 +98,9 @@ class UseCaseDiagramGenerator {
 	private def dispatch declaration(Usage u){
 		defineUsage(u)
 	}
+	private def dispatch declaration(Include i){
+		defineInclude(i)
+	}
 	private def dispatch declaration(Abstraction a){
 		defineAbstraction(a)
 	}
@@ -122,10 +125,20 @@ class UseCaseDiagramGenerator {
 	} 
 	
 	private def defineUsage(Usage usage) {
-		val head = usage.clients.head;
-		val tail = usage.suppliers.head;
-		printConnection(head, tail, " : use", " ..> ");	
+		val head = usage.clients.head
+		val tail = usage.suppliers.head
+		printConnection(head, tail, " : use", " ..> ")
 	} 
+	
+	private def defineInclude(Include include) {
+		//«parent.printElement» .> («element.addition.name») : include
+		val head = include.eContainer
+		val tail = include.addition
+		if (head instanceof NamedElement) {
+			printConnection(head, tail, " : include", " .> ")	
+		}			
+	} 
+	
 	private def defineAbstraction(Abstraction abstraction) {
 		val head = abstraction.clients.head;
 		val tail = abstraction.suppliers.head;
@@ -186,10 +199,7 @@ class UseCaseDiagramGenerator {
 	
 	private def printMembers(List<NamedElement> elements, NamedElement parent) '''
 	«FOR element : elements»
-		«IF element instanceof Include»«parent.printElement» .> («element.addition.name») : include
-			«ELSE»
-			«IF element instanceof Extend»«parent.printElement» .> («element.extendedCase.name») : extend
-			«ENDIF»
+		«IF element instanceof Extend»«parent.printElement» .> («element.extendedCase.name») : extend
 		«ENDIF»
 	«ENDFOR»
 	'''

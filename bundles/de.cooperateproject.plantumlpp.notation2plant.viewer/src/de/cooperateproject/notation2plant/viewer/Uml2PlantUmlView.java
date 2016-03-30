@@ -40,8 +40,10 @@ public class Uml2PlantUmlView extends ViewPart {
 	private static final String PLUGIN_ID = "de.cooperateproject.plantumlpp.notation2plant.viewer";
 	private static final String TERMINATE = "terminate.png";
 	private static final String START = "start.png";
+	private static final String PLANT = "plant.png";
 	private static final String ENABLE_TOOLTIP = "Enable Live Transformation";
 	private static final String DISABLE_TOOLTIP = "Disable Live Transformation";
+	private static final String PLANT_TOOLTIP = "Show UML Diagram";
 	private static final String VISUALIZATION_ENABLE_TOOLTIP = "Enable Graphical Visualizations";
 	private static final String VISUALIZATION_DISABLE_TOOLTIP = "Disable Graphical Visualizations";
 	private static final Logger LOGGER = Logger.getLogger(Uml2PlantUmlView.class);
@@ -226,6 +228,9 @@ public class Uml2PlantUmlView extends ViewPart {
 		toggleLiveAction.setImageDescriptor(getImage(TERMINATE));		
 		toggleLiveAction.setToolTipText(DISABLE_TOOLTIP);
 
+		showDiagramAction.setImageDescriptor(getImage(PLANT));
+		showDiagramAction.setToolTipText(PLANT_TOOLTIP);
+		
 		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
 
 		mgr.add(toggleLiveAction);
