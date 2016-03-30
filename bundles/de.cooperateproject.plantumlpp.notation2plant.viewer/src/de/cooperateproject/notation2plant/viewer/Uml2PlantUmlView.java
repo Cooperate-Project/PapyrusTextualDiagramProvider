@@ -162,7 +162,7 @@ public class Uml2PlantUmlView extends ViewPart {
 	 */
 	private ImageDescriptor getImage(String relativePath) {
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
-		URL url = FileLocator.find(bundle, new Path("icons/" + relativePath), null);
+		URL url = FileLocator.find(bundle, new Path("/icons/" + relativePath), null);
 		return ImageDescriptor.createFromURL(url);
 	}
 

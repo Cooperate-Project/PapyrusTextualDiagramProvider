@@ -9,7 +9,7 @@
             class="de.cooperateproject.notation2plant.viewer.Uml2PlantUmlView"
             id="de.cooperateproject.notation2plant.viewer.view1"
             name="TextualDiagram View"
-            icon="icons\cooperate.png"
+            icon="/icons/cooperate.png"
             restorable="true">
       </view>
    </extension>

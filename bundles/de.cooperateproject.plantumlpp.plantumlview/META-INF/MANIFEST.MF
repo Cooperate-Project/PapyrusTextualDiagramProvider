@@ -4,7 +4,6 @@ Bundle-Name: Plantumlview
 Bundle-SymbolicName: de.cooperateproject.plantumlpp.plantumlview;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Fragment-Host: net.sourceforge.plantuml.eclipse;bundle-version="1.1.7"
-Require-Bundle: net.sourceforge.plantuml.eclipse;bundle-version="1.1.7",
- com.google.guava;bundle-version="15.0.0",
+Require-Bundle: com.google.guava;bundle-version="15.0.0",
  de.cooperateproject.plantumlpp.notation2plant.viewer;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
