@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
@@ -29,9 +30,8 @@ import org.eclipse.xtext.generator.JavaIoFileSystemAccess;
 import org.eclipse.xtext.parser.IEncodingProvider;
 import org.eclipse.xtext.service.AbstractGenericModule;
 
-import com.google.common.base.Function;
 import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
+import com.google.common.collect.FluentIterable;
 import com.google.inject.Guice;
 
 import edu.kit.ipd.sdq.commons.ecore2txt.handler.AbstractEcore2TxtHandler;
@@ -56,20 +56,17 @@ public class PlantGeneratorHandler extends AbstractEcore2TxtHandler<IFile> {
     @Override
     public Iterable<IFile> filterSelection(ISelection selection) {
         if (!(selection instanceof IStructuredSelection)) {
-            return (Iterable<IFile>) Collections.EMPTY_LIST;
+            return (Iterable<IFile>) Collections.<IFile> emptyList();
         }
 
         IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-        Iterable<IFile> papyrusFiles = Iterables.transform(structuredSelection.toList(), new Function<Object, IFile>() {
-            @Override
-            public IFile apply(Object input) {
-                if (input instanceof IPapyrusFile) {
-                    return ((IPapyrusFile) input).getMainFile();
-                }
-                return null;
-            }
-        });
-        return Iterables.filter(papyrusFiles, Predicates.notNull());
+        FluentIterable<IPapyrusFile> files = FluentIterable
+        		.from(structuredSelection.toList())
+        		.filter(IPapyrusFile.class);
+        //can not be combined in eclipse due to dubios reasons
+        return files
+        		.transform(IPapyrusFile::getMainFile)
+        		.filter(Predicates.notNull());
     }
 
     @Override
