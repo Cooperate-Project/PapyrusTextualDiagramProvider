@@ -61,12 +61,12 @@ public class PlantGeneratorHandler extends AbstractEcore2TxtHandler<IFile> {
 
         IStructuredSelection structuredSelection = (IStructuredSelection) selection;
         FluentIterable<IPapyrusFile> files = FluentIterable
-        		.from(structuredSelection.toList())
-        		.filter(IPapyrusFile.class);
+                .from(structuredSelection.toList())
+                .filter(IPapyrusFile.class);
         //can not be combined in eclipse due to dubios reasons
         return files
-        		.transform(IPapyrusFile::getMainFile)
-        		.filter(Predicates.notNull());
+                .transform(IPapyrusFile::getMainFile)
+                .filter(Predicates.notNull());
     }
 
     @Override
