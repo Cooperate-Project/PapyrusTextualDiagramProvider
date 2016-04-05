@@ -12,8 +12,9 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 import net.sourceforge.plantuml.eclipse.actions.ToggleButtonAction;
+import net.sourceforge.plantuml.eclipse.views.PlantUmlView;
 
-public class PlantUMLView extends net.sourceforge.plantuml.eclipse.views.PlantUmlView {
+public class PlantUMLView extends PlantUmlView {
 
     public static final String ID = "de.cooperateproject.plantumlpp.plantumlview.PlantUMLView";
     private boolean disposed = false;

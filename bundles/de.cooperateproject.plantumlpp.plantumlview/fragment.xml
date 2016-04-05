@@ -8,6 +8,7 @@
             class="de.cooperateproject.plantumlpp.plantumlview.PlantUMLView"
             id="de.cooperateproject.plantumlpp.plantumlview.PlantUMLView"
             name="PlantUML Viewer"
+            icon="/icons/plant.png"
             restorable="false">
       </view>
    </extension>
