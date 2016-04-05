@@ -5,6 +5,6 @@
    </feature>
    <category-def name="default" label="Viewer"/>
    <repository-reference location="http://download.eclipse.org/tools/orbit/downloads/drops/R20151118145958/repository/" enabled="true" />
-   <repository-reference location="http://plantuml.sourceforge.net/updatesitejuno" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/" enabled="true" />
+   <repository-reference location="http://plantuml.sourceforge.net/updatesitejuno/" enabled="true" />
 </site>
