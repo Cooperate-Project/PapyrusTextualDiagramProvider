@@ -14,7 +14,10 @@
 	<name>Update Site</name>
 
 	<properties>
+		<siteTemplateFolder>${basedir}/templates</siteTemplateFolder>
+		<update.site.name>Papyrus Textual Diagram Provider</update.site.name>
 		<!-- We use the nightly profile as defaults -->
+		<update.site.releasetype>Nightly Build</update.site.releasetype>
 		<deployUser>${env.DEPLOY_USERNAME}</deployUser>
 		<deployKey>${env.DEPLOY_PASSWORD}</deployKey>
 		<deploySubject>cooperate-project</deploySubject>
@@ -23,11 +26,25 @@
 		<deployVersion>latest</deployVersion>
 	</properties>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss-snapshots-repository</id>
+			<name>JBoss Snapshots Repository</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<profiles>
 		<profile>
 			<id>release</id>
 			<properties>
 				<deployPackage>${project.version}</deployPackage>
+				<update.site.releasetype>Release Build</update.site.releasetype>
 			</properties>
 		</profile>
 		<profile>
@@ -38,6 +55,33 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.jboss.tools.tycho-plugins</groupId>
+				<artifactId>repository-utils</artifactId>
+				<version>0.23.3-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<id>generate-facade</id>
+						<phase>package</phase>
+						<goals>
+							<goal>generate-repository-facade</goal>
+						</goals>
+						<configuration>
+							<siteTemplateFolder>${siteTemplateFolder}</siteTemplateFolder>
+							<skipBuildInfo>true</skipBuildInfo>
+							<symbols>
+								<update.site.name>${update.site.name}</update.site.name>
+								<update.site.releasetype>${update.site.releasetype}</update.site.releasetype>
+								<update.site.version>${deployVersion}</update.site.version>
+							</symbols>
+							<associateSites>
+								<associateSite>http://plantuml.sourceforge.net/updatesitejuno</associateSite>
+							</associateSites>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
