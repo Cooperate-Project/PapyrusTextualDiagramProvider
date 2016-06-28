@@ -13,130 +13,15 @@
 	<packaging>eclipse-repository</packaging>
 	<name>Update Site</name>
 
-	<properties>
-		<siteTemplateFolder>${basedir}/templates</siteTemplateFolder>
-		<update.site.name>Papyrus Textual Diagram Provider</update.site.name>
-		<!-- We use the nightly profile as defaults -->
-		<update.site.releasetype>Nightly Build</update.site.releasetype>
-		<deployUser>${env.DEPLOY_USERNAME}</deployUser>
-		<deployKey>${env.DEPLOY_PASSWORD}</deployKey>
-		<deploySubject>cooperate-project</deploySubject>
-		<deployRepository>PapyrusTextualDiagramProvider</deployRepository>
-		<deployPackage>updatesite</deployPackage>
-		<deployVersion>latest</deployVersion>
-	</properties>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>jboss-public-repository-group</id>
-			<name>JBoss Public Repository Group</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>jboss-snapshots-repository</id>
-			<name>JBoss Snapshots Repository</name>
-			<url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<profiles>
-		<profile>
-			<id>release</id>
-			<properties>
-				<deployPackage>${project.version}</deployPackage>
-				<update.site.releasetype>Release Build</update.site.releasetype>
-			</properties>
-		</profile>
-		<profile>
-			<id>nightly</id>
-			<!-- just use the default values for the properties -->
-		</profile>
-	</profiles>
-
 	<build>
 		<plugins>
-
-			<plugin>
-				<groupId>org.jboss.tools.tycho-plugins</groupId>
-				<artifactId>repository-utils</artifactId>
-				<version>0.23.3-SNAPSHOT</version>
-				<executions>
-					<execution>
-						<id>generate-facade</id>
-						<phase>package</phase>
-						<goals>
-							<goal>generate-repository-facade</goal>
-						</goals>
-						<configuration>
-							<siteTemplateFolder>${siteTemplateFolder}</siteTemplateFolder>
-							<skipBuildInfo>true</skipBuildInfo>
-							<symbols>
-								<update.site.name>${update.site.name}</update.site.name>
-								<update.site.releasetype>${update.site.releasetype}</update.site.releasetype>
-								<update.site.version>${deployVersion}</update.site.version>
-							</symbols>
-							<associateSites>
-								<associateSite>http://plantuml.sourceforge.net/updatesitejuno</associateSite>
-							</associateSites>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<useReleaseProfile>false</useReleaseProfile>
-					<releaseProfiles>release</releaseProfiles>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<releaseVersion>${deployVersion}</releaseVersion>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>${maven.deploy-plugin.version}</version>
 				<configuration>
-					<skip>false</skip>
+					<skip>true</skip>
 				</configuration>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>none</phase>
-					</execution>
-					<execution>
-						<id>deploy-updatesite</id>
-						<phase>deploy</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.4.0</version>
-				<executions>
-					<execution>
-						<id>deploy-updatesite</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>python</executable>
-							<arguments>
-								<argument>${basedir}/../deploy.py</argument>
-								<argument>${deployUser}</argument>
-								<argument>${deployKey}</argument>
-								<argument>${deploySubject}</argument>
-								<argument>${deployRepository}</argument>
-								<argument>${deployPackage}</argument>
-								<argument>${deployVersion}</argument>
-								<argument>${project.build.directory}/${project.artifactId}-${project.version}.zip</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 
 		</plugins>

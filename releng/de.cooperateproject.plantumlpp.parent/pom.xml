@@ -18,6 +18,19 @@
 		<maven.deploy-plugin.version>2.8.2</maven.deploy-plugin.version>
 		<sonar.jacoco.reportPath>../../releng/de.cooperateproject.plantumlpp.dummy/target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
+	
+	<distributionManagement>
+		<repository>
+			<id>cooperate-packagedrone</id>
+			<name>Release Repository</name>
+			<url>https://mammutbaum36.fzi.de/maven/cooperate</url>
+		</repository>
+		<snapshotRepository>
+			<id>cooperate-packagedrone</id>
+			<name>Snapshot Repository</name>
+			<url>https://mammutbaum36.fzi.de/maven/cooperate-dev</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -157,13 +170,11 @@
 				<version>2.19.1</version>
 			</plugin>
 
-			<!-- we only want to deploy the update site, so we skip deployment for 
-				all other artifacts -->
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>${maven.deploy-plugin.version}</version>
 				<configuration>
-					<skip>true</skip>
+					<deployAtEnd>true</deployAtEnd>
 				</configuration>
 			</plugin>
 

@@ -3,27 +3,14 @@ sudo: false
 jdk:
   - oraclejdk8
 before_install:
-- wget -P /tmp http://www.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
-- unzip -d /tmp -qq /tmp/apache-maven-3.3.9-bin.zip
-- export M2_HOME=/tmp/apache-maven-3.3.9
-- chmod +x $M2_HOME/bin/mvn
-- export PATH=$M2_HOME/bin:$PATH
-- cp $JAVA_HOME/jre/lib/security/cacerts /tmp
-- wget -P /tmp https://letsencrypt.org/certs/isrgrootx1.pem
-- keytool -trustcacerts -keystore /tmp/cacerts -storepass changeit -noprompt -importcert -file /tmp/isrgrootx1.pem -alias isrgrootx1
-- wget -P /tmp https://letsencrypt.org/certs/letsencryptauthorityx1.der
-- keytool -trustcacerts -keystore /tmp/cacerts -storepass changeit -noprompt -importcert -file /tmp/letsencryptauthorityx1.der -alias letsencryptauthorityx1
-- cp ./releng/settings.xml "$HOME/.m2/"
-- pip install --user requests
+- git clone --depth 1 https://github.com/Cooperate-Project/BuildUtils.git /tmp/BuildUtils
+- . /tmp/BuildUtils/travisci/setup.sh
 install: true
 script:
-- ./.travis.sh "-Djavax.net.ssl.trustStore=/tmp/cacerts"
+- mavenBuild.sh
 cache:
   directories:
   - "$HOME/.m2/repository"
 env:
   global:  
-  - secure: "DXimnN1d9AFwS1aWVg0byy2WWhwATdCHqRySbkkhsjbPlQtHZ7s2Y2wV/QwzPOn3zImTdrlUc1qp+QejXYgPWz9Q/F2EZC78Zht7p48IwuGGV+8EXOzsVZ/YxRBr9KosGdmXgb25roNunI1wuNOe/mj93RPrPH/NVRiNCoq0i+1N+ETd3/XyX9Bp0+gfD1IMS3MIQCNfaIyOINFIDsBf0rBbQ7xdrEuZfyqfjUy6w7xGq7W3sJwLn3HrNK7Wam/g/Ss4HVtTwagDdgGVsQFMAMqrXcFRXd6T4BHL0PnYPXwgHNztLhqO0PLCXiv5lTkpkNV/kmO3OKMRpUHCuuHI2v3syAslNzGv0goKdm7+vOeIN4fgwUvlSI869jkz8VRkRCq7BOK150atVR2nHhGiS6aZcZwfpO7PFbnGdGpfvGT//qs35lLuynC9EtEaO2MmPuYX7pjh5WSnXtsu0WTUjAOQcZTWaWZnjFSShCuwLR+4APnaWYlxCshjWL2Si66Gfib5qrTw/aKoi/9o6k4FjVRJp8Ne3/YqjOQgC7UMi8E1MOGYl0Or2s+9I8VGwvGf6OUBOsUHrqVOsQOfNPz/kU7gnOl9hHCOu6/GEdG3E7sq8ZoXrqTWa/oMvMu++T3qEtm+DBlLs9Pp0BHKFnqzBvpMRTm+i95K3x67faQnLDs="
-  - secure: "awqgewRillhFG/ANlbcpgxCjguZvXo3PvihOFfVQ5OWRS320Fu9JcNsPyTnwpyR79FterlyQ8g8WLvzAXg/O03uRwlUMQKyTOoXkBsTR2orvmOA/HBTdL+mnMV+jiipG/+JTZOjBpzX5BAgkLh1Ur5+Hk/ApfRQwFFLL5b7a3VB/c2XeosStDns4nDkZwLe0eHdV66HizxRSPMcrGcg818HpoGo3JjCo1G2vHjf912elR4gSVwkDrmz0Esr2oEI/y77FKKxfIpOkT8V3zURC4k9xPyBrj5T1mQkFugTMPee4FmFI1KESrt0nFcbIRh4sDk0vg9NDbSDJxgJVNOJnPGjxCi9hLF00dxfPG+RbvmmC2QKvr4Iiw9ZYq8eXuD6wFffK/FQ6FPb60KikOFS4M4PgNgxWoxkhT4W2xgZlRF53SDYAxljyJRLb2WJbODwNvsBxRi7boDH9JWDADS3UdQUh+kPro8Ne7nndGKJpr7d/rLt7HsVANEbJ4z+e+oiXjMcsiif96nS67eLHmvjWtlI8eJJYGEj2lH8OVV7c2GMzvX4xnaSPoD3n4g69DvTeMExDMSa9cOG+xK0q/vOdprcBb5cM89Xga31gUDQhGQu8N6jOj/awiqaXJTDIhbK6CpUOIgupPi7JQ9XeVeQMBazzbzP7NYFgMvz45VVK59k="
-  - secure: "nvuwQ81jMNfyK8MAnf9Hp967eU7Jox2is5LNUTiDKb1+i2RLO0FQt2CJ0aGhvFQ529awigBE/0MomQu3AR7wqIcL025HbdTiPnldQ84X76FFmOunkaNOhlyY6LrwH5TahyHJoU40IfDKLT1Ca7s/GroAlBerLDaKgJrvSp9T6ZxkXoNwWnkthCVjGZdb76V0pXLyiNp0R8zth/M39PlhOR5tZHqYPV8fgwLF4nSKBiQa12LigAAtpbp/PBWMmRhLz7t0jzln/BGcypAkJNsijZhh6VnhGFwP1BzkoJVjy+ASmox6tt/VkXUyJajhMOUSjoUhmlhDEPaFcNqW9ammP8cCJqWbNn+8RwbaCy8WYQfDiqgw950MRKWpFThVMIRgpyr/SKfr6ZchrPnbXpDnvTKF+Hk6ZVBu/QfBoLfLX7JXmCenJC53PwRuZ6+BACXbGQN29Ir0HuQe5C+UdzIlrkgof6HjgkOctvy/ubKaTkKK4MZKoU4jKdIl+i7/402mjQB5+OktF1hrBG4+7PuaYZFY4cJIXqch03CFglv37+hAKRqHd8cOSrMGX/eWjV4J1BsMATBGGuORkO3oc/u4AwFiXWem2kxZzWTohDg4lV9857dhFW6hg+6RDsDn/PJwTpxKDRGME+mI0fmU9XyFh2YoGeX2/ezO29tcBVmsJl0="
-  - secure: "bCbfk5EQxucSrEG6lWybSGHIBRM3L8e4PE5nYJi3R2g965clzmwwqOgbhQAc8PSIVS1Ezp02rAlNvhKCHy4BRjDVd284JuBsU6p1usjdDHnbCMwTS3huWReBLf0DJ59IeX6yuU7MPt+Yqe08bf9XEhROFfGIfUgd82wFsH2g4eyoJSr+DPs2nTpydvZYOUACo6gKh0JaybpeWripy7R/CdEgjAcK8LZx6zTKVbt6kGa0jsW/dWf+2Shs5GbX+ZuZsMIaAQutSVnz38RzzI2VzIgi/B3D0AQZm4jSuZLe8FmccD1Xba6nj9L1n6wCAbeivfp2hIv9W2mw4f0oZNh2biqphIyuMOFBIKS9e3MnpCrC/7oIAD4TgfN+ZNFX81Uv0tpZcCLlzHtmHDC+YaOyYRzkrWMKTpT1yAp9j/zEFfaaI1tQ1pZGliblSRKg+FlIJ6VdsXH3kQ6kcqm7Iq2vvZw8r5ucftgU8WhCmEg9wDfrQ23tydL/Qu44IGspnv12r5N7VJIRPGFqsGGbzi8De56oinhGfDBN3zEQXmsfI2UtVV+gBzQjiDAcE3VVbZuDlhe5weEkdWtlHCFCfgVb/b7W889vXJ5iMMMoXvY6rTWSkBxQQa8S4OO1U6lSdcjfpfHwI2bCo0JGP0XvUiBI/lS2I3KdvyNs9C2TnsRGafA="
+  - secure: "aGlMRMyi9aKVJwWHNafY4eL4cmITylp8ZXqXZXL2TXGTqEJoaerhaPgjHN6WiHFIjhDFcKK4gdYbQVYAz71p61dTE9RHzccR5Go1IyAmJrWNouMzP3NTBgsi/WPnNpI7m+nHf46trnj3hvbV6xgzJGg0p1ywn9JoIrqmhKikgTDtqboo5B/euyIyxI9tbcAwCMKKrbCHHiub4h+EcGEyhLlHejJJyBiITBXrsDD3+xFh2fEUs0VRNkaJXp6KmukhMMUGCA3k5XFhyVyX/pcsxgrc0Wn+glQh80tlIH0PXekpgTHXmd+ulhNWTiZSujVk9vrQkoaVfRUi5pisgqzgJ+GWgw1nFLltwf5TDAKKKHGb7QKu35rdXv6o3T4yqdZMKiY+lGaRiVw2yimM396MKiPoyaO0iO/cm30kR9Fo7iXzzAJA+JIBEKilVveFyEOV4VNaezKhjcBjrvB3UkDSNez9FnDCusvD140yyt8f77XzRAWP2vcbDT39NgcL0POS7dXBihwR6G/UIluNRrmBe9QGcHwwlmJzNit1FjXmccDhN6ozxwzUA9AjouVIKzBZmIaQM5U+6tirdzA9YE3PQ2zvlRyToT9O6N6XcsWLAeQOtkg5WcCSRFhAJ1uwBiAS1BgYkYoY9qTH4Vti9i1PjyMz6WOWBxPGW00ZyEOkUXQ="
