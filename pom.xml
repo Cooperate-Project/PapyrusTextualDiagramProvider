@@ -19,6 +19,7 @@
 	<modules>
 		<module>releng/de.cooperateproject.plantumlpp.aggregator</module>
 		<module>releng/de.cooperateproject.plantumlpp.updatesite</module>
+		<module>releng/de.cooperateproject.plantumlpp.updatesite.aggregated</module>
 	</modules>
 </project> 
 
