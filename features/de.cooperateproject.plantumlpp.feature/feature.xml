@@ -16,6 +16,11 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="PlantUML" url="http://plantuml.sourceforge.net/updatesitejuno"/>
+      <discovery label="Eclipse Orbit Mars" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20151118145958/repository/"/>
+   </url>
+
    <requires>
       <import feature="org.eclipse.papyrus.sdk.feature" version="1.1.2.201509161440" match="greaterOrEqual"/>
       <import feature="net.sourceforge.plantuml.feature" version="1.1.8.8037" match="greaterOrEqual"/>
