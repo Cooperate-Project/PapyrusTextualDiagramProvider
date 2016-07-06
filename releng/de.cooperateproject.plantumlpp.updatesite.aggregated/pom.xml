@@ -55,7 +55,18 @@
 							<url> http://download.eclipse.org/modeling/emft/b3/updates-4.4/</url>
 						</repository>
 					</repositories>
-					<appArgLine>-application org.eclipse.b3.cli.headless aggregate --buildModel updatesite.b3aggr --action BUILD</appArgLine>
+					<jvmArgs>
+						<args>-Xmx1024m</args>
+					</jvmArgs>
+					<applicationsArgs>
+						<args>-application</args>
+						<args>org.eclipse.b3.cli.headless</args>
+						<args>aggregate</args>
+						<args>--buildModel</args>
+						<args>updatesite.b3aggr</args>
+						<args>--action</args>
+						<args>BUILD</args>
+					</applicationsArgs>
 					<dependencies>
 						<dependency>
 							<artifactId>org.eclipse.b3.aggregator.engine.feature</artifactId>
@@ -93,31 +104,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!--
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.10</version>
-				<executions>
-					<execution>
-						<id>attach-artifacts</id>
-						<phase>package</phase>
-						<goals>
-							<goal>attach-artifact</goal>
-						</goals>
-						<configuration>
-							<artifacts>
-								<artifact>
-									<file>${project.build.directory}/*.zip</file>
-									<type>zip</type>
-								</artifact>
-							</artifacts>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 			
 		</plugins>
 	</build>
