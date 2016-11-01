@@ -13,6 +13,10 @@
 	<packaging>pom</packaging>
 	<name>Update Site Aggregated</name>
 
+	<properties>
+		<bintray.deploy.file>${project.build.directory}/final</bintray.deploy.file>
+	</properties>
+	
 	<build>
 		<plugins>
 
@@ -45,14 +49,9 @@
 				<configuration>
 					<repositories>
 						<repository>
-							<id>B3 requirements</id>
+							<id>b3-aggregator</id>
 							<layout>p2</layout>
-							<url> http://download.eclipse.org/releases/mars/</url>
-						</repository>
-						<repository>
-							<id>B3 aggregator</id>
-							<layout>p2</layout>
-							<url> http://download.eclipse.org/modeling/emft/b3/updates-4.4/</url>
+							<url>http://download.eclipse.org/modeling/emft/b3/headless-4.4</url>
 						</repository>
 					</repositories>
 					<jvmArgs>
@@ -100,6 +99,21 @@
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>de.cooperateproject.maven</groupId>
+				<artifactId>de.cooperateproject.maven.bintray.deploy</artifactId>
+				<version>${bintray.deploy.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>bintray-deployment</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
 						</goals>
 					</execution>
 				</executions>
