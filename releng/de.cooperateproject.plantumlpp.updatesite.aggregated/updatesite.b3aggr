@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aggregator="http://www.eclipse.org/b3/2011/aggregator/1.1.0" label="PapyrusTextualDiagramProvider" buildRoot="target">
+<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:aggregator="http://www.eclipse.org/b3/2011/aggregator/1.1.0" label="PapyrusTextualDiagramProvider" buildRoot="target">
   <validationSets label="main">
     <contributions label="local">
       <repositories location="../de.cooperateproject.plantumlpp.updatesite/target/repository"/>
     </contributions>
     <contributions label="plantuml">
       <repositories location="http://plantuml.sourceforge.net/updatesitejuno">
-        <features name="net.sourceforge.plantuml.feature.feature.group" categories="//@customCategories[identifier='External%20Dependencies']"/>
+        <features name="net.sourceforge.plantuml.feature.feature.group"/>
       </repositories>
     </contributions>
     <contributions label="externals">
-      <repositories location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/" mirrorArtifacts="false" categoryPrefix="External Dependencies -">
-        <categories description="All possible external dependencies from the Eclipse Orbit." name="org.eclipse.orbit.category.all"/>
-        <mapRules xsi:type="aggregator:ExclusionRule" name="org.eclipse.orbit.build.feature.set1.feature.group"/>
-        <mapRules xsi:type="aggregator:ExclusionRule" name="org.apache.commons.daemon"/>
+      <repositories location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/" mirrorArtifacts="false">
+        <bundles name="com.google.guava"/>
+        <bundles name="com.google.inject"/>
       </repositories>
       <repositories location="http://download.eclipse.org/releases/mars/" mirrorArtifacts="false">
-        <features name="org.eclipse.papyrus.sdk.feature.feature.group" categories="//@customCategories[identifier='External%20Dependencies']"/>
+        <features name="org.eclipse.papyrus.sdk.feature.feature.group"/>
       </repositories>
     </contributions>
   </validationSets>
@@ -24,7 +23,5 @@
   <configurations architecture="x86_64"/>
   <configurations operatingSystem="linux" windowSystem="gtk"/>
   <configurations operatingSystem="linux" windowSystem="gtk" architecture="x86_64"/>
-  <configurations operatingSystem="macosx" windowSystem="cocoa"/>
   <configurations operatingSystem="macosx" windowSystem="cocoa" architecture="x86_64"/>
-  <customCategories identifier="External Dependencies" label="External Dependencies" description="External dependencies from various sources." features="//@validationSets[label='main']/@contributions[label='externals']/@repositories.1/@features.0 //@validationSets[label='main']/@contributions[label='plantuml']/@repositories.0/@features.0"/>
 </aggregator:Aggregation>
